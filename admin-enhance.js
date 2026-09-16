@@ -32,22 +32,6 @@ document.addEventListener('change',async e=>{
   compressing=false;
 },true);
 
-// Valida códigos duplicados antes de que el formulario original guarde.
-document.addEventListener('click',async e=>{
-  const btn=e.target.closest('.savep');if(!btn)return;
-  const modal=btn.closest('.pa-modal');if(!modal)return;
-  const sku=modal.querySelector('#psku')?.value.trim();if(!sku)return;
-  const input=modal.querySelector('#psku');
-  if(modal.querySelector('.pa-modal-title')?.textContent.includes('Editar')&&sku===input.dataset.initialSku)return;
-  e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();
-  btn.disabled=true;btn.textContent='Validando…';
-  const{data,error}=await S.from('products').select('id,name,sku').ilike('sku',sku).is('deleted_at',null).limit(1);
-  if(error){btn.disabled=false;btn.textContent='▣ Guardar producto';notify('No se pudo validar el código. Intenta nuevamente.','error');return}
-  if(data?.length){btn.disabled=false;btn.textContent='▣ Guardar producto';notify('Ya existe un producto con ese código. Usa uno diferente.','error');input.focus();return}
-  // Código válido: lanza nuevamente el handler original omitiendo una segunda validación.
-  input.dataset.initialSku=sku;btn.disabled=false;btn.textContent='▣ Guardar producto';btn.click();
-},true);
-
 function addAdminToolbar(){
   const title=[...document.querySelectorAll('.pa-title')].find(x=>['Productos','Inventario'].includes(x.textContent.trim()));
   if(!title)return;
@@ -72,7 +56,6 @@ async function addDashboardAttention(){
 
 function rememberInitialSku(){document.querySelectorAll('.pa-modal #psku').forEach(i=>{if(i.dataset.initialSku===undefined)i.dataset.initialSku=i.value.trim()})}
 
-// Añade recuperación de contraseña al login.
 function enhanceLogin(){const box=document.querySelector('.pa-loginbox');if(!box||box.querySelector('.pax-forgot'))return;const button=document.createElement('button');button.type='button';button.className='pax-forgot';button.textContent='¿Olvidaste tu contraseña?';button.onclick=async()=>{const email=box.querySelector('#lemail')?.value.trim();if(!email){notify('Escribe primero tu correo de administrador.','error');box.querySelector('#lemail')?.focus();return}const{error}=await S.auth.resetPasswordForEmail(email,{redirectTo:`${location.origin}/admin`});if(error)return notify(error.message,'error');notify('Te enviamos un enlace para recuperar tu contraseña.')};box.appendChild(button)}
 
 const obs=new MutationObserver(()=>{rememberInitialSku();addAdminToolbar();addDashboardAttention();enhanceLogin()});obs.observe(document.getElementById('app'),{childList:true,subtree:true});
