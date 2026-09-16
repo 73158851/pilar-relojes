@@ -4,19 +4,30 @@ function logoMarkup(cls){
   return `<span class="admin-logo-shell"><img class="${cls}" src="${PILAR_LOGO}" alt="Logo PILAR" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="admin-logo-fallback">PILAR</span></span>`;
 }
 
+function ensureToast(){
+  let toast=document.querySelector('.admin-update-toast');
+  if(toast) return toast;
+  toast=document.createElement('div');
+  toast.className='admin-update-toast';
+  toast.textContent='Tienda actualizada correctamente';
+  document.body.appendChild(toast);
+  return toast;
+}
+
 function ensureRefreshButton(side){
   if(!side || side.querySelector('.admin-refresh-store')) return;
   const button=document.createElement('button');
   button.type='button';
   button.className='admin-refresh-store';
   button.innerHTML='<span class="refresh-icon">↻</span><span>Actualizar tienda</span>';
-  button.title='Recargar la tienda pública con los datos más recientes';
+  button.title='Confirmar los cambios guardados en la tienda';
   button.addEventListener('click',()=>{
-    const url=`/?refresh=${Date.now()}`;
-    window.open(url,'_blank','noopener');
+    const toast=ensureToast();
     button.classList.add('done');
     const old=button.innerHTML;
-    button.innerHTML='<span class="refresh-icon">✓</span><span>Tienda actualizada</span>';
+    button.innerHTML='<span class="refresh-icon">✓</span><span>Actualizada</span>';
+    toast.classList.add('show');
+    setTimeout(()=>toast.classList.remove('show'),2200);
     setTimeout(()=>{button.innerHTML=old;button.classList.remove('done');},1800);
   });
   side.appendChild(button);
