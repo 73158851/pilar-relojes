@@ -1,0 +1,114 @@
+/* PILAR Admin Premium — visual only, no structural changes */
+:root{--ap-ink:#152033;--ap-muted:#738094;--ap-line:#e4e8ee;--ap-card:#fff;--ap-bg:#f4f6f9;--ap-navy:#18324d;--ap-blue:#2d6fae;--ap-blue-soft:#edf4fb;--ap-gold:#b88a37;--ap-green:#21835b;--ap-red:#b94a55}
+.padmin{background:linear-gradient(180deg,#f7f9fb 0%,#f2f5f8 100%)!important;color:var(--ap-ink)!important}
+
+/* Header */
+.pa-top{background:rgba(255,255,255,.96)!important;backdrop-filter:blur(16px);border-bottom:1px solid #e6ebf0!important;box-shadow:0 7px 26px rgba(27,48,72,.06)!important}
+.pa-nav{height:64px!important}
+.pa-logo{background:transparent!important;border-radius:0!important;width:78px!important;height:46px!important}
+.pa-tab,.pa-update,.pa-logout{transition:all .18s ease}
+.pa-tab{color:#526176!important;font-weight:760!important;border:1px solid transparent!important}
+.pa-tab:hover{background:#f7f9fb!important;color:#214d79!important}
+.pa-tab.active{background:#edf4fb!important;color:#1e5f9b!important;border-color:#dbe8f4!important;box-shadow:none!important}
+.pa-update{background:#fff!important;border:1px solid #dce6ef!important;color:#245e92!important;box-shadow:0 4px 12px rgba(30,73,112,.05)!important}
+.pa-update:hover{background:#f3f7fb!important;transform:translateY(-1px)}
+.pa-logout{background:#233f5d!important;box-shadow:0 6px 14px rgba(35,63,93,.14)!important}
+.pa-logout:hover{background:#1b324b!important;transform:translateY(-1px)}
+
+/* Main headings */
+.pa-main{padding-top:30px!important}
+.pa-title{font-size:32px!important;letter-spacing:-.65px!important;color:#172234!important}
+.pa-sub{color:#7a8798!important}
+.pa-headrow{margin-bottom:18px!important}
+
+/* Stats */
+.pa-stats{gap:12px!important}
+.pa-stat{border:1px solid #e5e9ee!important;border-radius:16px!important;padding:16px 17px!important;box-shadow:0 8px 24px rgba(24,40,60,.045)!important;background:linear-gradient(180deg,#fff,#fcfdfe)!important}
+.pa-stat:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(24,40,60,.07)!important}
+.pa-stat-icon{border-radius:13px!important;box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
+.pa-stat span{font-size:12px!important;font-weight:750!important;letter-spacing:.1px!important;color:#7a8798!important}
+.pa-stat strong{font-size:26px!important;color:#172234!important}
+
+/* Cards */
+.pa-card{border:1px solid #e3e8ed!important;border-radius:16px!important;box-shadow:0 9px 26px rgba(24,40,60,.045)!important;background:#fff!important}
+.pa-admin-summary{background:linear-gradient(135deg,#fff 0%,#f9fbfd 100%)!important}
+.pa-admin-summary .ico{background:#eef4fa!important;color:#2c6ca5!important;border:1px solid #dde8f2!important}
+.pa-admin-summary h3{color:#1a2739!important}
+.pa-admin-summary p{color:#7b8797!important}
+
+/* Buttons */
+.pa-btn{border-radius:9px!important;font-weight:800!important;box-shadow:none!important;transition:all .16s ease}
+.pa-btn:hover{transform:translateY(-1px)}
+.pa-btn.primary{background:linear-gradient(135deg,#2d6fae,#245e92)!important;color:#fff!important;box-shadow:0 7px 16px rgba(45,111,174,.16)!important}
+.pa-btn.light{background:#eef4f9!important;color:#315d83!important;border:1px solid #dde7ef!important}
+.pa-btn.danger,.pa-btn.soft-danger{background:#fff4f5!important;color:#a8434d!important;border:1px solid #f0d9dc!important}
+.pa-btn.success{background:#eef8f2!important;color:#23714f!important;border:1px solid #dcefe4!important}
+
+/* Tables */
+.pa-table-wrap{border:1px solid #e3e8ed!important;border-radius:13px!important;background:#fff!important}
+.pa-table th{background:#f7f9fb!important;color:#758296!important;font-size:10px!important;letter-spacing:.65px!important;border-bottom:1px solid #e5e9ee!important}
+.pa-table td{color:#334155!important;border-bottom:1px solid #edf0f3!important}
+.pa-table tbody tr{transition:background .15s ease}
+.pa-table tbody tr:hover{background:#fafbfd!important}
+.pa-state{display:inline-flex;align-items:center;padding:5px 8px;border-radius:999px;font-size:10px!important;line-height:1}
+.pa-state.ok,.pa-state.on{background:#edf8f2;color:#25734f!important}
+.pa-state.out,.pa-state.off{background:#fff2f3;color:#a5434d!important}
+
+/* Search / filters from enhance layer */
+.pax-toolbar{background:#fafbfd!important;border:1px solid #e4e8ee!important;border-radius:12px!important;padding:10px!important;margin-bottom:12px!important}
+.pax-search{background:#fff!important;border:1px solid #dde4eb!important;border-radius:10px!important}
+.pax-search input{background:transparent!important;color:#233247!important}
+.pax-filters button{border-radius:999px!important;border:1px solid #e0e6ec!important;background:#fff!important;color:#667589!important}
+.pax-filters button.active{background:#eaf2f9!important;color:#245f94!important;border-color:#d2e1ee!important}
+
+/* Settings */
+.pa-settings{padding:8px 14px!important}
+.pa-setting{grid-template-columns:46px 150px minmax(0,1fr)!important;padding:14px 4px!important;border-bottom:1px solid #edf0f3!important}
+.pa-seticon{width:40px!important;height:40px!important;border-radius:10px!important;box-shadow:0 6px 14px rgba(20,34,52,.08)}
+.pa-setting label{color:#344256!important}
+.pa-setting small{color:#8a96a6!important}
+.pa-input{border:1px solid #dce3ea!important;border-radius:9px!important;background:#fff!important;color:#243145!important;box-shadow:inset 0 1px 2px rgba(20,30,40,.02)!important}
+.pa-input:focus{border-color:#7fa9ce!important;box-shadow:0 0 0 3px rgba(45,111,174,.09)!important}
+.pa-settings-save{border-top:1px solid #edf0f3!important;margin-top:4px!important;padding-top:14px!important}
+
+/* Inventory helper */
+.pa-code-help{background:#f2f7fb!important;color:#49657e!important;border:1px solid #dfeaf3!important;box-shadow:none!important}
+.pa-code-help strong{color:#285c87!important}
+
+/* Modal */
+.pa-modal{background:rgba(13,25,39,.48)!important;backdrop-filter:blur(4px)}
+.pa-modalbox{border-radius:18px!important;border:1px solid rgba(255,255,255,.7)!important;box-shadow:0 30px 85px rgba(10,21,33,.24)!important;background:#fff!important}
+.pa-modal-title{color:#182335!important;font-size:23px!important}
+.pa-upload{background:#f9fbfd!important;border:1px dashed #a9c1d7!important;border-radius:13px!important}
+.pa-upload-btn{background:#eaf2f9!important;color:#295f8e!important;border:1px solid #d7e5f0!important;border-radius:9px!important}
+.pa-photo{border:1px solid #e1e6ec!important;border-radius:12px!important;box-shadow:0 6px 16px rgba(20,34,52,.04)}
+.pa-photo img{object-fit:cover!important}
+.pa-photo-tag{color:#2d6fae!important}
+.pa-savebar{border-top:1px solid #edf0f3!important;padding-top:12px!important}
+
+/* Login */
+.pa-login{background:radial-gradient(circle at 50% 10%,#fff 0%,#f4f7fa 45%,#edf2f6 100%)!important}
+.pa-loginbox{border:1px solid #e1e6eb!important;border-radius:20px!important;box-shadow:0 28px 75px rgba(24,40,60,.11)!important;background:rgba(255,255,255,.98)!important}
+.pa-login-logo{width:138px!important;height:62px!important}
+.pa-login-title{color:#172234!important;font-size:27px!important}
+.pa-loginbox p{color:#7b8797!important}
+.pax-forgot{color:#376b96!important;font-weight:750!important}
+
+/* Attention block */
+.pax-attention{background:linear-gradient(135deg,#fff,#f8fafc)!important;border:1px solid #e3e8ee!important;border-radius:16px!important;box-shadow:0 9px 26px rgba(24,40,60,.045)!important}
+.pax-attention h3{color:#1d2a3c!important}
+.pax-attention p,.pax-attention small{color:#7f8b9c!important}
+.pax-attention-grid>div{background:#fff!important;border:1px solid #e7ebef!important;border-radius:12px!important}
+
+@media(max-width:760px){
+  .pa-top{box-shadow:0 4px 16px rgba(27,48,72,.06)!important}
+  .pa-nav{height:58px!important}
+  .pa-logo{width:62px!important;height:39px!important}
+  .pa-tab{font-size:10px!important;padding:7px 8px!important}
+  .pa-main{padding-top:20px!important}
+  .pa-title{font-size:28px!important}
+  .pa-stat{border-radius:14px!important;padding:13px 11px!important}
+  .pa-card{border-radius:14px!important}
+  .pa-setting{grid-template-columns:42px 110px minmax(0,1fr)!important}
+  .pa-modalbox{border-radius:18px 18px 8px 8px!important}
+}
