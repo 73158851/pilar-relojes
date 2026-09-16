@@ -2,6 +2,7 @@ const admin=location.pathname.startsWith('/admin');
 if(admin){
   await import('/admin-v2.js');
   await import('/admin-enhance.js');
+  await import('/admin-sales.js');
 }else{
   await import('/storefront.js');
   await import('/store-enhance.js');
