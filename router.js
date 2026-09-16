@@ -5,4 +5,5 @@ if(admin){
 }else{
   await import('/storefront.js');
   await import('/store-enhance.js');
+  await import('/storefront-lightbox.js');
 }
