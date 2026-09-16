@@ -4,4 +4,5 @@ if(admin){
   await import('/admin-enhance.js');
 }else{
   await import('/storefront.js');
+  await import('/store-enhance.js');
 }
