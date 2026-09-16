@@ -1,0 +1,100 @@
+/* PILAR storefront polish — aprobado visualmente */
+.storefront{--p-gold:#bd8b20;--p-navy:#101827;--p-cream:#fbf8f1;--p-line:#e7e1d7}
+
+/* Top strip */
+.sf-topstrip{height:30px;background:#101827;border-bottom:1px solid rgba(255,255,255,.08)}
+.sf-topstrip .sf-container{justify-content:space-between;max-width:1180px;font-size:9px;letter-spacing:.1px;color:#e8edf4;opacity:1}
+.sf-topstrip span{display:flex;align-items:center;gap:5px;white-space:nowrap}
+
+/* Main header */
+.sf-header{background:rgba(255,255,255,.985);box-shadow:0 4px 18px rgba(20,28,45,.035)}
+.sf-bar{height:74px;grid-template-columns:52px 1fr 52px;position:relative}
+.sf-menu{display:block!important;justify-self:start;width:38px;height:38px;padding:0;border-radius:50%;font-size:0;position:relative}
+.sf-menu:before,.sf-menu:after,.sf-menu{transition:.2s}
+.sf-menu:before{content:'☰';font-size:25px;line-height:38px;color:#111827}
+.sf-menu:hover{background:#f7f3eb}
+.sf-logo{justify-self:center}
+.sf-logo img{width:112px;height:52px}
+.sf-nav{display:none!important}
+.sf-head-wa{display:grid!important;place-items:center;justify-self:end;width:38px;height:38px;border:1px solid #ece8df;border-radius:50%;background:#fff;color:#111827!important}
+.sf-head-wa svg{width:22px;height:22px}
+
+/* Back subbar */
+.sf-subbar{background:#fff;border-top:1px solid #f3efe8;border-bottom:1px solid #f0ece4}
+.sf-subbar .sf-container{height:40px;font-size:10px}
+.sf-back{display:inline-flex;align-items:center;gap:5px;font-size:11px;padding:7px 0;color:#121a2b}
+.sf-back:hover{color:var(--p-gold)}
+.sf-subbar span{font-size:9px;letter-spacing:.8px;text-transform:uppercase;color:#8d8170}
+
+/* Drawer */
+.sf-drawer{background:rgba(16,24,39,.42);backdrop-filter:blur(2px)}
+.sf-drawer-panel{width:min(335px,84vw);padding:22px 24px 18px;background:#fff;box-shadow:24px 0 60px rgba(4,12,25,.19)}
+.sf-drawer-head{padding:0 0 18px;margin-bottom:13px}
+.sf-drawer-head img{width:104px;height:50px}
+.sf-drawer-close{width:38px;height:38px;border-radius:50%;font-size:28px;line-height:34px;cursor:pointer;color:#111827}
+.sf-drawer-close:hover{background:#f5f3ee}
+.sf-drawer-panel>a:not(.sf-drawer-wa){position:relative;padding:14px 8px 14px 42px;border-bottom:1px solid #f1eee8;font-size:13px;font-weight:760;color:#182033}
+.sf-drawer-panel>a:not(.sf-drawer-wa):before{position:absolute;left:9px;top:50%;transform:translateY(-50%);width:22px;text-align:center;font-size:17px;font-weight:400;color:#a47720}
+.sf-drawer-panel>a:nth-of-type(1):before{content:'⌂'}
+.sf-drawer-panel>a:nth-of-type(2):before{content:'▦'}
+.sf-drawer-panel>a:nth-of-type(3):before{content:'☆'}
+.sf-drawer-panel>a:nth-of-type(4):before{content:'◇'}
+.sf-drawer-panel>a:nth-of-type(5):before{content:'✉'}
+.sf-drawer-panel>a:not(.sf-drawer-wa):hover{background:#fbf8f1;color:#a47720}
+.sf-drawer-wa{margin-top:auto!important;min-height:60px;padding:10px 13px!important;border:1px solid #e5e0d6!important;border-radius:14px!important;background:#fff;box-shadow:0 6px 18px rgba(18,27,43,.045);font-size:12px!important;font-weight:800!important}
+.sf-drawer-wa:after{content:'›';margin-left:auto;font-size:22px;color:#707988}
+.sf-drawer-wa svg{width:27px!important;height:27px!important}
+
+/* Home hero refinements */
+.sf-hero{background:radial-gradient(circle at 86% 44%,rgba(184,135,37,.12),transparent 28%),linear-gradient(135deg,#fffdfa,#f6f3ed)}
+.sf-hero-inner{padding-top:70px}
+.sf-btn.dark{background:linear-gradient(135deg,#b98219,#d1a33b);box-shadow:0 9px 24px rgba(184,135,37,.17)}
+.sf-link{padding:11px 16px;border:1px solid #ddd8ce;border-radius:9px;background:#fff;box-shadow:0 5px 15px rgba(17,24,39,.035)}
+
+/* Footer — premium but compact */
+.sf-footer{background:linear-gradient(135deg,#0e1726,#111d30);margin-top:10px;border-top:1px solid rgba(184,135,37,.22)}
+.sf-footer-grid{grid-template-columns:1.25fr .8fr 1fr 1fr;gap:22px;padding:17px 0 13px;align-items:start}
+.sf-footer-intro strong{font:500 20px/1 Georgia,serif;letter-spacing:2.5px;margin-bottom:6px}
+.sf-footer-intro p{max-width:230px}
+.sf-footer h4{font-size:8px;letter-spacing:1.6px;margin:1px 0 7px;color:#f5f7fa}
+.sf-footer p,.sf-footer a{font-size:9px;line-height:1.45;margin:3px 0;color:#aeb8c7}
+.sf-footer a:hover{color:#fff}
+.sf-footer-wa{color:#dce4ee!important}
+.sf-footer-wa svg{width:14px;height:14px}
+.sf-footer-meta{padding:7px 10px;font-size:8px;background:rgba(4,10,18,.12)}
+
+/* Floating WhatsApp */
+.sf-float{width:50px;height:50px;right:16px;bottom:16px;border:2px solid rgba(255,255,255,.85);box-shadow:0 12px 30px rgba(10,20,30,.2)}
+
+@media(max-width:680px){
+  .sf-topstrip{height:26px}
+  .sf-topstrip .sf-container{width:calc(100% - 24px);font-size:7px;gap:5px}
+  .sf-bar{height:67px;grid-template-columns:42px 1fr 42px}
+  .sf-logo img{width:98px;height:44px}
+  .sf-head-wa,.sf-menu{width:36px;height:36px}
+  .sf-menu:before{line-height:36px;font-size:24px}
+  .sf-head-wa svg{width:21px;height:21px}
+  .sf-subbar .sf-container{height:36px}
+  .sf-drawer-panel{width:min(320px,82vw);padding:19px 20px 17px}
+  .sf-drawer-head img{width:96px;height:46px}
+  .sf-drawer-panel>a:not(.sf-drawer-wa){padding:13px 7px 13px 39px;font-size:12px}
+  .sf-drawer-panel>a:not(.sf-drawer-wa):before{left:7px;font-size:16px}
+  .sf-drawer-wa{min-height:56px;font-size:11px!important}
+  .sf-hero-inner{padding-top:45px}
+  .sf-link{padding:10px 13px}
+  .sf-footer-grid{grid-template-columns:1.15fr 1fr 1fr;gap:12px;padding:14px 0 11px}
+  .sf-footer-intro{grid-column:1/-1;display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding-bottom:7px;border-bottom:1px solid rgba(255,255,255,.07)}
+  .sf-footer-intro strong{font-size:17px;margin:0;flex:0 0 auto}
+  .sf-footer-intro p{font-size:8px!important;margin:0!important;text-align:right;max-width:210px}
+  .sf-footer h4{font-size:7px;margin-bottom:5px}
+  .sf-footer p,.sf-footer a{font-size:8px;line-height:1.35}
+  .sf-footer-meta{padding:6px;font-size:7px}
+  .sf-float{width:47px;height:47px;right:12px;bottom:12px}
+}
+
+@media(max-width:390px){
+  .sf-topstrip span:nth-child(2){display:none}
+  .sf-footer-grid{grid-template-columns:1fr 1fr;gap:12px 18px}
+  .sf-footer-grid>div:last-child{grid-column:1/-1}
+  .sf-footer-intro{grid-column:1/-1}
+}
