@@ -5,6 +5,18 @@ const ICONS={
   stock:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v12H4zM7 4h10v3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 11h8M8 15h5" stroke="currentColor" stroke-width="1.8"/></svg>'
 };
 
+function renameSku(root=document){
+  root.querySelectorAll('label,th,.spec b').forEach(el=>{
+    if(el.textContent.trim()==='SKU') el.textContent='Código del producto';
+  });
+  const sku=root.querySelector('#psku');
+  if(sku){
+    sku.placeholder='Ej. PILAR-CAS-001';
+    const lab=sku.parentElement?.querySelector('label');
+    if(lab) lab.textContent='Código del producto';
+  }
+}
+
 function hideColorField(modal){
   const color=modal.querySelector('#pcolor');
   const wrap=color?.parentElement;
@@ -19,7 +31,7 @@ function enhanceFilePicker(modal){
   const holder=input.parentElement;
   const box=document.createElement('div');
   box.className='photo-picker-pro';
-  box.innerHTML='<button type="button" class="photo-picker-button"><span>＋</span> Seleccionar fotos</button><span class="photo-picker-status">Ninguna foto seleccionada</span>';
+  box.innerHTML='<button type="button" class="photo-picker-button"><span class="photo-upload-icon">⇧</span><span>Seleccionar fotos</span></button><span class="photo-picker-status">Ninguna foto seleccionada</span><small>JPG, PNG o WEBP · puedes elegir varias fotos</small>';
   holder.insertBefore(box,input);
   const button=box.querySelector('.photo-picker-button');
   const status=box.querySelector('.photo-picker-status');
@@ -40,7 +52,7 @@ function enhanceSaveActions(modal){
   const add=document.createElement('button');
   add.type='button';
   add.className='btn light add-photos-inline';
-  add.innerHTML='<span class="add-photo-icon">＋</span> Agregar más fotos';
+  add.innerHTML='<span class="add-photo-icon">＋</span><span>Agregar más fotos</span>';
   add.onclick=()=>input.click();
   wrap.insertBefore(add,save);
 }
@@ -51,31 +63,68 @@ function removeDuplicateGallery(modal){
 
 function decorateSettings(){
   const panel=document.querySelector('#swa')?.closest('.panel');
-  if(!panel||panel.dataset.settingsPro==='1') return;
-  panel.dataset.settingsPro='1';
-  panel.classList.add('settings-panel-pro');
-  const rows=[['swa','whatsapp','WhatsApp'],['sloc','location','Ubicación'],['stik','tiktok','TikTok'],['slow','stock','Umbral stock bajo']];
-  rows.forEach(([id,icon,label])=>{
-    const input=document.getElementById(id);
-    const lab=input?.parentElement?.querySelector('label');
-    if(!lab||lab.querySelector('.setting-icon')) return;
-    lab.innerHTML=`<span class="setting-icon">${ICONS[icon]}</span><span>${label}</span>`;
-    input.parentElement.classList.add('setting-field-pro');
-  });
-  document.getElementById('sshow')?.parentElement?.classList.add('setting-check-pro');
+  if(!panel) return;
+  if(panel.dataset.settingsPro!=='1'){
+    panel.dataset.settingsPro='1';
+    panel.classList.add('settings-panel-pro');
+    const rows=[['swa','whatsapp','WhatsApp'],['sloc','location','Ubicación'],['stik','tiktok','TikTok'],['slow','stock','Umbral stock bajo']];
+    rows.forEach(([id,icon,label])=>{
+      const input=document.getElementById(id);
+      const lab=input?.parentElement?.querySelector('label');
+      if(!lab||lab.querySelector('.setting-icon')) return;
+      lab.innerHTML=`<span class="setting-icon setting-icon-${icon}">${ICONS[icon]}</span><span>${label}</span>`;
+      input.parentElement.classList.add('setting-field-pro');
+    });
+    document.getElementById('sshow')?.parentElement?.classList.add('setting-check-pro');
+    const save=document.getElementById('saves');
+    if(save) save.textContent='Guardar cambios';
+  }
+  const heading=document.querySelector('.main>h2');
+  if(heading&&heading.textContent.trim()==='Configuración'){
+    heading.textContent='Configuración de la tienda';
+    if(!heading.nextElementSibling?.classList?.contains('admin-page-subtitle')){
+      const sub=document.createElement('p');
+      sub.className='admin-page-subtitle';
+      sub.textContent='Actualiza la información que se muestra en tu tienda.';
+      heading.insertAdjacentElement('afterend',sub);
+    }
+  }
+}
+
+function decorateInventory(){
+  const heading=[...document.querySelectorAll('.main>h2')].find(x=>x.textContent.trim()==='Inventario');
+  if(!heading) return;
+  if(!heading.nextElementSibling?.classList?.contains('admin-page-subtitle')){
+    const sub=document.createElement('p');
+    sub.className='admin-page-subtitle';
+    sub.textContent='Controla el stock y los movimientos de tus productos.';
+    heading.insertAdjacentElement('afterend',sub);
+  }
+  const firstPanel=heading.parentElement?.querySelector('.panel');
+  if(firstPanel&&!firstPanel.querySelector('.product-code-help')){
+    const help=document.createElement('div');
+    help.className='product-code-help';
+    help.innerHTML='<strong>¿Qué es el código del producto?</strong><span>Es un identificador único para cada reloj. Sirve para organizar el inventario y encontrar productos rápidamente. Ejemplo: PILAR-CAS-001.</span>';
+    firstPanel.insertAdjacentElement('afterend',help);
+  }
 }
 
 function enhanceModal(modal){
   if(!modal||!modal.querySelector('#psku')) return;
+  renameSku(modal);
   hideColorField(modal);
   removeDuplicateGallery(modal);
   enhanceFilePicker(modal);
   enhanceSaveActions(modal);
+  const title=modal.querySelector('.ahead h3');
+  if(title&&title.textContent.trim()==='Nuevo producto') title.textContent='Agregar producto';
 }
 
 function run(){
+  renameSku(document);
   document.querySelectorAll('.modal').forEach(enhanceModal);
   decorateSettings();
+  decorateInventory();
 }
 
 const observer=new MutationObserver(run);
