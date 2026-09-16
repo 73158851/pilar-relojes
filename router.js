@@ -3,6 +3,7 @@ if(admin){
   await import('/app.js');
   await import('/multi-images.js');
   await import('/image-manager-v2.js');
+  await import('/admin-brand.js');
 }else{
   await import('/storefront.js');
 }
