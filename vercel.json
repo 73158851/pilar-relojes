@@ -1,1 +1,1 @@
-{"rewrites":[{"source":"/(.*)","destination":"/index.html"}]}
+{"rewrites":[{"source":"/sitemap.xml","destination":"/api/sitemap"},{"source":"/producto/:slug","has":[{"type":"header","key":"user-agent","value":".*(Googlebot|bingbot|facebookexternalhit|Facebot|Twitterbot|LinkedInBot|WhatsApp|TelegramBot).*"}],"destination":"/api/product-meta?slug=:slug"},{"source":"/(.*)","destination":"/index.html"}]}
