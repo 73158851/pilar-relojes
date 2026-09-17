@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 const read=(p)=>fs.existsSync(p)?fs.readFileSync(p,'utf8'):'';
+const exists=p=>fs.existsSync(p);
 const checks=[
  ['admin selector de género',()=>read('admin-product-gender.js').includes('pgender')],
  ['guardado de género',()=>read('admin-product-save-v2.js').includes("gender:")&&read('admin-product-save-v2.js').includes("$('pgender')")],
@@ -13,10 +14,12 @@ const checks=[
  ['SEO Product JSON-LD',()=>read('store-seo.js').includes('application/ld+json')&&read('store-seo.js').includes('Product')],
  ['compartir incluye precio y disponibilidad',()=>read('store-pro.js').includes('sf-detail-price')&&read('store-pro.js').includes('sfp-status')&&read('store-pro.js').includes('Descubre este modelo en PILAR Relojes Sucre')],
  ['preview social enriquecido',()=>['og:image:secure_url','og:image:alt','product:price:amount','product:price:currency','twitter:title','twitter:image'].every(x=>read('api/product-meta.js').includes(x))],
- ['hero usa composición de referencia',()=>['sf-ref-copy','sf-ref-visual','sf-ref-benefits','sf-ref-info','Más que'].every(x=>read('storefront-reference-hero.js').includes(x))],
- ['hero mantiene botones funcionales',()=>read('storefront-reference-hero.js').includes('sf-ref-catalog')&&read('storefront-reference-hero.js').includes('sf-ref-wa')&&read('storefront-reference-hero.js').includes('/catalogo')],
- ['hero tiene animaciones premium',()=>read('storefront-reference-hero.css').includes('@keyframes heroReferenceReveal')&&read('storefront-reference-hero.css').includes('@keyframes heroReferenceImage')&&read('storefront-reference-hero.css').includes('@keyframes heroReferenceShine')],
- ['hero responsive integrado',()=>read('storefront-reference-hero.css').includes('@media(max-width:800px)')&&read('index.html').includes('storefront-reference-hero.css')&&read('router.js').includes('storefront-reference-hero.js')],
+ ['asset exacto de referencia existe',()=>exists('pilar-hero-reference-mobile.webp')],
+ ['hero usa solo imagen exacta',()=>read('storefront-reference-hero.js').includes('sf-ref-exact')&&read('storefront-reference-hero.js').includes('/pilar-hero-reference-mobile.webp')&&!read('storefront-reference-hero.js').includes('sf-ref-benefits')],
+ ['hotspots reales se conservan',()=>read('storefront-reference-hero.js').includes('sf-ref-hotspot catalog')&&read('storefront-reference-hero.js').includes('sf-ref-hotspot whatsapp')&&read('storefront-reference-hero.js').includes('/catalogo')],
+ ['proporción móvil coincide',()=>read('storefront-reference-hero.css').includes('aspect-ratio:343/430')&&read('storefront-reference-hero.css').includes('object-fit:cover')],
+ ['animaciones sin deformar referencia',()=>read('storefront-reference-hero.css').includes('@keyframes heroExactReveal')&&read('storefront-reference-hero.css').includes('@keyframes heroExactShine')&&read('storefront-reference-hero.css').includes('prefers-reduced-motion')],
+ ['hero integrado',()=>read('index.html').includes('storefront-reference-hero.css')&&read('router.js').includes('storefront-reference-hero.js')],
  ['robots sitemap',()=>read('robots.txt').includes('Sitemap: https://pilar-relojes.vercel.app/sitemap.xml')],
  ['sitemap server',()=>read('api/sitemap.js').includes('urlset')&&read('api/sitemap.js').includes('products')],
  ['meta server',()=>read('api/product-meta.js').includes('og:title')&&read('api/product-meta.js').includes('application/ld+json')],
