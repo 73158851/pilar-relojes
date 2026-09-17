@@ -9,5 +9,5 @@ if(!location.pathname.startsWith('/admin')){
     splash.classList.add('is-leaving');
     splash.addEventListener('animationend',()=>splash.remove(),{once:true});
     window.setTimeout(()=>splash.remove(),650);
-  },1500);
+  },2500);
 }
