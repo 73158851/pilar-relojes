@@ -1,0 +1,115 @@
+/* PILAR Premium Motion — animaciones sobrias y accesibles */
+.storefront{--motion-fast:180ms;--motion-med:260ms;--motion-slow:420ms;--ease-premium:cubic-bezier(.22,.61,.36,1)}
+
+/* Entrada inicial */
+.storefront.motion-ready .sf-hero .sf-kicker,
+.storefront.motion-ready .sf-hero h1,
+.storefront.motion-ready .sf-hero .sf-lead,
+.storefront.motion-ready .sf-hero .sf-actions,
+.storefront.motion-ready .sf-hero .sf-meta,
+.storefront.motion-ready .sf-section-head,
+.storefront.motion-ready .sf-catalog-head,
+.storefront.motion-ready .sf-product-gallery,
+.storefront.motion-ready .sf-detail-info,
+.storefront.motion-ready .sf-contact-card,
+.storefront.motion-ready .sf-footer-grid,
+.storefront.motion-ready .sf-card{
+  opacity:0;
+  transform:translateY(16px);
+}
+.storefront.motion-ready .is-visible{opacity:1!important;transform:none!important;transition:opacity var(--motion-slow) var(--ease-premium),transform var(--motion-slow) var(--ease-premium)}
+
+/* Hero secuencial */
+.storefront.motion-ready .sf-hero .sf-kicker.is-visible{transition-delay:20ms}
+.storefront.motion-ready .sf-hero h1.is-visible{transition-delay:70ms}
+.storefront.motion-ready .sf-hero .sf-lead.is-visible{transition-delay:120ms}
+.storefront.motion-ready .sf-hero .sf-actions.is-visible{transition-delay:170ms}
+.storefront.motion-ready .sf-hero .sf-meta.is-visible{transition-delay:220ms}
+
+/* Tarjetas */
+.sf-card{will-change:transform;transition:transform var(--motion-med) var(--ease-premium),box-shadow var(--motion-med) var(--ease-premium),border-color var(--motion-fast) ease!important}
+.sf-card:hover{transform:translateY(-7px) scale(1.008)!important;border-color:rgba(197,154,68,.6)!important}
+.sf-card:active{transform:translateY(-2px) scale(.995)!important}
+.sf-card-media{overflow:hidden}
+.sf-card-media img{transition:transform 520ms var(--ease-premium),filter var(--motion-med) ease!important}
+.sf-card:hover .sf-card-media img{transform:scale(1.045)!important}
+.sf-card-bottom a,.sf-view-all,.sf-back,.sf-nav a{transition:color var(--motion-fast) ease,opacity var(--motion-fast) ease,transform var(--motion-fast) ease}
+.sf-card-bottom a:hover,.sf-view-all:hover{transform:translateX(3px)}
+
+/* Botones */
+.sf-btn,.sf-link,.sf-head-wa,.sf-menu,.sf-thumb,.sfp-actions button,.sfp-more,.sf-float{
+  transition:transform var(--motion-fast) var(--ease-premium),box-shadow var(--motion-fast) ease,filter var(--motion-fast) ease,background-color var(--motion-fast) ease!important;
+}
+.sf-btn:hover,.sf-link:hover,.sfp-more:hover{transform:translateY(-2px);filter:brightness(1.025)}
+.sf-btn:active,.sf-link:active,.sfp-more:active,.sf-menu:active,.sf-head-wa:active,.sf-thumb:active{transform:translateY(1px) scale(.98)}
+
+/* Header compacto al hacer scroll */
+.sf-header{transition:box-shadow var(--motion-med) ease,background-color var(--motion-med) ease,backdrop-filter var(--motion-med) ease}
+.sf-bar{transition:height var(--motion-med) var(--ease-premium),padding var(--motion-med) var(--ease-premium)}
+.sf-logo img{transition:width var(--motion-med) var(--ease-premium),height var(--motion-med) var(--ease-premium),transform var(--motion-med) var(--ease-premium)}
+.storefront.sf-scrolled .sf-header{box-shadow:0 12px 32px rgba(8,17,30,.12)!important;background:rgba(255,255,255,.95)!important;backdrop-filter:blur(12px)}
+.storefront.sf-scrolled .sf-bar{height:60px!important}
+.storefront.sf-scrolled .sf-logo img{transform:scale(.9)}
+
+/* Drawer */
+.sf-drawer{opacity:0;pointer-events:none;transition:opacity var(--motion-med) ease!important}
+.sf-drawer.open{opacity:1;pointer-events:auto}
+.sf-drawer-panel{transform:translateX(-22px);opacity:.98;transition:transform var(--motion-med) var(--ease-premium),opacity var(--motion-med) ease!important}
+.sf-drawer.open .sf-drawer-panel{transform:none;opacity:1}
+.sf-drawer-panel>a{transition:background-color var(--motion-fast) ease,color var(--motion-fast) ease,padding-left var(--motion-fast) var(--ease-premium)!important}
+.sf-drawer-panel>a:hover{padding-left:28px!important}
+
+/* Detalle de producto */
+.sf-gallery-main{overflow:hidden;transition:box-shadow var(--motion-med) ease,transform var(--motion-med) var(--ease-premium)!important}
+.sf-gallery-main:hover{transform:translateY(-2px);box-shadow:0 24px 56px rgba(36,28,17,.13)!important}
+#sf-main-img{transition:opacity 160ms ease,transform 420ms var(--ease-premium)!important}
+#sf-main-img.sf-image-switching{opacity:.18;transform:scale(.985)}
+.sf-thumb{opacity:.82}
+.sf-thumb:hover,.sf-thumb.active{opacity:1;transform:translateY(-2px)}
+.sf-detail-info{transition:transform var(--motion-med) var(--ease-premium),box-shadow var(--motion-med) ease!important}
+
+/* Badges */
+.sf-badge{transition:transform var(--motion-fast) var(--ease-premium),box-shadow var(--motion-fast) ease}
+.sf-card:hover .sf-badge{transform:translateY(-1px)}
+.sf-badge.sale{position:relative;overflow:hidden}
+.sf-badge.sale:after{content:'';position:absolute;inset:-40% auto -40% -35%;width:28%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-18deg);animation:sfGoldShine 4.8s ease-in-out infinite}
+@keyframes sfGoldShine{0%,70%{left:-35%}88%,100%{left:135%}}
+
+/* WhatsApp flotante: pulso discreto */
+.sf-float{animation:sfWaPulse 5.5s ease-in-out infinite}
+@keyframes sfWaPulse{0%,78%,100%{transform:scale(1);box-shadow:0 10px 26px rgba(0,0,0,.16)}86%{transform:scale(1.055);box-shadow:0 13px 34px rgba(37,211,102,.28)}}
+
+/* Aparición del footer */
+.sf-footer{position:relative;overflow:hidden}
+.sf-footer:before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(225,196,131,.75),transparent)}
+
+/* Carga progresiva */
+.sfp-progressive{transition:opacity 360ms ease,filter 480ms ease,transform 520ms var(--ease-premium)!important}
+
+/* Touch/mobile: movimientos más pequeños */
+@media(max-width:680px){
+  .sf-card:hover{transform:none!important}
+  .sf-card:active{transform:scale(.985)!important}
+  .storefront.motion-ready .sf-card{transform:translateY(10px)}
+  .storefront.sf-scrolled .sf-bar{height:58px!important}
+  .sf-gallery-main:hover{transform:none}
+}
+
+/* Accesibilidad */
+@media(prefers-reduced-motion:reduce){
+  .storefront *,
+  .storefront *::before,
+  .storefront *::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important;transition-delay:0ms!important}
+  .storefront.motion-ready .sf-hero .sf-kicker,
+  .storefront.motion-ready .sf-hero h1,
+  .storefront.motion-ready .sf-hero .sf-lead,
+  .storefront.motion-ready .sf-hero .sf-actions,
+  .storefront.motion-ready .sf-hero .sf-meta,
+  .storefront.motion-ready .sf-section-head,
+  .storefront.motion-ready .sf-catalog-head,
+  .storefront.motion-ready .sf-product-gallery,
+  .storefront.motion-ready .sf-detail-info,
+  .storefront.motion-ready .sf-contact-card,
+  .storefront.motion-ready .sf-footer-grid,
+  .storefront.motion-ready .sf-card{opacity:1!important;transform:none!important}
+}
