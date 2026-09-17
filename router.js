@@ -12,4 +12,5 @@ if(admin){
   await import('/store-pro.js');
   await import('/storefront-whatsapp-sync.js?v=20260916-wa-sync-1');
   await import('/store-premium-motion.js?v=20260917-motion-1');
+  await import('/store-header-cleanup.js?v=20260917-wa-header-1');
 }
