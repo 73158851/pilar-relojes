@@ -1,8 +1,9 @@
 let installPrompt=null;
 const isAdmin=location.pathname.startsWith('/admin');
 
-if('serviceWorker' in navigator){
-  window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(err=>console.warn('PILAR PWA:',err)));
+// La PWA pública nunca controla /admin. PILAR Admin registra su propio worker.
+if(!isAdmin&&'serviceWorker' in navigator){
+  window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js',{scope:'/'}).catch(err=>console.warn('PILAR PWA:',err)));
 }
 
 function installed(){return window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true}
@@ -25,12 +26,14 @@ function button(){
   return b;
 }
 
-window.addEventListener('beforeinstallprompt',e=>{
-  e.preventDefault();
-  installPrompt=e;
-  button();
-});
-window.addEventListener('appinstalled',()=>{
-  installPrompt=null;
-  document.querySelector('.pilar-install')?.remove();
-});
+if(!isAdmin){
+  window.addEventListener('beforeinstallprompt',e=>{
+    e.preventDefault();
+    installPrompt=e;
+    button();
+  });
+  window.addEventListener('appinstalled',()=>{
+    installPrompt=null;
+    document.querySelector('.pilar-install')?.remove();
+  });
+}
