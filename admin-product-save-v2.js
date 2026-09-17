@@ -16,6 +16,8 @@ if (location.pathname.startsWith('/admin')) {
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '');
 
+  const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
   const withTimeout = (promise, ms = 30000) => Promise.race([
     promise,
     new Promise((_, reject) => setTimeout(() => reject(new Error('La operación tardó demasiado. Intenta nuevamente.')), ms))
@@ -33,18 +35,18 @@ if (location.pathname.startsWith('/admin')) {
     el.textContent = msg;
     el.classList.add('show');
     clearTimeout(el._timer);
-    el._timer = setTimeout(() => el.classList.remove('show'), 2200);
+    el._timer = setTimeout(() => el.classList.remove('show'), 2600);
   }
 
   function friendlyError(error) {
     const msg = String(error?.message || error || 'No se pudo guardar el producto.');
     if (msg.includes('products_sku_key')) return 'El código del producto ya existe.';
     if (msg.includes('products_slug_key')) return 'El identificador del producto ya existe.';
-    if (msg.includes('Failed to fetch')) return 'No se pudo conectar al servidor. Revisa tu conexión.';
+    if (msg.includes('Failed to fetch')) return 'La foto no pudo subirse por un problema de conexión.';
     return msg;
   }
 
-  async function uploadImage(product, file, primary, sortOrder) {
+  async function uploadOnce(product, file, primary, sortOrder) {
     const safe = file.name.replace(/[^a-zA-Z0-9._-]+/g, '-');
     const path = `${product.id}/${Date.now()}-${Math.random().toString(36).slice(2, 8)}-${safe}`;
 
@@ -69,6 +71,20 @@ if (location.pathname.startsWith('/admin')) {
     if (insertImage.error) throw insertImage.error;
   }
 
+  async function uploadImage(product, file, primary, sortOrder) {
+    let lastError;
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        await uploadOnce(product, file, primary, sortOrder);
+        return;
+      } catch (error) {
+        lastError = error;
+        if (attempt < 3) await wait(attempt * 1200);
+      }
+    }
+    throw lastError;
+  }
+
   async function save(button) {
     if (busy) return;
 
@@ -82,7 +98,7 @@ if (location.pathname.startsWith('/admin')) {
     busy = true;
     const original = button.innerHTML;
     button.disabled = true;
-    button.innerHTML = 'Guardando...';
+    button.innerHTML = 'Guardando datos...';
 
     try {
       const payload = {
@@ -116,8 +132,9 @@ if (location.pathname.startsWith('/admin')) {
 
       if (result.error) throw result.error;
       const product = result.data;
-
       const files = [...($('pfiles')?.files || [])];
+      let failedImages = 0;
+
       if (files.length) {
         const existing = await withTimeout(
           S.from('product_images').select('id,is_primary,sort_order').eq('product_id', product.id),
@@ -131,12 +148,21 @@ if (location.pathname.startsWith('/admin')) {
 
         for (let i = 0; i < files.length; i++) {
           button.innerHTML = `Subiendo foto ${i + 1} de ${files.length}...`;
-          await uploadImage(product, files[i], !hasPrimary && i === 0, startOrder + i);
+          try {
+            await uploadImage(product, files[i], !hasPrimary && i === 0, startOrder + i);
+          } catch (error) {
+            console.error('PILAR image upload error:', error);
+            failedImages++;
+          }
         }
       }
 
       button.innerHTML = 'Guardado ✓';
-      toast(currentProductId ? 'Producto actualizado correctamente' : 'Producto guardado correctamente');
+      if (failedImages) {
+        toast(`Producto actualizado. ${failedImages} foto${failedImages === 1 ? '' : 's'} no pudo${failedImages === 1 ? '' : 'ieron'} subirse.`);
+      } else {
+        toast(currentProductId ? 'Producto actualizado correctamente' : 'Producto guardado correctamente');
+      }
 
       document.querySelector('.pa-modal')?.remove();
       document.body.classList.remove('pa-modal-open');
@@ -144,7 +170,7 @@ if (location.pathname.startsWith('/admin')) {
 
       setTimeout(() => {
         location.href = `${location.origin}/admin?tab=products&t=${Date.now()}`;
-      }, 350);
+      }, 500);
     } catch (error) {
       console.error('PILAR product save error:', error);
       alert(friendlyError(error));
