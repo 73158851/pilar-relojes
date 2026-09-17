@@ -7,17 +7,18 @@ const S=createClient(
 
 let installPrompt=null;
 let authorized=false;
-const installed=()=>window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
+const isAdminPath=location.pathname.startsWith('/admin');
 
-function useAdminManifest(){
-  let manifest=document.querySelector('link[rel="manifest"]');
-  if(!manifest){manifest=document.createElement('link');manifest.rel='manifest';document.head.appendChild(manifest)}
-  manifest.href='/admin-manifest.webmanifest?v=20260917-admin-pwa-1';
-  document.querySelector('meta[name="theme-color"]')?.setAttribute('content','#080d14');
-  document.querySelector('meta[name="apple-mobile-web-app-title"]')?.setAttribute('content','PILAR Admin');
-  let icon=document.querySelector('link[rel="apple-touch-icon"]');
-  if(!icon){icon=document.createElement('link');icon.rel='apple-touch-icon';document.head.appendChild(icon)}
-  icon.href='/pilar-admin-icon.svg?v=20260917-admin-pwa-1';
+function adminInstalled(){
+  if(!window.matchMedia('(display-mode: standalone)').matches&&window.navigator.standalone!==true)return false;
+  return location.pathname.startsWith('/admin');
+}
+
+async function registerAdminWorker(){
+  if(!isAdminPath||!('serviceWorker' in navigator))return;
+  try{
+    await navigator.serviceWorker.register('/admin-sw.js',{scope:'/admin/'});
+  }catch(err){console.warn('PILAR Admin PWA:',err)}
 }
 
 async function verifyAdmin(){
@@ -30,7 +31,7 @@ async function verifyAdmin(){
 function removeButton(){document.querySelector('.pilar-admin-install')?.remove()}
 
 function showButton(){
-  if(!authorized||!installPrompt||installed()||document.querySelector('.pilar-admin-install'))return;
+  if(!authorized||!installPrompt||adminInstalled()||document.querySelector('.pilar-admin-install'))return;
   const b=document.createElement('button');
   b.type='button';
   b.className='pilar-admin-install pa-btn primary';
@@ -46,23 +47,22 @@ function showButton(){
   document.body.appendChild(b);
 }
 
-window.addEventListener('beforeinstallprompt',e=>{
-  if(!location.pathname.startsWith('/admin'))return;
-  e.preventDefault();
-  installPrompt=e;
-  showButton();
-});
+if(isAdminPath){
+  await registerAdminWorker();
 
-window.addEventListener('appinstalled',()=>{installPrompt=null;removeButton()});
-
-if(location.pathname.startsWith('/admin')){
-  authorized=await verifyAdmin();
-  if(authorized){
-    useAdminManifest();
+  window.addEventListener('beforeinstallprompt',e=>{
+    e.preventDefault();
+    installPrompt=e;
     showButton();
-  }
-  S.auth.onAuthStateChange(async(event)=>{
+  });
+
+  window.addEventListener('appinstalled',()=>{installPrompt=null;removeButton()});
+
+  authorized=await verifyAdmin();
+  showButton();
+
+  S.auth.onAuthStateChange(async()=>{
     authorized=await verifyAdmin();
-    if(authorized){useAdminManifest();showButton()}else removeButton();
+    if(authorized)showButton();else removeButton();
   });
 }
