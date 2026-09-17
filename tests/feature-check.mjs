@@ -10,7 +10,7 @@ const checks=[
  ['preview de imágenes',()=>read('admin-image-pro.js').includes('pilar-image-preview')],
  ['foto principal se mantiene',()=>read('admin-v2.js').includes('is_primary')&&read('admin-v2.js').includes('Hacer principal')],
  ['SEO canonical/OG',()=>read('store-seo.js').includes('canonical')&&read('store-seo.js').includes('og:title')],
- ['hero referencia embebida e inmune a caché',()=>read('storefront-reference-hero.js').includes('data:image/webp;base64,')&&!read('storefront-reference-hero.js').includes('pilar-hero-reference-mobile.webp?v=')],
+ ['hero usa asset exacto nuevo',()=>exists('pilar-hero-reference-exact-v5.webp')&&read('storefront-reference-hero.js').includes('/pilar-hero-reference-exact-v5.webp')&&!read('storefront-reference-hero.js').includes('pilar-hero-reference-mobile.webp?v=')],
  ['hotspots reales se conservan',()=>read('storefront-reference-hero.js').includes('sf-ref-hotspot catalog')&&read('storefront-reference-hero.js').includes('sf-ref-hotspot whatsapp')&&read('storefront-reference-hero.js').includes('/catalogo')],
  ['proporción móvil coincide',()=>read('storefront-reference-hero.css').includes('aspect-ratio:343/430')&&read('storefront-reference-hero.css').includes('object-fit:cover')],
  ['splash dura 2.5 segundos',()=>read('store-splash.js').includes('2500')&&!read('store-splash.js').includes('},1500)')],
