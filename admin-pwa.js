@@ -5,7 +5,7 @@ const S=createClient(
   'sb_publishable_kM87waiflFugm53n9o-B4A_mkn5P5Uu'
 );
 
-let installPrompt=null;
+let installPrompt=window.__PILAR_ADMIN_INSTALL_PROMPT__||null;
 let authorized=false;
 const isAdminPath=location.pathname.startsWith('/admin');
 
@@ -17,12 +17,10 @@ function adminInstalled(){
 async function registerAdminWorker(){
   if(!isAdminPath||!('serviceWorker' in navigator))return;
   try{
-    const reg=await navigator.serviceWorker.register('/admin-sw.js',{scope:'/admin'});
+    const reg=await navigator.serviceWorker.register('/admin-sw.js?v=20260917-admin-sw-2',{scope:'/admin'});
     await navigator.serviceWorker.ready;
     return reg;
-  }catch(err){
-    console.warn('PILAR Admin PWA:',err);
-  }
+  }catch(err){console.warn('PILAR Admin PWA:',err)}
 }
 
 async function verifyAdmin(){
@@ -35,6 +33,7 @@ async function verifyAdmin(){
 function removeButton(){document.querySelector('.pilar-admin-install')?.remove()}
 
 function showButton(){
+  installPrompt=installPrompt||window.__PILAR_ADMIN_INSTALL_PROMPT__||null;
   if(!authorized||!installPrompt||adminInstalled()||document.querySelector('.pilar-admin-install'))return;
   const b=document.createElement('button');
   b.type='button';
@@ -42,11 +41,13 @@ function showButton(){
   b.innerHTML='⬇ Instalar PILAR Admin';
   Object.assign(b.style,{position:'fixed',right:'16px',bottom:'16px',zIndex:'10000',padding:'12px 17px',borderRadius:'999px',boxShadow:'0 10px 30px rgba(0,0,0,.25)'});
   b.onclick=async()=>{
-    if(!authorized||!installPrompt)return;
-    installPrompt.prompt();
-    const result=await installPrompt.userChoice;
+    const prompt=installPrompt||window.__PILAR_ADMIN_INSTALL_PROMPT__;
+    if(!authorized||!prompt)return;
+    prompt.prompt();
+    const result=await prompt.userChoice;
     if(result.outcome==='accepted'){
       installPrompt=null;
+      window.__PILAR_ADMIN_INSTALL_PROMPT__=null;
       removeButton();
     }
   };
@@ -54,25 +55,24 @@ function showButton(){
 }
 
 if(isAdminPath){
-  await registerAdminWorker();
-
+  window.addEventListener('pilar-admin-install-ready',()=>{
+    installPrompt=window.__PILAR_ADMIN_INSTALL_PROMPT__||installPrompt;
+    showButton();
+  });
   window.addEventListener('beforeinstallprompt',e=>{
     e.preventDefault();
     installPrompt=e;
+    window.__PILAR_ADMIN_INSTALL_PROMPT__=e;
     showButton();
   });
+  window.addEventListener('appinstalled',()=>{installPrompt=null;window.__PILAR_ADMIN_INSTALL_PROMPT__=null;removeButton()});
 
-  window.addEventListener('appinstalled',()=>{
-    installPrompt=null;
-    removeButton();
-  });
-
+  await registerAdminWorker();
   authorized=await verifyAdmin();
   showButton();
 
   S.auth.onAuthStateChange(async()=>{
     authorized=await verifyAdmin();
-    if(authorized)showButton();
-    else removeButton();
+    if(authorized)showButton();else removeButton();
   });
 }
