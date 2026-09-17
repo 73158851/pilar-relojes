@@ -1,0 +1,25 @@
+name: PILAR Feature Check
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [feature/seo-images-gender-v3]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax
+        run: |
+          node --check admin-product-gender.js
+          node --check admin-image-pro.js
+          node --check admin-product-save-v2.js
+          node --check store-gender-filter.js
+          node --check store-seo.js
+          node --check api/sitemap.js
+          node --check api/product-meta.js
+      - name: Run feature contract
+        run: node tests/feature-check.mjs
