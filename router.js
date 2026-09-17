@@ -8,4 +8,5 @@ if(admin){
   await import('/store-enhance.js');
   await import('/storefront-lightbox.js');
   await import('/store-pro.js');
+  await import('/storefront-whatsapp-sync.js?v=20260916-wa-sync-1');
 }
