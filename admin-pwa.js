@@ -17,8 +17,12 @@ function adminInstalled(){
 async function registerAdminWorker(){
   if(!isAdminPath||!('serviceWorker' in navigator))return;
   try{
-    await navigator.serviceWorker.register('/admin-sw.js',{scope:'/admin/'});
-  }catch(err){console.warn('PILAR Admin PWA:',err)}
+    const reg=await navigator.serviceWorker.register('/admin-sw.js',{scope:'/admin'});
+    await navigator.serviceWorker.ready;
+    return reg;
+  }catch(err){
+    console.warn('PILAR Admin PWA:',err);
+  }
 }
 
 async function verifyAdmin(){
@@ -40,9 +44,11 @@ function showButton(){
   b.onclick=async()=>{
     if(!authorized||!installPrompt)return;
     installPrompt.prompt();
-    await installPrompt.userChoice;
-    installPrompt=null;
-    removeButton();
+    const result=await installPrompt.userChoice;
+    if(result.outcome==='accepted'){
+      installPrompt=null;
+      removeButton();
+    }
   };
   document.body.appendChild(b);
 }
@@ -56,13 +62,17 @@ if(isAdminPath){
     showButton();
   });
 
-  window.addEventListener('appinstalled',()=>{installPrompt=null;removeButton()});
+  window.addEventListener('appinstalled',()=>{
+    installPrompt=null;
+    removeButton();
+  });
 
   authorized=await verifyAdmin();
   showButton();
 
   S.auth.onAuthStateChange(async()=>{
     authorized=await verifyAdmin();
-    if(authorized)showButton();else removeButton();
+    if(authorized)showButton();
+    else removeButton();
   });
 }
