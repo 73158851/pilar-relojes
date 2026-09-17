@@ -10,6 +10,8 @@ const checks=[
  ['orden y principal',()=>read('admin-image-pro.js').includes('sort_order')&&read('admin-v2.js').includes('is_primary')&&read('admin-v2.js').includes('Hacer principal')],
  ['SEO canonical/OG',()=>read('store-seo.js').includes('canonical')&&read('store-seo.js').includes('og:title')],
  ['SEO Product JSON-LD',()=>read('store-seo.js').includes('application/ld+json')&&read('store-seo.js').includes('Product')],
+ ['compartir incluye precio y disponibilidad',()=>read('store-pro.js').includes('sf-detail-price')&&read('store-pro.js').includes('sfp-status')&&read('store-pro.js').includes('Descubre este modelo en PILAR Relojes Sucre')],
+ ['preview social enriquecido',()=>['og:image:secure_url','og:image:alt','product:price:amount','product:price:currency','twitter:title','twitter:image'].every(x=>read('api/product-meta.js').includes(x))],
  ['robots sitemap',()=>read('robots.txt').includes('Sitemap: https://pilar-relojes.vercel.app/sitemap.xml')],
  ['sitemap server',()=>read('api/sitemap.js').includes('urlset')&&read('api/sitemap.js').includes('products')],
  ['meta server',()=>read('api/product-meta.js').includes('og:title')&&read('api/product-meta.js').includes('application/ld+json')],
