@@ -10,10 +10,11 @@ const checks=[
  ['foto principal se mantiene',()=>read('admin-v2.js').includes('is_primary')],
  ['SEO canonical/OG',()=>read('store-seo.js').includes('canonical')&&read('store-seo.js').includes('og:title')],
  ['nuevo asset exacto existe',()=>exists('pilar-hero-exact-reference.webp')],
- ['hero usa exclusivamente nuevo asset',()=>read('storefront-reference-hero.js').includes('/pilar-hero-exact-reference.webp?v=20260917-exact-crop-1')&&!read('storefront-reference-hero.js').includes('pilar-hero-reference-mobile.webp')],
+ ['hero usa exclusivamente nuevo asset',()=>read('storefront-reference-hero.js').includes('/pilar-hero-exact-reference.webp')&&!read('storefront-reference-hero.js').includes('pilar-hero-reference-mobile.webp')],
  ['hotspots reales se conservan',()=>read('storefront-reference-hero.js').includes('sf-ref-hotspot catalog')&&read('storefront-reference-hero.js').includes('sf-ref-hotspot whatsapp')&&read('storefront-reference-hero.js').includes('/catalogo')],
  ['proporción exacta del recorte',()=>read('storefront-reference-hero.css').includes('aspect-ratio:343/429')&&read('storefront-reference-hero.css').includes('object-fit:cover')],
- ['splash dura 2.5 segundos',()=>read('store-splash.js').includes('2500')],
+ ['splash solo PWA y una vez',()=>read('store-splash.js').includes('display-mode: standalone')&&read('store-splash.js').includes('sessionStorage')&&read('store-splash.js').includes('2500')],
+ ['SW renueva hero exacto',()=>read('sw.js').includes("pilar-shell-v4")&&read('sw.js').includes("url.pathname==='/pilar-hero-exact-reference.webp'")],
  ['hero integrado',()=>read('index.html').includes('storefront-reference-hero.css')&&read('router.js').includes('storefront-reference-hero.js')],
  ['robots sitemap',()=>read('robots.txt').includes('Sitemap: https://pilar-relojes.vercel.app/sitemap.xml')]
 ];
