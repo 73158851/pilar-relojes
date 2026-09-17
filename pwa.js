@@ -3,7 +3,14 @@ const isAdmin=location.pathname.startsWith('/admin');
 
 // La PWA pública nunca controla /admin. PILAR Admin registra su propio worker.
 if(!isAdmin&&'serviceWorker' in navigator){
-  window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js',{scope:'/'}).catch(err=>console.warn('PILAR PWA:',err)));
+  window.addEventListener('load',async()=>{
+    try{
+      const reg=await navigator.serviceWorker.register('/sw.js?v=20260917-store-cache-2',{scope:'/'});
+      await reg.update();
+    }catch(err){
+      console.warn('PILAR PWA:',err);
+    }
+  });
 }
 
 function installed(){return window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true}
