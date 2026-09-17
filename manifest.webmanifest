@@ -6,15 +6,15 @@
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#0a1422",
+  "background_color": "#ffffff",
   "theme_color": "#0a1422",
   "lang": "es",
   "icons": [
     {
-      "src": "/pilar-icon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "src": "https://lsuigiuthuycddlcvrds.supabase.co/storage/v1/object/public/product-images/87b25917-0e2e-46d1-92ab-f17b25d30d8f/1789530951622-1000503226.webp?v=20260916-appicon-2",
+      "sizes": "1536x1536",
+      "type": "image/webp",
+      "purpose": "any"
     }
   ]
 }
