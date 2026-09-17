@@ -1,9 +1,9 @@
 {
-  "id": "/admin?pwa=pilar-admin",
+  "id": "/admin",
   "name": "PILAR Admin",
   "short_name": "PILAR Admin",
   "description": "Panel privado de administración de PILAR.",
-  "start_url": "/admin?source=pwa-admin",
+  "start_url": "/admin",
   "scope": "/admin",
   "display": "standalone",
   "orientation": "portrait-primary",
@@ -12,16 +12,10 @@
   "lang": "es",
   "icons": [
     {
-      "src": "/pilar-admin-icon.svg?v=20260917-admin-final-1",
-      "sizes": "192x192",
-      "type": "image/svg+xml",
-      "purpose": "any"
-    },
-    {
-      "src": "/pilar-admin-icon.svg?v=20260917-admin-final-1",
+      "src": "/pilar-admin-icon.svg?v=20260917-admin-final-3",
       "sizes": "512x512",
       "type": "image/svg+xml",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }
