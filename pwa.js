@@ -5,7 +5,7 @@ const isAdmin=location.pathname.startsWith('/admin');
 if(!isAdmin&&'serviceWorker' in navigator){
   window.addEventListener('load',async()=>{
     try{
-      const reg=await navigator.serviceWorker.register('/sw.js?v=20260917-store-cache-3',{scope:'/'});
+      const reg=await navigator.serviceWorker.register('/sw.js?v=20260917-store-cache-4',{scope:'/'});
       await reg.update();
     }catch(err){
       console.warn('PILAR PWA:',err);
