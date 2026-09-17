@@ -1,0 +1,21 @@
+{
+  "id": "/admin",
+  "name": "PILAR Admin",
+  "short_name": "PILAR Admin",
+  "description": "Panel de administración de PILAR.",
+  "start_url": "/admin",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#080d14",
+  "theme_color": "#080d14",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/pilar-admin-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
