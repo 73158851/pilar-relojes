@@ -15,7 +15,7 @@ async function requestInstall(){
   installDialog();
 }
 function button(){
-  if(isAdmin||installed()||document.querySelector('.pilar-install'))return null;
+  if(isAdmin||installed()||!installPrompt||document.querySelector('.pilar-install'))return null;
   const b=document.createElement('button');
   b.className='pilar-install';
   b.type='button';
@@ -35,12 +35,12 @@ function button(){
   return b;
 }
 if(!isAdmin){
-  window.addEventListener('load',()=>button());
+  window.addEventListener('load',()=>{installPrompt=installPrompt||window.__PILAR_INSTALL_PROMPT__||null;button();});
   window.addEventListener('pilar-install-ready',()=>{installPrompt=window.__PILAR_INSTALL_PROMPT__||installPrompt;button();});
   window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;window.__PILAR_INSTALL_PROMPT__=e;button();});
   window.addEventListener('appinstalled',()=>{installPrompt=null;document.querySelector('.pilar-install')?.remove();});
   matchMedia('(display-mode: standalone)').addEventListener?.('change',e=>{if(e.matches)document.querySelector('.pilar-install')?.remove();});
-  if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));
+  if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js?v=20260918-pwa13').catch(()=>{}));
 }else{
   const l=document.querySelector('link[rel="manifest"]');if(l)l.remove();
 }
