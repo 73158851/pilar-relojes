@@ -1,5 +1,5 @@
 {
-  "id": "/pilar-store",
+  "id": "/?pwa=pilar-store",
   "name": "PILAR",
   "short_name": "PILAR",
   "description": "Tienda de relojes PILAR en Sucre, Bolivia.",
@@ -12,23 +12,10 @@
   "lang": "es",
   "icons": [
     {
-      "src": "/pilar-icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/pilar-icon-512.png",
-      "sizes": "512x512",
-      "type": "image/png",
+      "src": "https://lsuigiuthuycddlcvrds.supabase.co/storage/v1/object/public/product-images/87b25917-0e2e-46d1-92ab-f17b25d30d8f/1789530951622-1000503226.webp?v=20260916-appicon-2",
+      "sizes": "1536x1536",
+      "type": "image/webp",
       "purpose": "any"
     }
-  ],
-  "related_applications": [
-    {
-      "platform": "webapp",
-      "url": "/manifest.webmanifest"
-    }
-  ],
-  "prefer_related_applications": false
+  ]
 }
