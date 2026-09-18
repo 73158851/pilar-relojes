@@ -1,4 +1,4 @@
-const CACHE='pilar-shell-v5';
+const CACHE='pilar-shell-v6';
 const SHELL=['/offline.html','/pilar-icon.svg','/manifest.webmanifest'];
 
 self.addEventListener('install',event=>{
@@ -20,7 +20,7 @@ self.addEventListener('fetch',event=>{
     return;
   }
 
-  if(url.origin===self.location.origin&&(url.pathname==='/pilar-hero-exact-reference.webp'||url.pathname==='/pilar-hero-reference-mobile.webp')){
+  if(url.origin===self.location.origin&&(url.pathname==='/pilar-hero-approved.webp'||url.pathname==='/pilar-hero-exact-reference.webp'||url.pathname==='/pilar-hero-reference-mobile.webp')){
     event.respondWith(fetch(req,{cache:'no-store'}).then(res=>{
       if(res&&res.ok){const copy=res.clone();caches.open(CACHE).then(cache=>cache.put(req,copy));}
       return res;
