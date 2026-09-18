@@ -1,7 +1,7 @@
 function enhanceHero(){
   const hero=document.querySelector('.sf-hero');
   if(!hero||hero.dataset.premiumHero)return;
-  const heroImage='/pilar-hero-exact-reference.webp';
+  const productImage=document.querySelector('.sf-card-media img')?.src||'';
   const globalWa=document.querySelector('.sf-float')?.href||document.querySelector('.sf-footer-wa')?.href||'#';
   hero.dataset.premiumHero='v1';
   hero.className='sf-hero sf-premium-hero';
@@ -9,7 +9,7 @@ function enhanceHero(){
   <div class="sf-premium-hero-inner">
     <div class="sf-premium-copy">
       <div class="sf-premium-kicker">RELOJERÍA · SUCRE, BOLIVIA <span></span></div>
-      <h1>Tu estilo.<br><em>Tu tiempo.</em></h1>
+      <h1><span class="sf-title-line">Tu estilo.</span><em class="sf-title-line">Tu tiempo.</em></h1>
       <p>Una selección de relojes pensada para distintos estilos y momentos. Encuentra el modelo que encaje contigo y consulta disponibilidad directamente por WhatsApp.</p>
       <div class="sf-premium-actions">
         <a class="sf-premium-catalog" href="/catalogo"><span aria-hidden="true">▣</span><b>Ver catálogo</b><i>→</i></a>
@@ -18,7 +18,7 @@ function enhanceHero(){
     </div>
     <div class="sf-premium-visual">
       <div class="sf-premium-script">Más que<br>relojes, <em>historias</em><br>contigo.</div>
-      <img src="${heroImage}" alt="Reloj destacado PILAR" fetchpriority="high">
+      ${productImage?`<img src="${productImage}" alt="Reloj destacado PILAR" fetchpriority="high">`:'<div class="sf-premium-watch-placeholder" aria-hidden="true">PILAR</div>'}
       <span class="sf-premium-glow" aria-hidden="true"></span>
     </div>
     <div class="sf-premium-benefits">
