@@ -1,12 +1,21 @@
 let installPrompt=window.__PILAR_INSTALL_PROMPT__||null;
 const isAdmin=location.pathname.startsWith('/admin');
 function installed(){return matchMedia('(display-mode: standalone)').matches||navigator.standalone===true}
+function installFallback(){
+  const n=document.createElement('div');n.className='pilar-install-dialog';
+  const isAndroid=/Android/i.test(navigator.userAgent);const isChrome=/Chrome\//i.test(navigator.userAgent)&&!/SamsungBrowser|EdgA|OPR\//i.test(navigator.userAgent);
+  const canOpenChrome=isAndroid&&!isChrome;
+  n.innerHTML='<div role="dialog" aria-modal="true" style="width:min(88vw,360px);background:#fff;color:#102235;border-radius:22px;padding:24px;box-shadow:0 22px 60px rgba(0,0,0,.32);font-family:inherit"><div style="font-size:20px;font-weight:800;margin-bottom:10px">Instalar PILAR</div><div style="font-size:15px;line-height:1.45;margin-bottom:20px">'+(canOpenChrome?'Este navegador no permite iniciar la instalación directa. Puedes abrir PILAR en Chrome para instalarla.':'El navegador todavía no habilitó la instalación directa de PILAR. Recarga la página y vuelve a intentar.')+'</div><div style="display:flex;gap:10px;justify-content:flex-end"><button type="button" data-close style="border:0;background:transparent;padding:10px 14px;font-weight:700;color:#52606d">Cancelar</button>'+(canOpenChrome?'<button type="button" data-chrome style="border:0;border-radius:12px;background:#0a2942;color:#f5d486;padding:10px 16px;font-weight:800">Abrir en Chrome</button>':'<button type="button" data-reload style="border:0;border-radius:12px;background:#0a2942;color:#f5d486;padding:10px 16px;font-weight:800">Recargar</button>')+'</div></div>';
+  Object.assign(n.style,{position:'fixed',inset:'0',zIndex:'10001',display:'grid',placeItems:'center',background:'rgba(2,12,21,.52)',padding:'20px'});
+  n.addEventListener('click',e=>{if(e.target.closest('[data-close]'))n.remove();if(e.target.closest('[data-reload]'))location.reload();if(e.target.closest('[data-chrome]'))location.href='intent://pilar-relojes.vercel.app/#Intent;scheme=https;package=com.android.chrome;end';});
+  document.body.appendChild(n);
+}
 function installDialog(){
   if(document.querySelector('.pilar-install-dialog'))return;
   const d=document.createElement('div');d.className='pilar-install-dialog';
   d.innerHTML='<div role="dialog" aria-modal="true" aria-label="Instalar PILAR" style="width:min(88vw,360px);background:#fff;color:#102235;border-radius:22px;padding:24px;box-shadow:0 22px 60px rgba(0,0,0,.32);font-family:inherit"><div style="font-size:21px;font-weight:800;margin-bottom:9px">Instalar PILAR</div><div style="font-size:16px;line-height:1.45;margin-bottom:22px">¿Deseas instalar PILAR?</div><div style="display:flex;justify-content:flex-end;gap:10px"><button type="button" data-action="cancel" style="border:0;background:transparent;padding:10px 14px;font-weight:700;color:#52606d">Cancelar</button><button type="button" data-action="install" style="border:0;border-radius:12px;background:#0a2942;color:#f5d486;padding:10px 16px;font-weight:800">Instalar</button></div></div>';
   Object.assign(d.style,{position:'fixed',inset:'0',zIndex:'10001',display:'grid',placeItems:'center',background:'rgba(2,12,21,.52)',padding:'20px'});
-  d.addEventListener('click',async e=>{const action=e.target.closest('[data-action]')?.dataset.action;if(action==='cancel'){d.remove();return}if(action==='install'){d.remove();if(!installPrompt){const n=document.createElement('div');n.className='pilar-install-dialog';n.innerHTML='<div role="dialog" aria-modal="true" style="width:min(88vw,360px);background:#fff;color:#102235;border-radius:22px;padding:24px;box-shadow:0 22px 60px rgba(0,0,0,.32);font-family:inherit"><div style="font-size:20px;font-weight:800;margin-bottom:10px">Instalación no disponible todavía</div><div style="font-size:15px;line-height:1.45;margin-bottom:20px">Chrome todavía no habilitó el instalador de PILAR en esta pestaña. Recarga la tienda y vuelve a intentarlo.</div><button type="button" data-close style="width:100%;border:0;border-radius:12px;background:#0a2942;color:#f5d486;padding:11px 16px;font-weight:800">Aceptar</button></div>';Object.assign(n.style,{position:'fixed',inset:'0',zIndex:'10001',display:'grid',placeItems:'center',background:'rgba(2,12,21,.52)',padding:'20px'});n.addEventListener('click',e=>{if(e.target.closest('[data-close]'))n.remove()});document.body.appendChild(n);return}installPrompt.prompt();const choice=await installPrompt.userChoice;if(choice?.outcome==='accepted')document.querySelector('.pilar-install')?.remove();installPrompt=null;}});
+  d.addEventListener('click',async e=>{const action=e.target.closest('[data-action]')?.dataset.action;if(action==='cancel'){d.remove();return}if(action==='install'){d.remove();if(!installPrompt){installFallback();return}installPrompt.prompt();const choice=await installPrompt.userChoice;if(choice?.outcome==='accepted')document.querySelector('.pilar-install')?.remove();installPrompt=null;}});
   document.body.appendChild(d);
 }
 async function requestInstall(){
@@ -15,7 +24,7 @@ async function requestInstall(){
   installDialog();
 }
 function button(){
-  if(isAdmin||installed()||!installPrompt||document.querySelector('.pilar-install'))return null;
+  if(isAdmin||installed()||document.querySelector('.pilar-install'))return null;
   const b=document.createElement('button');
   b.className='pilar-install';
   b.type='button';
