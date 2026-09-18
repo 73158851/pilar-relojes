@@ -13,7 +13,7 @@ if(admin){
   await import('/storefront-lightbox.js');
   await import('/store-pro.js?v=20260917-share-1');
   await import('/storefront-whatsapp-sync.js?v=20260916-wa-sync-1');
-  if(location.pathname==='/'||location.pathname==='') await import('/storefront-reference-hero.js?v=20260918-refreshstable-1');
+  if(location.pathname==='/'||location.pathname==='') await import('/storefront-reference-hero.js?v=20260918-stable-rollback-1');
   await import('/store-premium-motion.js?v=20260917-motion-1');
   await import('/store-gender-filter.js?v=20260917-gender-1');
   await import('/store-seo.js?v=20260917-seo-1');
