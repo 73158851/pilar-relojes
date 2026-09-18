@@ -12,9 +12,9 @@
   "lang": "es",
   "icons": [
     {
-      "src": "/pilar-admin-icon.svg?v=20260917-admin-final-3",
+      "src": "/pilar-admin-logo-20260918.png?v=20260918-admin-logo-1",
       "sizes": "512x512",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any"
     }
   ]
