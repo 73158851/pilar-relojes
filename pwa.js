@@ -1,14 +1,18 @@
 let installPrompt=null;
 const isAdmin=location.pathname.startsWith('/admin');
 function installed(){return matchMedia('(display-mode: standalone)').matches||navigator.standalone===true}
-function showInstallHelp(){alert('Para instalar PILAR en Chrome, toca el menú ⋮ y elige “Instalar aplicación” o “Agregar a pantalla de inicio”.')}
+function installDialog(){
+  if(document.querySelector('.pilar-install-dialog'))return;
+  const d=document.createElement('div');d.className='pilar-install-dialog';
+  d.innerHTML='<div role="dialog" aria-modal="true" aria-label="Instalar PILAR" style="width:min(88vw,360px);background:#fff;color:#102235;border-radius:22px;padding:24px;box-shadow:0 22px 60px rgba(0,0,0,.32);font-family:inherit"><div style="font-size:21px;font-weight:800;margin-bottom:9px">Instalar PILAR</div><div style="font-size:16px;line-height:1.45;margin-bottom:22px">¿Deseas instalar PILAR?</div><div style="display:flex;justify-content:flex-end;gap:10px"><button type="button" data-action="cancel" style="border:0;background:transparent;padding:10px 14px;font-weight:700;color:#52606d">Cancelar</button><button type="button" data-action="install" style="border:0;border-radius:12px;background:#0a2942;color:#f5d486;padding:10px 16px;font-weight:800">Instalar</button></div></div>';
+  Object.assign(d.style,{position:'fixed',inset:'0',zIndex:'10001',display:'grid',placeItems:'center',background:'rgba(2,12,21,.52)',padding:'20px'});
+  d.addEventListener('click',async e=>{const action=e.target.closest('[data-action]')?.dataset.action;if(action==='cancel'){d.remove();return}if(action==='install'){d.remove();if(!installPrompt)return;installPrompt.prompt();const choice=await installPrompt.userChoice;if(choice?.outcome==='accepted')document.querySelector('.pilar-install')?.remove();installPrompt=null;}});
+  document.body.appendChild(d);
+}
 async function requestInstall(){
   if(installed()){document.querySelector('.pilar-install')?.remove();return}
-  if(!installPrompt){showInstallHelp();return}
-  installPrompt.prompt();
-  const choice=await installPrompt.userChoice;
-  if(choice?.outcome==='accepted'){document.querySelector('.pilar-install')?.remove()}
-  installPrompt=null;
+  if(!installPrompt)return;
+  installDialog();
 }
 function button(){
   if(isAdmin||installed()||document.querySelector('.pilar-install'))return null;
