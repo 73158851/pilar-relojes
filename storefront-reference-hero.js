@@ -1,7 +1,7 @@
 function enhanceHero(){
   const hero=document.querySelector('.sf-hero');
   if(!hero||hero.dataset.premiumHero)return;
-  const productImage=document.querySelector('.sf-card-media img')?.src||'';
+  const heroImage='/pilar-hero-exact-reference.webp';
   const globalWa=document.querySelector('.sf-float')?.href||document.querySelector('.sf-footer-wa')?.href||'#';
   hero.dataset.premiumHero='v1';
   hero.className='sf-hero sf-premium-hero';
@@ -18,7 +18,7 @@ function enhanceHero(){
     </div>
     <div class="sf-premium-visual">
       <div class="sf-premium-script">Más que<br>relojes, <em>historias</em><br>contigo.</div>
-      ${productImage?`<img src="${productImage}" alt="Reloj destacado PILAR" fetchpriority="high">`:'<div class="sf-premium-watch-placeholder" aria-hidden="true">PILAR</div>'}
+      <img src="${heroImage}" alt="Reloj destacado PILAR" fetchpriority="high">
       <span class="sf-premium-glow" aria-hidden="true"></span>
     </div>
     <div class="sf-premium-benefits">
