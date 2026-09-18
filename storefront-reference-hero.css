@@ -48,3 +48,13 @@
   .sf-premium-benefits>div{font-size:8px}.sf-premium-benefits strong{font-size:19px}
   .sf-premium-info>div{font-size:7px;padding:0 3px}.sf-premium-info .sf-premium-sign{font-size:10.5px}
 }
+
+/* Stable SVG icon pass */
+.sf-premium-actions svg{width:22px;height:22px;display:block}
+.sf-premium-benefits strong svg{width:34px;height:34px;display:block}
+.sf-premium-info strong svg{width:27px;height:27px;display:block}
+@media(max-width:800px){
+ .sf-premium-actions svg{width:18px;height:18px}
+ .sf-premium-benefits strong svg{width:24px;height:24px}
+ .sf-premium-info strong svg{width:19px;height:19px}
+}
