@@ -1,5 +1,5 @@
-const CACHE='pilar-shell-v13';
-const SHELL=['/offline.html','/pilar-icon.svg','/pilar-icon-192.png','/pilar-icon-512.png','/manifest.webmanifest'];
+const CACHE='pilar-shell-v12';
+const SHELL=['/offline.html','/pilar-icon.svg','/manifest.webmanifest'];
 
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting()));
