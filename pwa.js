@@ -1,4 +1,4 @@
-let installPrompt=null;
+let installPrompt=window.__PILAR_INSTALL_PROMPT__||null;
 const isAdmin=location.pathname.startsWith('/admin');
 function installed(){return matchMedia('(display-mode: standalone)').matches||navigator.standalone===true}
 function installDialog(){
@@ -36,7 +36,8 @@ function button(){
 }
 if(!isAdmin){
   window.addEventListener('load',()=>button());
-  window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;button();});
+  window.addEventListener('pilar-install-ready',()=>{installPrompt=window.__PILAR_INSTALL_PROMPT__||installPrompt;button();});
+  window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;window.__PILAR_INSTALL_PROMPT__=e;button();});
   window.addEventListener('appinstalled',()=>{installPrompt=null;document.querySelector('.pilar-install')?.remove();});
   matchMedia('(display-mode: standalone)').addEventListener?.('change',e=>{if(e.matches)document.querySelector('.pilar-install')?.remove();});
   if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));
