@@ -1,4 +1,4 @@
-const CACHE='pilar-shell-v10';
+const CACHE='pilar-shell-v11';
 const SHELL=['/offline.html','/pilar-icon.svg','/manifest.webmanifest'];
 
 self.addEventListener('install',event=>{
