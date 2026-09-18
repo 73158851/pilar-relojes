@@ -1,25 +1,41 @@
 let installPrompt=null;
 const isAdmin=location.pathname.startsWith('/admin');
-
-// La PWA pública nunca controla /admin. PILAR Admin registra su propio worker.
-if(!isAdmin&&'serviceWorker' in navigator){
-  window.addEventListener('load',async()=>{
-    try{
-      const reg=await navigator.serviceWorker.register('/sw.js?v=20260917-store-cache-4',{scope:'/'});
-      await reg.update();
-    }catch(err){
-      console.warn('PILAR PWA:',err);
-    }
-  });
+function installed(){return matchMedia('(display-mode: standalone)').matches||navigator.standalone===true}
+function showInstallHelp(){alert('Para instalar PILAR en Chrome, toca el menú ⋮ y elige “Instalar aplicación” o “Agregar a pantalla de inicio”.')}
+async function requestInstall(){
+  if(installed()){document.querySelector('.pilar-install')?.remove();return}
+  if(!installPrompt){showInstallHelp();return}
+  installPrompt.prompt();
+  const choice=await installPrompt.userChoice;
+  if(choice?.outcome==='accepted'){document.querySelector('.pilar-install')?.remove()}
+  installPrompt=null;
 }
-
-function installed(){return window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true}
-function showInstallHelp(){alert(installed()?'PILAR ya está instalada en este dispositivo.':'Para instalar PILAR en Chrome, toca el menú ⋮ y elige “Instalar aplicación” o “Agregar a pantalla de inicio”.')}
-async function requestInstall(){if(installed()){showInstallHelp();return}if(!installPrompt){showInstallHelp();return}installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;document.querySelector('.pilar-install')?.remove()}
 function button(){
   if(isAdmin||installed()||document.querySelector('.pilar-install'))return null;
-  const b=document.createElement('button');b.type='button';b.className='pilar-install';b.innerHTML='<span aria-hidden="true">↓</span> Instalar PILAR';
-  Object.assign(b.style,{position:'fixed',left:'16px',bottom:'16px',zIndex:'9998',border:'1px solid rgba(199,164,90,.55)',background:'#0a1422',color:'#fff',padding:'11px 15px',borderRadius:'999px',font:'600 13px Arial,sans-serif',boxShadow:'0 8px 26px rgba(10,20,34,.2)',cursor:'pointer'});
-  b.addEventListener('click',requestInstall);document.body.appendChild(b);return b;
+  const b=document.createElement('button');
+  b.className='pilar-install';
+  b.type='button';
+  b.setAttribute('aria-label','Instalar aplicación PILAR');
+  b.innerHTML='<span aria-hidden="true" style="font-size:20px;line-height:1">↓</span><span>Instalar PILAR</span>';
+  Object.assign(b.style,{
+    position:'fixed',left:'16px',bottom:'16px',zIndex:'9999',
+    display:'flex',alignItems:'center',gap:'9px',
+    padding:'12px 16px',border:'1px solid rgba(218,177,92,.75)',
+    borderRadius:'999px',background:'linear-gradient(135deg,#071d30,#0d3555)',
+    color:'#f5d486',fontWeight:'800',fontSize:'14px',letterSpacing:'.15px',
+    boxShadow:'0 8px 24px rgba(3,18,31,.28),0 0 0 1px rgba(255,255,255,.05) inset',
+    cursor:'pointer',fontFamily:'inherit'
+  });
+  b.addEventListener('click',requestInstall);
+  document.body.appendChild(b);
+  return b;
 }
-if(!isAdmin){document.addEventListener('click',e=>{if(e.target.closest('.pilar-install-menu'))requestInstall()});window.addEventListener('load',()=>button());window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;button();});window.addEventListener('appinstalled',()=>{installPrompt=null;document.querySelector('.pilar-install')?.remove();});}
+if(!isAdmin){
+  window.addEventListener('load',()=>button());
+  window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;button();});
+  window.addEventListener('appinstalled',()=>{installPrompt=null;document.querySelector('.pilar-install')?.remove();});
+  matchMedia('(display-mode: standalone)').addEventListener?.('change',e=>{if(e.matches)document.querySelector('.pilar-install')?.remove();});
+  if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));
+}else{
+  const l=document.querySelector('link[rel="manifest"]');if(l)l.remove();
+}
