@@ -1,4 +1,4 @@
-const HERO_IMAGE='/pilar-hero-reference-mobile.webp?v=20260918-stable-watch-1';
+const HERO_IMAGE='https://wallpapers.com/images/hd/gold-watch-png-bix-4fdga3mzspf496kp.png';
 function enhanceHero(){
   const hero=document.querySelector('.sf-hero');
   if(!hero||hero.dataset.premiumHero)return !!hero;
