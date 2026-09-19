@@ -28,7 +28,7 @@ const checks=[
  ['admin supports previous price',()=>save.includes('previous_price')],
  ['admin validates nonnegative stock and price',()=>save.includes("price<0||stock<0")],
  ['admin validates offer comparison',()=>save.includes('previousPrice<=price')],
- ['admin low stock threshold is bounded',()=>admin.includes('Math.max(1,Number(slow.value||2))'),
+ ['admin low stock threshold is bounded',()=>admin.includes('Math.max(1,Number(slow.value||2))')],
  ['seo no stale vercel origin',()=>!seo.includes('pilar-relojes.vercel.app')],
  ['robots no stale vercel origin',()=>!robots.includes('pilar-relojes.vercel.app')],
 ];
