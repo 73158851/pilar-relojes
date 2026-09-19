@@ -17,6 +17,7 @@ on:
       - 'tests/hero-splash-regression.mjs'
       - 'tests/hero-stable-rollback.mjs'
       - 'tests/hero-watch-cache-regression.mjs'
+      - 'tests/hero-watch-only-change.mjs'
       - 'storefront-reference-hero.js'
       - 'storefront-reference-hero.css'
       - 'tests/hero-stable-rollback.mjs'
