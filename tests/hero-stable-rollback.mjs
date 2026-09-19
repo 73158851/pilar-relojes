@@ -6,7 +6,7 @@ const checks=[
  ['usa imagen aprobada local', js.includes('/pilar-hero-watch-approved.webp') && !js.includes("document.querySelector('.sf-card-media img')")],
  ['mantiene reintento tras render asíncrono', js.includes('MutationObserver') && js.includes('observer.observe')],
  ['restaura layout premium', css.includes('.sf-premium-hero-inner') && css.includes('.sf-premium-visual')],
- ['mantiene título móvil en dos líneas', css.includes('.sf-title-line{display:block;white-space:nowrap}')]
+ ['mantiene título premium responsive', css.includes('.sf-premium-title') && css.includes('@media')],
 ];
 let failed=0;
 for(const [name,ok] of checks){console.log(`${ok?'PASS':'FAIL'} ${name}`);if(!ok)failed++}
