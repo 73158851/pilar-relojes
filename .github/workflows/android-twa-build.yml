@@ -27,6 +27,7 @@ jobs:
           node tests/android-twa-structure.mjs
           node tests/android-gradle-config.mjs
           node tests/android-sdk-compat.mjs
+          node tests/android-gradle-version.mjs
 
       - uses: actions/setup-java@v4
         with:
@@ -35,7 +36,7 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '8.9'
+          gradle-version: '8.11.1'
 
       - name: Build unsigned release APK and AAB
         working-directory: android-twa
