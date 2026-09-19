@@ -1,0 +1,3 @@
+android-twa/**/*.jks
+android-twa/**/*.keystore
+android-twa/keystore.properties
