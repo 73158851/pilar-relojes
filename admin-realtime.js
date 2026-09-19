@@ -1,14 +1,15 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 const S=createClient('https://lsuigiuthuycddlcvrds.supabase.co','sb_publishable_kM87waiflFugm53n9o-B4A_mkn5P5Uu');
 let timer=null,pending=false;
+function authorized(){return sessionStorage.getItem('pilar_admin_authenticated_v1')==='1'&&!!document.querySelector('.padmin')&&!document.querySelector('.pa-login')}
 function refresh(){
-  if(!document.querySelector('.padmin')||document.querySelector('.pa-login')){pending=false;return}
+  if(!authorized()){pending=false;return}
   if(document.querySelector('.pa-modal')){pending=true;return}
   const tab=new URLSearchParams(location.search).get('tab')||document.querySelector('.pa-tab.active')?.dataset.tab||'dash';
   window.dispatchEvent(new CustomEvent('pilar-admin-refresh',{detail:{tab}}));
   pending=false;
 }
-function schedule(){if(!document.querySelector('.padmin')||document.querySelector('.pa-login'))return;clearTimeout(timer);timer=setTimeout(refresh,220)}
+function schedule(){if(!authorized())return;clearTimeout(timer);timer=setTimeout(refresh,220)}
 const observer=new MutationObserver(()=>{if(pending&&!document.querySelector('.pa-modal'))schedule()});
 observer.observe(document.body,{childList:true,subtree:true});
 const channel=S.channel('pilar-admin-live')
