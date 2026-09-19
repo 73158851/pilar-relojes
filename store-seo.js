@@ -1,6 +1,6 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 const S=createClient('https://lsuigiuthuycddlcvrds.supabase.co','sb_publishable_kM87waiflFugm53n9o-B4A_mkn5P5Uu');
-const ORIGIN='https://pilar-relojes.vercel.app',DEFAULT_IMG='https://lsuigiuthuycddlcvrds.supabase.co/storage/v1/object/public/product-images/87b25917-0e2e-46d1-92ab-f17b25d30d8f/1789530951622-1000503226.webp';
+const ORIGIN='https://pilar-relojes.pages.dev',DEFAULT_IMG='https://lsuigiuthuycddlcvrds.supabase.co/storage/v1/object/public/product-images/87b25917-0e2e-46d1-92ab-f17b25d30d8f/1789530951622-1000503226.webp';
 function meta(name,content,property=false){let e=document.head.querySelector(`meta[${property?'property':'name'}="${name}"]`);if(!e){e=document.createElement('meta');e.setAttribute(property?'property':'name',name);document.head.appendChild(e)}e.content=content}
 function canonical(url){let e=document.head.querySelector('link[rel="canonical"]');if(!e){e=document.createElement('link');e.rel='canonical';document.head.appendChild(e)}e.href=url}
 function jsonld(data){let e=document.getElementById('pilar-seo-jsonld');if(!e){e=document.createElement('script');e.id='pilar-seo-jsonld';e.type='application/ld+json';document.head.appendChild(e)}e.textContent=JSON.stringify(data)}
