@@ -30,6 +30,7 @@ jobs:
           node tests/android-gradle-version.mjs
           node tests/android-keystore-safety.mjs
           node tests/android-assetlinks.mjs
+          node tests/android-twa-identity.mjs
 
       - uses: actions/setup-java@v4
         with:
