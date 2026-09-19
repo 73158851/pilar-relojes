@@ -1,7 +1,2 @@
-const isAdmin=location.pathname.startsWith('/admin');
-
-if(!isAdmin&&'serviceWorker' in navigator){
-  window.addEventListener('load',()=>{
-    navigator.serviceWorker.register('/sw.js').catch(()=>{});
-  });
-}
+// PILAR storefront: installation promotion intentionally disabled.
+// The website remains fully usable in the browser.
