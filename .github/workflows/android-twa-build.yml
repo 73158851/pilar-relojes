@@ -26,6 +26,7 @@ jobs:
         run: |
           node tests/android-twa-structure.mjs
           node tests/android-gradle-config.mjs
+          node tests/android-sdk-compat.mjs
 
       - uses: actions/setup-java@v4
         with:
