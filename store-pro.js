@@ -1,4 +1,4 @@
-import { availability as productAvailability } from '/storefront-state.js';
+import { availability as productAvailability } from '/storefront-state.js?v=20260919-final-cf-1';
 const KEY='pilar_favorites_v1',BATCH=12;
 const favs=()=>{try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch{return[]}};
 const save=a=>localStorage.setItem(KEY,JSON.stringify([...new Set(a)]));
