@@ -27,4 +27,7 @@ jobs:
             test ! -f "$f" || node --check "$f"
           done
       - name: Storefront/admin synchronization contract
-        run: node tests/storefront-admin-sync.mjs
+        run: |
+          node --check tests/storefront-admin-sync.mjs
+          node tests/storefront-admin-sync.mjs
+          for t in tests/*.mjs; do echo "Running $t"; node "$t"; done
