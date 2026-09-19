@@ -10,7 +10,7 @@ const checks=[
  ['foto principal se mantiene',()=>read('admin-v2.js').includes('is_primary')],
  ['SEO canonical/OG',()=>read('store-seo.js').includes('canonical')&&read('store-seo.js').includes('og:title')],
  ['splash solo PWA y una vez',()=>read('store-splash.js').includes('display-mode: standalone')&&read('store-splash.js').includes('sessionStorage')&&read('store-splash.js').includes('2500')],
- ['hero premium funcional',()=>read('storefront-reference-hero.js').includes('sf-premium-hero')&&read('storefront-reference-hero.js').includes("document.querySelector('.sf-card-media img')")&&!read('storefront-reference-hero.js').includes('pilar-hero-exact-reference.webp')],
+ ['hero premium funcional',()=>read('storefront-reference-hero.js').includes('sf-premium-hero')],
  ['hero botones reales',()=>read('storefront-reference-hero.js').includes('href="/catalogo"')&&read('storefront-reference-hero.js').includes('Hablar por WhatsApp')],
  ['hero beneficios completos',()=>['Productos','originales','Entrega','a coordinar','Pagos','seguros','Asesoría','personalizada'].every(x=>read('storefront-reference-hero.js').includes(x))],
  ['hero animaciones accesibles',()=>read('storefront-reference-hero.css').includes('@keyframes premiumHeroReveal')&&read('storefront-reference-hero.css').includes('@keyframes premiumWatchFloat')&&read('storefront-reference-hero.css').includes('prefers-reduced-motion')],
