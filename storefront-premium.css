@@ -121,3 +121,5 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
   .sf-gallery-main img{padding:6px!important}
   .sf-drawer-panel>a:not(.sf-drawer-wa){font-size:15px!important;min-height:60px!important}
 }
+
+.sf-availability{display:inline-flex;align-items:center;gap:6px;margin:9px 0 2px;font-size:11px;font-weight:850;letter-spacing:.2px}.sf-availability:before{content:'';width:7px;height:7px;border-radius:50%;background:currentColor}.sf-availability.ok{color:#26754a}.sf-availability.out{color:#a13c3c}.sf-detail-availability{margin:4px 0 10px;font-size:12px}@media(max-width:680px){.sf-availability{font-size:9px;margin:6px 0 1px}.sf-detail-availability{font-size:10px}}
