@@ -14,7 +14,7 @@ const save=read('admin-product-save-v2.js');
 const checks=[
  ['public state module exists',()=>state.includes('normalizeSettings')&&state.includes('availability')],
  ['storefront reads settings',()=>storefront.includes("from('settings')")],
- ['storefront uses dynamic operational settings',()=>storefront.includes('delivery_text')&&storefront.includes('hours')&&storefront.includes('show_exact_stock')],
+ ['storefront uses dynamic operational settings',()=>state.includes('delivery_text')&&state.includes('hours')&&state.includes('show_exact_stock')&&storefront.includes('SETTINGS.delivery_text')&&storefront.includes('SETTINGS.hours')],
  ['detail exposes real stock',()=>storefront.includes('data-product-stock')],
  ['availability does not infer stock from text',()=>!pro.includes("let stock=3")],
  ['public realtime products',()=>realtime.includes("table:'products'")],
