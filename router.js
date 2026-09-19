@@ -5,7 +5,7 @@ if(admin){
   await import('/admin-sales.js?v=20260916-sales-2');
   await import('/admin-product-gender.js?v=20260917-gender-1');
   await import('/admin-image-pro.js?v=20260917-image-pro-1');
-  await import('/admin-product-save-v2.js?v=20260917-save-v3-1');
+  await import('/admin-product-save-v2.js?v=20260919-single-json-fix-1');
   await import('/admin-pwa.js?v=20260917-admin-pwa-2');
 }else{
   await import('/storefront.js');
