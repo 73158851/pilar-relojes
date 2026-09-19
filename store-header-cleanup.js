@@ -1,11 +1,10 @@
-function removeHeaderWhatsApp(){
-  document.querySelectorAll('.sf-head-wa').forEach(el=>el.remove());
+// PILAR storefront header: preserve the approved WhatsApp shortcut shown in the reference design.
+function preserveHeaderWhatsApp(){
+  document.querySelectorAll('.sf-head-wa').forEach(el=>{
+    el.hidden=false;
+    el.removeAttribute('aria-hidden');
+  });
 }
-
-removeHeaderWhatsApp();
-
+preserveHeaderWhatsApp();
 const app=document.getElementById('app');
-if(app){
-  const observer=new MutationObserver(removeHeaderWhatsApp);
-  observer.observe(app,{childList:true,subtree:true});
-}
+if(app)new MutationObserver(preserveHeaderWhatsApp).observe(app,{childList:true,subtree:true});
