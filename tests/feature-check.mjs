@@ -15,6 +15,6 @@ const checks=[
  ['hero beneficios completos',()=>['Productos','originales','Entrega','a coordinar','Pagos','seguros','Asesoría','personalizada'].every(x=>read('storefront-reference-hero.js').includes(x))],
  ['hero animaciones accesibles',()=>read('storefront-reference-hero.css').includes('@keyframes premiumHeroReveal')&&read('storefront-reference-hero.css').includes('@keyframes premiumWatchFloat')&&read('storefront-reference-hero.css').includes('prefers-reduced-motion')],
  ['hero integrado',()=>read('index.html').includes('storefront-reference-hero.css')&&read('router.js').includes('storefront-reference-hero.js')],
- ['robots sitemap',()=>read('robots.txt').includes('Sitemap: https://pilar-relojes.vercel.app/sitemap.xml')]
+ ['robots sitemap',()=>read('robots.txt').includes('Sitemap: https://pilar-relojes.pages.dev/sitemap.xml')]
 ];
 let failed=0;for(const [name,fn] of checks){let ok=false;try{ok=!!fn()}catch{};console.log(`${ok?'PASS':'FAIL'} ${name}`);if(!ok)failed++}if(failed){console.error(`\n${failed} comprobaciones fallaron`);process.exit(1)}console.log(`\n${checks.length}/${checks.length} comprobaciones correctas`);
