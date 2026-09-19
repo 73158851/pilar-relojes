@@ -14,7 +14,7 @@ function adminInstalled(){return window.matchMedia('(display-mode: standalone)')
 async function registerAdminWorker(){
   if(!isAdminPath||!('serviceWorker' in navigator))return;
   try{
-    const reg=await navigator.serviceWorker.register('/admin-sw.js?v=20260917-admin-sw-4',{scope:'/admin'});
+    const reg=await navigator.serviceWorker.register('/admin-sw.js?v=20260919-admin-sw-5',{scope:'/admin'});
     await navigator.serviceWorker.ready;
     return reg;
   }catch(err){console.warn('PILAR Admin PWA:',err)}
