@@ -1,5 +1,5 @@
 const SUPABASE='https://lsuigiuthuycddlcvrds.supabase.co';
 const KEY='sb_publishable_kM87waiflFugm53n9o-B4A_mkn5P5Uu';
-const ORIGIN='https://pilar-relojes.vercel.app';
+const ORIGIN='https://pilar-relojes.pages.dev';
 const esc=s=>String(s).replace(/[<>&'\"]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;',"'":'&apos;','"':'&quot;'}[c]));
 export default async function handler(req,res){try{const r=await fetch(`${SUPABASE}/rest/v1/products?select=slug,updated_at&visible=eq.true&deleted_at=is.null&order=updated_at.desc`,{headers:{apikey:KEY,Authorization:`Bearer ${KEY}`}});if(!r.ok)throw new Error('products');const products=await r.json(),staticPaths=['/','/catalogo','/nuevos','/ofertas','/contacto'];const urls=[...staticPaths.map(path=>({loc:ORIGIN+path,lastmod:null})),...products.map(p=>({loc:`${ORIGIN}/producto/${encodeURIComponent(p.slug)}`,lastmod:p.updated_at}))];const xml=`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(x=>`<url><loc>${esc(x.loc)}</loc>${x.lastmod?`<lastmod>${esc(new Date(x.lastmod).toISOString())}</lastmod>`:''}</url>`).join('')}</urlset>`;res.setHeader('Content-Type','application/xml; charset=utf-8');res.setHeader('Cache-Control','public, max-age=0, s-maxage=1800');res.status(200).send(xml)}catch{res.status(500).send('No se pudo generar el sitemap')}}
