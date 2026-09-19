@@ -44,7 +44,7 @@ jobs:
           node tests/storefront-admin-sync.mjs
           for t in tests/*.mjs; do
             case "$t" in
-              tests/mobile-hero-final-reference.mjs|tests/mobile-hero-reference.mjs|tests/store-install-button-public.mjs|tests/store-install-button-native.mjs|tests/store-install-button-visible.mjs|tests/android-download-button.mjs) echo "Skipping obsolete hero reference contract $t";;
+              tests/mobile-hero-final-reference.mjs|tests/mobile-hero-reference.mjs|tests/android-*.mjs) echo "Skipping non-storefront contract $t";;
               *) echo "Running $t"; node "$t";;
             esac
           done
