@@ -15,6 +15,7 @@ on:
       - 'tests/hero-icons-image-stable.mjs'
       - 'tests/hero-refresh-race.mjs'
       - 'tests/hero-splash-regression.mjs'
+      - 'tests/hero-stable-rollback.mjs'
       - '.github/workflows/storefront-admin-check.yml'
   pull_request:
     branches: [cloudflare-pages]
