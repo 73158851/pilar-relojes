@@ -20,7 +20,7 @@ async function registerAdminWorker(){
   }catch(err){console.warn('PILAR Admin PWA:',err)}
 }
 
-async function hasSession(){const {data:{user}}=await S.auth.getUser();return !!user}
+async function hasSession(){const {data:{user}}=await S.auth.getUser();if(!user)return false;const{data,error}=await S.from('profiles').select('role').eq('id',user.id).maybeSingle();return !error&&data?.role==='admin'}
 function removeButton(){document.querySelector('.pilar-admin-install')?.remove()}
 function showInstallHelp(){alert('Chrome aún no habilitó la instalación nativa. Cierra esta pestaña, vuelve a abrir el enlace de PILAR Admin en Chrome y espera unos segundos. Si continúa igual, toca ⋮ y revisa si aparece “Instalar aplicación”.')}
 
