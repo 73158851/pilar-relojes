@@ -121,3 +121,5 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
   .sf-gallery-main img{padding:6px!important}
   .sf-drawer-panel>a:not(.sf-drawer-wa){font-size:15px!important;min-height:60px!important}
 }
+
+.sf-stock,.sf-detail-stock{display:inline-flex;align-items:center;gap:6px;font-weight:850}.sf-stock:before,.sf-detail-stock:before{content:'';width:7px;height:7px;border-radius:50%;background:currentColor}.sf-stock[data-product-stock='0'],.sf-detail-stock[data-product-stock='0']{color:#a13c3c}.sf-stock:not([data-product-stock='0']),.sf-detail-stock:not([data-product-stock='0']){color:#26754a}
