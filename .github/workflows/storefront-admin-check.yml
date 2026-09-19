@@ -17,6 +17,7 @@ on:
       - 'tests/hero-splash-regression.mjs'
       - 'tests/hero-stable-rollback.mjs'
       - 'storefront-reference-hero.js'
+      - 'storefront-reference-hero.css'
       - '.github/workflows/storefront-admin-check.yml'
   pull_request:
     branches: [cloudflare-pages]
