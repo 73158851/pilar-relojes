@@ -31,6 +31,7 @@ jobs:
           node tests/android-keystore-safety.mjs
           node tests/android-assetlinks.mjs
           node tests/android-twa-identity.mjs
+          node tests/android-download-button.mjs
 
       - uses: actions/setup-java@v4
         with:
