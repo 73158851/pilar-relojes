@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.pilar.relojes",
+      "sha256_cert_fingerprints": [
+        "9F:CE:67:96:48:B0:94:25:E3:DF:BC:6C:5E:7D:20:45:F6:EA:61:AB:8D:77:5E:42:9C:8C:46:81:79:D5:C2:FB"
+      ]
+    }
+  }
+]
