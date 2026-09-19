@@ -1,5 +1,5 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
-import { normalizeSettings, normalizePhone, stockText } from '/storefront-state.js';
+import { normalizeSettings, normalizePhone, stockText } from '/storefront-state.js?v=20260919-final-cf-1';
 const supabase=createClient('https://lsuigiuthuycddlcvrds.supabase.co','sb_publishable_kM87waiflFugm53n9o-B4A_mkn5P5Uu');
 const app=document.getElementById('app');
 const LOGO='https://lsuigiuthuycddlcvrds.supabase.co/storage/v1/object/public/product-images/87b25917-0e2e-46d1-92ab-f17b25d30d8f/1789530951622-1000503226.webp';
