@@ -40,7 +40,7 @@ function showButton(){
   document.body.appendChild(b);
 }
 
-async function syncAuth(){authenticated=await hasSession();if(authenticated)showButton();else removeButton()}
+async function syncAuth(){authenticated=sessionStorage.getItem('pilar_admin_authenticated_v1')==='1'&&await hasSession();if(authenticated)showButton();else removeButton()}
 
 if(isAdminPath){
   window.addEventListener('pilar-admin-install-ready',()=>{installPrompt=window.__PILAR_ADMIN_INSTALL_PROMPT__||installPrompt;showButton()});
@@ -48,5 +48,6 @@ if(isAdminPath){
   window.addEventListener('appinstalled',()=>{installPrompt=null;window.__PILAR_ADMIN_INSTALL_PROMPT__=null;removeButton()});
   await registerAdminWorker();
   await syncAuth();
-  S.auth.onAuthStateChange(syncAuth);
+  window.addEventListener('pilar-admin-authenticated',syncAuth);
+  S.auth.onAuthStateChange(()=>setTimeout(syncAuth,0));
 }
