@@ -23,7 +23,9 @@ jobs:
           node-version: '22'
 
       - name: Verify Android project contract
-        run: node tests/android-twa-structure.mjs
+        run: |
+          node tests/android-twa-structure.mjs
+          node tests/android-gradle-config.mjs
 
       - uses: actions/setup-java@v4
         with:
