@@ -11,6 +11,7 @@ on:
       - 'index.html'
       - 'robots.txt'
       - 'tests/storefront-admin-sync.mjs'
+      - 'tests/feature-check.mjs'
       - '.github/workflows/storefront-admin-check.yml'
   pull_request:
     branches: [cloudflare-pages]
