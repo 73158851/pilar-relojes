@@ -1,6 +1,6 @@
 const isAdmin=location.pathname.startsWith('/admin');
 const isAndroidApp=document.referrer.startsWith('android-app://com.pilar.relojes');
-const APK_URL='/downloads/PILAR-1.0.0.apk';
+const APK_URL='https://pilar-apk.angelitoortiz101.workers.dev/PILAR-1.0.0.apk';
 
 function installed(){
   return isAndroidApp||window.matchMedia('(display-mode: standalone)').matches||window.navigator.standalone===true;
