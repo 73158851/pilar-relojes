@@ -12,6 +12,7 @@ on:
       - 'robots.txt'
       - 'tests/storefront-admin-sync.mjs'
       - 'tests/admin-product-id-contract.mjs'
+      - 'tests/admin-cache-bust-product-fix.mjs'
       - 'tests/feature-check.mjs'
       - 'tests/hero-icons-image-stable.mjs'
       - 'tests/hero-refresh-race.mjs'
