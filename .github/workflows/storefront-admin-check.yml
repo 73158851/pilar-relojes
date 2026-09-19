@@ -18,6 +18,7 @@ on:
       - 'tests/hero-stable-rollback.mjs'
       - 'tests/hero-watch-cache-regression.mjs'
       - 'tests/hero-watch-only-change.mjs'
+      - 'tests/mobile-hero-layout.mjs'
       - 'storefront-reference-hero.js'
       - 'storefront-reference-hero.css'
       - 'tests/hero-stable-rollback.mjs'
