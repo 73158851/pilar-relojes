@@ -239,3 +239,51 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
   .sf-footer-intro{grid-column:1/-1!important}
   .sf-float{width:54px!important;height:54px!important;right:14px!important;bottom:14px!important}
 }
+
+/* PILAR PRODUCT DETAIL REFERENCE LOCK 2026-09-19 */
+/* Favorite control: intentionally smaller so NUEVO / OFERTA badges remain unobstructed. */
+.sf-card-media .sfp-fav{width:30px!important;height:30px!important;right:7px!important;top:7px!important;font-size:17px!important;line-height:1!important}
+.sf-badges{z-index:5!important;max-width:calc(100% - 42px)!important;flex-wrap:wrap!important}
+.sf-card-media .sfp-fav{z-index:4!important}
+
+/* Product detail — lock proportions to the supplied reference. */
+.sf-product-section>.sf-container{width:min(1160px,calc(100% - 36px))!important}
+.sf-product-view{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:58px!important;align-items:start!important}
+.sf-product-gallery{display:grid!important;grid-template-columns:1fr!important;gap:12px!important}
+.sf-gallery-main{grid-row:1!important;aspect-ratio:1/1.04!important;width:100%!important;min-width:0!important}
+.sf-gallery-main img{width:100%!important;height:100%!important;object-fit:contain!important}
+.sf-thumbs-vertical{grid-row:2!important;display:flex!important;flex-direction:row!important;gap:9px!important}
+.sf-thumb{width:64px!important;height:64px!important;flex:0 0 64px!important}
+.sf-detail-info{width:100%!important;min-width:0!important}
+.sf-detail-info>.sf-detail-stock{margin:0 0 10px!important}
+.sf-detail-info>.sfp-tools{margin:0 0 14px!important;display:flex!important;justify-content:flex-start!important}
+.sf-detail-info>.sfp-tools .sfp-actions{width:100%!important;display:grid!important;grid-template-columns:1fr 1.35fr!important;gap:10px!important}
+.sf-detail-info>.sfp-tools .sfp-actions button{height:48px!important;border-radius:10px!important}
+.sf-detail-info>.sfp-tools .sfp-detail-fav{font-size:20px!important}
+.sf-detail-info>.sfp-tools .sfp-detail-fav span{display:none!important}
+
+@media(max-width:680px){
+  .sf-card-media .sfp-fav{width:27px!important;height:27px!important;right:6px!important;top:6px!important;font-size:15px!important}
+  .sf-badges{max-width:calc(100% - 37px)!important}
+  .sf-product-section{padding:54px 0 80px!important;min-height:850px!important}
+  .sf-product-section>.sf-container{width:calc(100% - 36px)!important}
+  .sf-product-view{grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:70px!important;align-items:start!important}
+  .sf-product-gallery{grid-template-columns:1fr!important;gap:11px!important;min-width:0!important}
+  .sf-gallery-main{grid-row:1!important;width:100%!important;aspect-ratio:1/1.04!important;border-radius:18px!important}
+  .sf-gallery-main img{padding:10px!important}
+  .sf-thumbs-vertical{grid-row:2!important;display:flex!important;flex-direction:row!important;gap:8px!important}
+  .sf-thumb{width:62px!important;height:62px!important;flex:0 0 62px!important}
+  .sf-detail-info{padding:17px!important;border-radius:17px!important}
+  .sf-detail-info h1{font-size:39px!important;line-height:.98!important;margin:8px 0 13px!important}
+  .sf-detail-price{font-size:29px!important;margin:10px 0 13px!important}
+  .sf-detail-info>.sf-detail-stock{font-size:12px!important;padding:8px 14px!important;margin:0 0 11px!important}
+  .sf-detail-info>.sfp-tools{margin:0 0 14px!important;display:block!important}
+  .sf-detail-info>.sfp-tools .sfp-actions{width:100%!important;display:grid!important;grid-template-columns:1fr 1.35fr!important;gap:9px!important}
+  .sf-detail-info>.sfp-tools .sfp-actions button{height:48px!important;font-size:12px!important}
+  .sf-detail-copy{font-size:14px!important;line-height:1.4!important;padding-bottom:14px!important}
+  .sf-specs-compact{margin:14px 0!important}
+  .sf-spec b{font-size:8px!important}
+  .sf-spec span{font-size:10px!important}
+  .sf-buy-wide{min-height:54px!important;font-size:14px!important}
+  .sf-trust-row{grid-template-columns:1fr!important}
+}
