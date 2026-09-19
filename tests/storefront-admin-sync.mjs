@@ -10,6 +10,7 @@ const adminRealtime=read('admin-realtime.js');
 const state=read('storefront-state.js');
 const admin=read('admin-v2.js');
 const save=read('admin-product-save-v2.js');
+const gender=read('store-gender-filter.js');
 
 const checks=[
  ['public state module exists',()=>state.includes('normalizeSettings')&&state.includes('availability')],
@@ -31,6 +32,7 @@ const checks=[
  ['admin low stock threshold is bounded',()=>admin.includes('Math.max(1,Number(slow.value||2))')],
  ['seo no stale vercel origin',()=>!seo.includes('pilar-relojes.vercel.app')],
  ['robots no stale vercel origin',()=>!robots.includes('pilar-relojes.vercel.app')],
+ ['legacy explicit gender remains filterable',()=>gender.includes('inferGender')&&gender.includes("return'varon'")&&gender.includes("return'dama'")],
 ];
 let failed=0;
 for(const [name,fn] of checks){let ok=false;try{ok=!!fn()}catch{};console.log(`${ok?'PASS':'FAIL'} ${name}`);if(!ok)failed++}
