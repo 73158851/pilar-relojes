@@ -28,6 +28,8 @@ jobs:
           node tests/android-gradle-config.mjs
           node tests/android-sdk-compat.mjs
           node tests/android-gradle-version.mjs
+          node tests/android-keystore-safety.mjs
+          node tests/android-assetlinks.mjs
 
       - uses: actions/setup-java@v4
         with:
