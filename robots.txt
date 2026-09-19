@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /api/
 
-Sitemap: https://pilar-relojes.vercel.app/sitemap.xml
+Sitemap: https://pilar-relojes.pages.dev/sitemap.xml
