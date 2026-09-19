@@ -23,7 +23,7 @@ jobs:
           node-version: '22'
       - name: JavaScript syntax
         run: |
-          for f in storefront.js storefront-state.js storefront-realtime.js store-pro.js store-seo.js admin-v2.js admin-realtime.js admin-product-save-v2.js router.js; do
+          for f in storefront.js storefront-state.js storefront-realtime.js store-pro.js store-seo.js store-gender-filter.js admin-v2.js admin-realtime.js admin-product-save-v2.js router.js; do
             test ! -f "$f" || node --check "$f"
           done
       - name: Storefront/admin synchronization contract
