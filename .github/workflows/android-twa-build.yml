@@ -1,0 +1,49 @@
+name: PILAR Android TWA Build
+
+on:
+  push:
+    branches: [cloudflare-pages]
+    paths:
+      - 'android-twa/**'
+      - 'tests/android-twa-structure.mjs'
+      - '.github/workflows/android-twa-build.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Verify Android project contract
+        run: node tests/android-twa-structure.mjs
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Build unsigned release APK and AAB
+        working-directory: android-twa
+        run: |
+          gradle :app:assembleRelease :app:bundleRelease --stacktrace
+
+      - name: Upload unsigned Android artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: pilar-android-unsigned
+          if-no-files-found: error
+          path: |
+            android-twa/app/build/outputs/apk/release/*.apk
+            android-twa/app/build/outputs/bundle/release/*.aab
