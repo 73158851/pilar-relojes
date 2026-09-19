@@ -13,6 +13,7 @@ on:
       - 'tests/storefront-admin-sync.mjs'
       - 'tests/feature-check.mjs'
       - 'tests/hero-icons-image-stable.mjs'
+      - 'tests/hero-refresh-race.mjs'
       - '.github/workflows/storefront-admin-check.yml'
   pull_request:
     branches: [cloudflare-pages]
