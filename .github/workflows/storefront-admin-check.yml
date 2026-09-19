@@ -8,6 +8,7 @@ on:
       - 'store-seo.js'
       - 'admin*.js'
       - 'router.js'
+      - 'index.html'
       - 'robots.txt'
       - 'tests/storefront-admin-sync.mjs'
       - '.github/workflows/storefront-admin-check.yml'
