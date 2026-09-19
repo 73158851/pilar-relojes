@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 const pwa=fs.readFileSync('pwa.js','utf8');
-const APK_URL='https://pilar-apk.angelitoortiz101.workers.dev/PILAR-1.0.0.apk';
+const APK_URL='https://pilar-apk-v2.angelitoortiz101.workers.dev/PILAR-1.0.0.apk';
 const checks=[
  ['public APK worker URL configured',pwa.includes(APK_URL)],
  ['legacy local APK placeholder removed',!pwa.includes("const APK_URL='/downloads/PILAR-1.0.0.apk'")],
