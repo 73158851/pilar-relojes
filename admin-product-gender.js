@@ -18,8 +18,8 @@ async function enhance(modal){
   field.innerHTML='<label for="pgender">Género</label><select id="pgender" class="pa-input"><option value="">Sin clasificar</option><option value="varon">Varón</option><option value="dama">Dama</option></select><small>Define dónde aparecerá este reloj en el catálogo.</small>';
   category?.after(field);
   if(editingId){
-    const {data}=await S.from('products').select('gender').eq('id',editingId).maybeSingle();
-    if(modal.isConnected&&data?.gender)modal.querySelector('#pgender').value=data.gender;
+    const {data,error}=await S.from('products').select('gender').eq('id',editingId).limit(2);
+    if(!error&&modal.isConnected&&(data||[]).length===1&&data[0]?.gender)modal.querySelector('#pgender').value=data[0].gender;
   }
 }
 
