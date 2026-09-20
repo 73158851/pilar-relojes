@@ -520,166 +520,199 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
   }
 }
 
-/* PILAR PRODUCT DETAIL DESKTOP MATCH MOBILE 2026-09-20 */
+/* PILAR PRODUCT DETAIL DESKTOP BALANCED 2026-09-20 */
+/* Desktop-only refinement. Mobile <=680px remains unchanged. */
 @media (min-width:681px){
-  /* Use more of the desktop viewport instead of a small centered island */
+  /* Restore normal page flow so footer stays at the bottom of the viewport. */
+  .storefront>main{
+    flex:1 0 auto!important;
+    display:block!important;
+  }
+  .sf-footer{
+    margin-top:auto!important;
+  }
+
   .sf-product-section{
-    padding:46px 0 72px!important;
-    min-height:0!important;
+    padding:38px 0 56px!important;
+    min-height:calc(100vh - 330px)!important;
   }
   .sf-product-section>.sf-container{
-    width:min(1480px,calc(100% - 64px))!important;
-    max-width:none!important;
+    width:min(1220px,calc(100% - 48px))!important;
+    max-width:1220px!important;
+    margin-inline:auto!important;
   }
   .sf-product-view{
     display:grid!important;
-    grid-template-columns:minmax(0,1.08fr) minmax(420px,.92fr)!important;
-    gap:64px!important;
+    grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr)!important;
+    gap:46px!important;
     align-items:start!important;
   }
 
-  /* Gallery: larger, closer to the approved phone proportions */
+  /* Gallery */
   .sf-product-gallery{
     display:grid!important;
-    grid-template-columns:92px minmax(0,1fr)!important;
-    gap:16px!important;
+    grid-template-columns:78px minmax(0,1fr)!important;
+    gap:14px!important;
     min-width:0!important;
   }
   .sf-gallery-main{
-    aspect-ratio:1.07/1!important;
-    min-height:520px!important;
-    border-radius:24px!important;
+    width:100%!important;
+    min-height:0!important;
+    aspect-ratio:1.08/1!important;
+    border-radius:20px!important;
   }
   .sf-gallery-main img{
-    padding:22px!important;
+    width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+    padding:16px!important;
   }
   .sf-thumbs-vertical{
-    gap:11px!important;
+    gap:9px!important;
   }
   .sf-thumb{
-    width:92px!important;
-    height:92px!important;
-    border-radius:12px!important;
-    padding:5px!important;
+    width:78px!important;
+    height:78px!important;
+    border-radius:10px!important;
+    padding:4px!important;
   }
 
-  /* Product card: same visual hierarchy as mobile, but desktop-sized */
+  /* Information card */
   .sf-detail-info{
-    padding:28px 30px!important;
-    border-radius:22px!important;
+    width:100%!important;
+    max-width:470px!important;
+    justify-self:end!important;
+    padding:22px 24px!important;
+    border-radius:18px!important;
     min-width:0!important;
   }
   .sf-detail-info .sf-eyebrow{
-    font-size:10px!important;
-    letter-spacing:2.2px!important;
+    font-size:9px!important;
+    letter-spacing:2px!important;
   }
   .sf-detail-info h1{
-    font-size:clamp(46px,4.1vw,68px)!important;
-    line-height:1.01!important;
-    letter-spacing:-1.4px!important;
-    margin:8px 0 12px!important;
+    font-size:clamp(36px,3.4vw,50px)!important;
+    line-height:1.03!important;
+    letter-spacing:-1px!important;
+    margin:7px 0 10px!important;
   }
   .sf-detail-price{
-    font-size:36px!important;
-    margin:10px 0 12px!important;
+    font-size:30px!important;
+    margin:9px 0 10px!important;
   }
   .sf-detail-stock,
   .sf-detail-availability{
-    font-size:13px!important;
-    padding:8px 12px!important;
-    margin:0 0 12px!important;
+    font-size:11px!important;
+    padding:7px 10px!important;
+    margin:0 0 10px!important;
   }
   .sf-detail-info>.sfp-tools{
-    margin:0 0 14px!important;
+    margin:0 0 11px!important;
   }
   .sf-detail-info>.sfp-tools .sfp-actions{
     display:grid!important;
-    grid-template-columns:1fr 1.45fr!important;
-    gap:10px!important;
+    grid-template-columns:1fr 1.35fr!important;
+    gap:8px!important;
     width:100%!important;
   }
   .sf-detail-info>.sfp-tools .sfp-actions button{
-    min-height:48px!important;
-    border-radius:11px!important;
-    font-size:13px!important;
+    min-height:42px!important;
+    height:auto!important;
+    border-radius:9px!important;
+    font-size:11px!important;
   }
   .sf-detail-copy{
-    font-size:15px!important;
-    line-height:1.5!important;
-    padding-bottom:16px!important;
+    font-size:12px!important;
+    line-height:1.48!important;
+    padding-bottom:12px!important;
   }
   .sf-specs-compact{
     grid-template-columns:1fr 1fr!important;
-    margin:14px 0!important;
+    margin:10px 0!important;
   }
   .sf-spec{
-    padding:9px 14px 12px!important;
+    padding:7px 10px 9px!important;
   }
   .sf-spec:first-child{padding-left:0!important}
   .sf-spec b{
-    font-size:8px!important;
-    letter-spacing:1.2px!important;
+    font-size:7px!important;
+    letter-spacing:1px!important;
   }
   .sf-spec span{
-    font-size:12px!important;
-  }
-  .sf-buy-wide{
-    min-height:58px!important;
-    font-size:16px!important;
-    border-radius:11px!important;
-  }
-  .sf-buy-wide svg{
-    width:21px!important;
-    height:21px!important;
-  }
-  .sf-trust-row{
-    margin-top:12px!important;
-    border-radius:12px!important;
-  }
-  .sf-trust-row div{
-    padding:12px 13px!important;
-  }
-  .sf-trust-row strong{
     font-size:10px!important;
   }
-  .sf-trust-row span{
-    font-size:9px!important;
+  .sf-buy-wide{
+    min-height:48px!important;
+    font-size:13px!important;
+    border-radius:9px!important;
   }
-
-  /* Avoid the huge empty desktop gap before footer */
-  .storefront>main{
-    flex:0 0 auto!important;
+  .sf-buy-wide svg{
+    width:18px!important;
+    height:18px!important;
   }
-  .sf-footer{
-    margin-top:0!important;
+  .sf-trust-row{
+    margin-top:9px!important;
+    border-radius:10px!important;
   }
+  .sf-trust-row div{
+    padding:9px 10px!important;
+  }
+  .sf-trust-row strong{font-size:8px!important}
+  .sf-trust-row span{font-size:7px!important}
 }
+
+/* Typical laptop / desktop-site viewport */
 @media (min-width:681px) and (max-width:1100px){
+  .sf-product-section{
+    padding:30px 0 44px!important;
+    min-height:calc(100vh - 290px)!important;
+  }
   .sf-product-section>.sf-container{
     width:calc(100% - 34px)!important;
   }
   .sf-product-view{
-    grid-template-columns:minmax(0,1fr) minmax(360px,.92fr)!important;
-    gap:34px!important;
+    grid-template-columns:minmax(0,1.05fr) minmax(330px,.95fr)!important;
+    gap:28px!important;
   }
   .sf-product-gallery{
-    grid-template-columns:72px minmax(0,1fr)!important;
-    gap:11px!important;
+    grid-template-columns:62px minmax(0,1fr)!important;
+    gap:10px!important;
   }
   .sf-thumb{
-    width:72px!important;
-    height:72px!important;
+    width:62px!important;
+    height:62px!important;
   }
   .sf-gallery-main{
-    min-height:420px!important;
+    aspect-ratio:1.08/1!important;
   }
   .sf-detail-info{
-    padding:22px!important;
+    max-width:400px!important;
+    padding:18px 19px!important;
   }
   .sf-detail-info h1{
-    font-size:42px!important;
+    font-size:34px!important;
   }
   .sf-detail-price{
-    font-size:30px!important;
+    font-size:25px!important;
+  }
+  .sf-detail-copy{
+    font-size:10.5px!important;
+  }
+  .sf-buy-wide{
+    min-height:44px!important;
+    font-size:11.5px!important;
+  }
+}
+
+/* Wide desktop: slightly roomier, never oversized. */
+@media (min-width:1280px){
+  .sf-product-section>.sf-container{
+    width:min(1180px,calc(100% - 64px))!important;
+  }
+  .sf-product-view{
+    gap:52px!important;
+  }
+  .sf-detail-info{
+    max-width:450px!important;
   }
 }
