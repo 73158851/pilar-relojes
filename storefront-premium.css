@@ -853,3 +853,245 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
     font-size:8px!important;
   }
 }
+
+/* PILAR OPTION 1 DESKTOP FINAL 2026-09-20 */
+/* Approved Option 1. Mobile <=680px intentionally untouched. */
+
+/* Real desktop/laptop */
+@media (min-width:1101px){
+  .sf-product-section{
+    padding:42px 0 34px!important;
+    min-height:0!important;
+  }
+  .sf-product-section>.sf-container{
+    width:min(1440px,calc(100% - 64px))!important;
+    max-width:1440px!important;
+  }
+  .sf-product-view{
+    grid-template-columns:minmax(0,1.05fr) minmax(480px,.95fr)!important;
+    gap:34px!important;
+    align-items:stretch!important;
+  }
+  .sf-product-gallery{
+    grid-template-columns:96px minmax(0,1fr)!important;
+    gap:14px!important;
+  }
+  .sf-thumbs-vertical{gap:12px!important}
+  .sf-thumb{
+    width:96px!important;
+    height:96px!important;
+    border-radius:12px!important;
+  }
+  .sf-gallery-main{
+    aspect-ratio:1.18/1!important;
+    min-height:520px!important;
+    border-radius:22px!important;
+  }
+  .sf-gallery-main img{padding:18px!important}
+  .sf-detail-info{
+    max-width:none!important;
+    height:100%!important;
+    justify-self:stretch!important;
+    padding:28px 30px!important;
+    border-radius:22px!important;
+  }
+  .sf-detail-info h1{
+    font-size:clamp(48px,4vw,66px)!important;
+    margin:8px 0 12px!important;
+  }
+  .sf-detail-price{
+    font-size:38px!important;
+    margin:10px 0 12px!important;
+  }
+  .sf-detail-copy{
+    font-size:15px!important;
+    padding:14px 0 18px!important;
+  }
+  .sf-detail-info>.sfp-tools .sfp-actions button{
+    min-height:52px!important;
+    font-size:14px!important;
+  }
+  .sf-spec{padding:11px 16px 14px!important}
+  .sf-spec b{font-size:9px!important}
+  .sf-spec span{font-size:13px!important}
+  .sf-buy-wide{
+    min-height:60px!important;
+    font-size:17px!important;
+    border-radius:10px!important;
+  }
+  .sf-trust-row div{padding:14px 16px!important}
+  .sf-trust-row strong{font-size:11px!important}
+  .sf-trust-row span{font-size:9px!important}
+  .sf-footer-grid{
+    padding:30px 0 26px!important;
+    gap:34px!important;
+  }
+  .sf-footer-intro strong{font-size:25px!important}
+  .sf-footer h4{font-size:10px!important}
+  .sf-footer p,.sf-footer a{font-size:11px!important}
+}
+
+/* Chrome Android "sitio para computadoras" / compact desktop viewport.
+   Recreates the visual weight of the approved mobile reference instead of shrinking the whole site. */
+@media (min-width:681px) and (max-width:1100px){
+  .storefront{
+    background:#101827!important;
+  }
+  .sf-topstrip{
+    height:38px!important;
+    font-size:11px!important;
+  }
+  .sf-topstrip .sf-container{
+    width:calc(100% - 28px)!important;
+    justify-content:space-between!important;
+  }
+  .sf-bar{
+    height:108px!important;
+    grid-template-columns:60px 1fr 60px!important;
+    gap:10px!important;
+  }
+  .sf-logo{
+    justify-self:center!important;
+  }
+  .sf-logo img{
+    width:132px!important;
+    height:62px!important;
+  }
+  .sf-menu{
+    display:block!important;
+    justify-self:start!important;
+    font-size:34px!important;
+  }
+  .sf-head-wa{
+    display:block!important;
+    justify-self:end!important;
+  }
+  .sf-head-wa svg{
+    width:30px!important;
+    height:30px!important;
+  }
+  .sf-nav{display:none!important}
+  .sf-subbar .sf-container{
+    width:calc(100% - 28px)!important;
+    height:54px!important;
+    font-size:12px!important;
+  }
+  .sf-back{font-size:14px!important}
+
+  .sf-product-section{
+    padding:46px 0 70px!important;
+    min-height:0!important;
+  }
+  .sf-product-section>.sf-container{
+    width:calc(100% - 28px)!important;
+    max-width:none!important;
+  }
+  .sf-product-view{
+    grid-template-columns:minmax(0,1.03fr) minmax(0,.97fr)!important;
+    gap:24px!important;
+    align-items:stretch!important;
+  }
+  .sf-product-gallery{
+    grid-template-columns:72px minmax(0,1fr)!important;
+    gap:12px!important;
+  }
+  .sf-thumbs-vertical{gap:10px!important}
+  .sf-thumb{
+    width:72px!important;
+    height:72px!important;
+    border-radius:10px!important;
+  }
+  .sf-gallery-main{
+    aspect-ratio:1/1.04!important;
+    min-height:0!important;
+    border-radius:19px!important;
+  }
+  .sf-gallery-main img{
+    padding:10px!important;
+  }
+
+  .sf-detail-info{
+    max-width:none!important;
+    width:100%!important;
+    height:100%!important;
+    justify-self:stretch!important;
+    padding:24px 22px!important;
+    border-radius:18px!important;
+  }
+  .sf-detail-info .sf-eyebrow{
+    font-size:9px!important;
+    letter-spacing:1.8px!important;
+  }
+  .sf-detail-info h1{
+    font-size:42px!important;
+    line-height:1.02!important;
+    margin:7px 0 10px!important;
+  }
+  .sf-detail-price{
+    font-size:31px!important;
+    margin:8px 0 10px!important;
+  }
+  .sf-detail-stock,.sf-detail-availability{
+    font-size:11px!important;
+    padding:7px 10px!important;
+  }
+  .sf-detail-info>.sfp-tools .sfp-actions button{
+    min-height:46px!important;
+    font-size:12px!important;
+  }
+  .sf-detail-copy{
+    font-size:12px!important;
+    line-height:1.5!important;
+    padding:12px 0 14px!important;
+  }
+  .sf-spec{
+    padding:9px 11px 12px!important;
+  }
+  .sf-spec b{font-size:8px!important}
+  .sf-spec span{font-size:10px!important}
+  .sf-buy-wide{
+    min-height:52px!important;
+    font-size:14px!important;
+  }
+  .sf-trust-row div{
+    padding:11px 10px!important;
+  }
+  .sf-trust-row strong{font-size:9px!important}
+  .sf-trust-row span{font-size:8px!important}
+
+  /* Large footer like the approved reference, and navy continuation instead of white void. */
+  .sf-footer{
+    margin-top:0!important;
+    min-height:250px!important;
+  }
+  .sf-footer .sf-container{
+    width:calc(100% - 34px)!important;
+  }
+  .sf-footer-grid{
+    grid-template-columns:1.15fr 1fr 1fr!important;
+    gap:26px!important;
+    padding:42px 0 34px!important;
+  }
+  .sf-footer-intro strong{
+    font-size:28px!important;
+    margin-bottom:10px!important;
+  }
+  .sf-footer-intro p{
+    max-width:230px!important;
+    font-size:11px!important;
+    line-height:1.5!important;
+  }
+  .sf-footer h4{
+    font-size:10px!important;
+    margin-bottom:10px!important;
+  }
+  .sf-footer p,.sf-footer a{
+    font-size:11px!important;
+    line-height:1.55!important;
+  }
+  .sf-footer-grid>div:last-child{display:none!important}
+  .sf-footer-meta{
+    padding:11px!important;
+    font-size:9px!important;
+  }
+}
