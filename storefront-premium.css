@@ -519,3 +519,167 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
     font-size:7px!important;
   }
 }
+
+/* PILAR PRODUCT DETAIL DESKTOP MATCH MOBILE 2026-09-20 */
+@media (min-width:681px){
+  /* Use more of the desktop viewport instead of a small centered island */
+  .sf-product-section{
+    padding:46px 0 72px!important;
+    min-height:0!important;
+  }
+  .sf-product-section>.sf-container{
+    width:min(1480px,calc(100% - 64px))!important;
+    max-width:none!important;
+  }
+  .sf-product-view{
+    display:grid!important;
+    grid-template-columns:minmax(0,1.08fr) minmax(420px,.92fr)!important;
+    gap:64px!important;
+    align-items:start!important;
+  }
+
+  /* Gallery: larger, closer to the approved phone proportions */
+  .sf-product-gallery{
+    display:grid!important;
+    grid-template-columns:92px minmax(0,1fr)!important;
+    gap:16px!important;
+    min-width:0!important;
+  }
+  .sf-gallery-main{
+    aspect-ratio:1.07/1!important;
+    min-height:520px!important;
+    border-radius:24px!important;
+  }
+  .sf-gallery-main img{
+    padding:22px!important;
+  }
+  .sf-thumbs-vertical{
+    gap:11px!important;
+  }
+  .sf-thumb{
+    width:92px!important;
+    height:92px!important;
+    border-radius:12px!important;
+    padding:5px!important;
+  }
+
+  /* Product card: same visual hierarchy as mobile, but desktop-sized */
+  .sf-detail-info{
+    padding:28px 30px!important;
+    border-radius:22px!important;
+    min-width:0!important;
+  }
+  .sf-detail-info .sf-eyebrow{
+    font-size:10px!important;
+    letter-spacing:2.2px!important;
+  }
+  .sf-detail-info h1{
+    font-size:clamp(46px,4.1vw,68px)!important;
+    line-height:1.01!important;
+    letter-spacing:-1.4px!important;
+    margin:8px 0 12px!important;
+  }
+  .sf-detail-price{
+    font-size:36px!important;
+    margin:10px 0 12px!important;
+  }
+  .sf-detail-stock,
+  .sf-detail-availability{
+    font-size:13px!important;
+    padding:8px 12px!important;
+    margin:0 0 12px!important;
+  }
+  .sf-detail-info>.sfp-tools{
+    margin:0 0 14px!important;
+  }
+  .sf-detail-info>.sfp-tools .sfp-actions{
+    display:grid!important;
+    grid-template-columns:1fr 1.45fr!important;
+    gap:10px!important;
+    width:100%!important;
+  }
+  .sf-detail-info>.sfp-tools .sfp-actions button{
+    min-height:48px!important;
+    border-radius:11px!important;
+    font-size:13px!important;
+  }
+  .sf-detail-copy{
+    font-size:15px!important;
+    line-height:1.5!important;
+    padding-bottom:16px!important;
+  }
+  .sf-specs-compact{
+    grid-template-columns:1fr 1fr!important;
+    margin:14px 0!important;
+  }
+  .sf-spec{
+    padding:9px 14px 12px!important;
+  }
+  .sf-spec:first-child{padding-left:0!important}
+  .sf-spec b{
+    font-size:8px!important;
+    letter-spacing:1.2px!important;
+  }
+  .sf-spec span{
+    font-size:12px!important;
+  }
+  .sf-buy-wide{
+    min-height:58px!important;
+    font-size:16px!important;
+    border-radius:11px!important;
+  }
+  .sf-buy-wide svg{
+    width:21px!important;
+    height:21px!important;
+  }
+  .sf-trust-row{
+    margin-top:12px!important;
+    border-radius:12px!important;
+  }
+  .sf-trust-row div{
+    padding:12px 13px!important;
+  }
+  .sf-trust-row strong{
+    font-size:10px!important;
+  }
+  .sf-trust-row span{
+    font-size:9px!important;
+  }
+
+  /* Avoid the huge empty desktop gap before footer */
+  .storefront>main{
+    flex:0 0 auto!important;
+  }
+  .sf-footer{
+    margin-top:0!important;
+  }
+}
+@media (min-width:681px) and (max-width:1100px){
+  .sf-product-section>.sf-container{
+    width:calc(100% - 34px)!important;
+  }
+  .sf-product-view{
+    grid-template-columns:minmax(0,1fr) minmax(360px,.92fr)!important;
+    gap:34px!important;
+  }
+  .sf-product-gallery{
+    grid-template-columns:72px minmax(0,1fr)!important;
+    gap:11px!important;
+  }
+  .sf-thumb{
+    width:72px!important;
+    height:72px!important;
+  }
+  .sf-gallery-main{
+    min-height:420px!important;
+  }
+  .sf-detail-info{
+    padding:22px!important;
+  }
+  .sf-detail-info h1{
+    font-size:42px!important;
+  }
+  .sf-detail-price{
+    font-size:30px!important;
+  }
+}
