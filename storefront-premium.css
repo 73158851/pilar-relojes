@@ -1144,3 +1144,92 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
     aspect-ratio:1.06/1!important;
   }
 }
+
+/* PILAR MOBILE TOUCH TARGETS 56 - 2026-09-20 */
+@media(max-width:680px){
+  /* Comfortable touch targets without visually enlarging the approved UI. */
+  .storefront button,
+  .storefront a{
+    touch-action:manipulation;
+    -webkit-tap-highlight-color:transparent;
+  }
+
+  /* Header icon buttons keep their current visual size, but receive a 44px hit area. */
+  .storefront .sf-menu,
+  .storefront .sf-head-wa{
+    position:relative!important;
+    overflow:visible!important;
+  }
+  .storefront .sf-menu::after,
+  .storefront .sf-head-wa::after{
+    content:"";
+    position:absolute;
+    width:44px;
+    height:44px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+  }
+
+  /* Favourite heart remains visually compact; its invisible tap area is larger. */
+  .storefront .sfp-fav{
+    position:absolute!important;
+    overflow:visible!important;
+  }
+  .storefront .sfp-fav::after{
+    content:"";
+    position:absolute;
+    width:44px;
+    height:44px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    border-radius:50%;
+  }
+
+  /* Product gallery thumbnails: minimum recommended mobile target. */
+  .storefront .sf-thumb{
+    width:44px!important;
+    height:44px!important;
+    flex:0 0 44px!important;
+    min-width:44px!important;
+    min-height:44px!important;
+  }
+
+  /* Navigation and product actions are easy to tap with one hand. */
+  .storefront .sf-back{
+    min-height:44px!important;
+    display:inline-flex!important;
+    align-items:center!important;
+    padding:0 8px!important;
+    margin-left:-8px!important;
+  }
+  .storefront .sf-btn,
+  .storefront .sf-buy-wide,
+  .storefront .sf-premium-actions a{
+    min-height:44px!important;
+  }
+  .storefront .sf-card-bottom a{
+    min-height:44px!important;
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    padding:0 3px!important;
+  }
+
+  /* Gender filters become easier to select without changing their hierarchy. */
+  .storefront .pilar-gender-option{
+    min-height:44px!important;
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    padding:0 15px!important;
+  }
+
+  /* Floating WhatsApp already exceeds the touch target; keep it explicit. */
+  .storefront .sf-float{
+    min-width:48px!important;
+    min-height:48px!important;
+  }
+}
