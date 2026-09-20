@@ -1553,7 +1553,6 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
 }
 
 /* PILAR DESKTOP WIDTH CONTROL 39 - 2026-09-20 */
-/* Desktop-only width discipline. Mobile/tablet are intentionally untouched. */
 @media (min-width:1024px){
   .storefront .sf-container,
   .storefront .sf-topstrip .sf-container,
@@ -1564,25 +1563,21 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
     margin-left:auto!important;
     margin-right:auto!important;
   }
-
   .storefront .sf-product-section>.sf-container{
     width:min(1180px,calc(100% - 64px))!important;
     max-width:1180px!important;
     margin-left:auto!important;
     margin-right:auto!important;
   }
-
   .storefront .sf-product-view{
     grid-template-columns:minmax(0,1fr) minmax(420px,480px)!important;
     gap:40px!important;
   }
-
   .storefront .sf-detail-info{
     width:100%!important;
     max-width:480px!important;
     justify-self:end!important;
   }
-
   .storefront .sf-grid,
   .storefront .sf-grid-3{
     max-width:1180px!important;
@@ -1590,8 +1585,6 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
     margin-right:auto!important;
   }
 }
-
-/* Large monitors keep breathing room instead of stretching the storefront. */
 @media (min-width:1440px){
   .storefront .sf-container,
   .storefront .sf-topstrip .sf-container,
@@ -1601,18 +1594,11 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
     width:min(1200px,calc(100% - 96px))!important;
     max-width:1200px!important;
   }
-
   .storefront .sf-product-view{
     grid-template-columns:minmax(0,1fr) 490px!important;
     gap:48px!important;
   }
-
-  .storefront .sf-detail-info{
-    max-width:490px!important;
-  }
-
+  .storefront .sf-detail-info{max-width:490px!important}
   .storefront .sf-grid,
-  .storefront .sf-grid-3{
-    max-width:1200px!important;
-  }
+  .storefront .sf-grid-3{max-width:1200px!important}
 }
