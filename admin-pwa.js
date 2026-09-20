@@ -27,21 +27,7 @@ async function hasSession(){const {data:{user}}=await S.auth.getUser();if(!user)
 function removeButton(){document.querySelector('.pilar-admin-install')?.remove()}
 function showInstallHelp(){alert('Chrome aún no habilitó la instalación nativa. Cierra esta pestaña, vuelve a abrir el enlace de PILAR Admin en Chrome y espera unos segundos. Si continúa igual, toca ⋮ y revisa si aparece “Instalar aplicación”.')}
 
-function showButton(){
-  installPrompt=installPrompt||window.__PILAR_ADMIN_INSTALL_PROMPT__||null;
-  if(!authenticated||adminInstalled()||document.querySelector('.pilar-admin-install'))return;
-  const b=document.createElement('button');
-  b.type='button';b.className='pilar-admin-install pa-btn primary';b.innerHTML='⬇ Instalar PILAR Admin';
-  Object.assign(b.style,{position:'fixed',right:'16px',bottom:'16px',zIndex:'10000',padding:'12px 17px',borderRadius:'999px',boxShadow:'0 10px 30px rgba(0,0,0,.25)',fontWeight:'800'});
-  b.onclick=async()=>{
-    const prompt=installPrompt||window.__PILAR_ADMIN_INSTALL_PROMPT__;
-    if(!prompt){showInstallHelp();return}
-    prompt.prompt();
-    const result=await prompt.userChoice;
-    if(result.outcome==='accepted'){installPrompt=null;window.__PILAR_ADMIN_INSTALL_PROMPT__=null;removeButton()}
-  };
-  document.body.appendChild(b);
-}
+function showButton(){removeButton()}
 
 async function syncAuth(){authenticated=sessionStorage.getItem('pilar_admin_authenticated_v1')==='1'&&await hasSession();if(authenticated)showButton();else removeButton()}
 
