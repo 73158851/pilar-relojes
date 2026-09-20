@@ -1095,3 +1095,52 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
     font-size:9px!important;
   }
 }
+
+/* PILAR UNIFORM PRODUCT IMAGES 2026-09-20 */
+/* Visual-only normalization: no product data or layout logic changes. */
+.storefront .sf-card-media{
+  aspect-ratio:1.06/1!important;
+  display:grid!important;
+  place-items:center!important;
+  overflow:hidden!important;
+}
+.storefront .sf-card-media img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+}
+.storefront .sf-gallery-main{
+  display:grid!important;
+  place-items:center!important;
+  overflow:hidden!important;
+}
+.storefront .sf-gallery-main img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+}
+.storefront .sf-thumb{
+  overflow:hidden!important;
+}
+.storefront .sf-thumb img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+}
+
+/* Keep the approved mobile catalog footprint while using the same image rules. */
+@media(max-width:680px){
+  .storefront .sf-card-media{
+    aspect-ratio:1.06/1!important;
+  }
+}
