@@ -716,3 +716,140 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
     max-width:450px!important;
   }
 }
+
+/* PILAR DESKTOP-SITE PHONE FIX 2026-09-20 */
+@media (min-width:681px) and (max-width:1100px){
+  /* Chrome Android "sitio para computadoras" reports a very tall desktop viewport.
+     Cap the product section so it does not create a huge empty block. */
+  .storefront>main{
+    flex:0 0 auto!important;
+  }
+  .sf-product-section{
+    min-height:min(930px,calc(100vh - 290px))!important;
+    padding:34px 0 54px!important;
+  }
+
+  /* Match the visual weight of the approved reference */
+  .sf-product-section>.sf-container{
+    width:calc(100% - 30px)!important;
+    max-width:none!important;
+  }
+  .sf-product-view{
+    grid-template-columns:minmax(0,1.04fr) minmax(340px,.96fr)!important;
+    gap:30px!important;
+  }
+  .sf-product-gallery{
+    grid-template-columns:66px minmax(0,1fr)!important;
+    gap:11px!important;
+  }
+  .sf-thumb{
+    width:66px!important;
+    height:66px!important;
+  }
+  .sf-gallery-main{
+    aspect-ratio:1.04/1!important;
+    border-radius:18px!important;
+  }
+  .sf-gallery-main img{
+    padding:12px!important;
+  }
+  .sf-detail-info{
+    max-width:420px!important;
+    padding:20px 20px!important;
+    border-radius:17px!important;
+  }
+  .sf-detail-info h1{
+    font-size:38px!important;
+    line-height:1.03!important;
+    margin:6px 0 9px!important;
+  }
+  .sf-detail-price{
+    font-size:28px!important;
+  }
+
+  /* Header should not look miniaturized in desktop-site mode */
+  .sf-topstrip{
+    height:34px!important;
+    font-size:10px!important;
+  }
+  .sf-topstrip .sf-container{
+    width:calc(100% - 30px)!important;
+    justify-content:space-between!important;
+  }
+  .sf-bar{
+    height:92px!important;
+    grid-template-columns:56px 1fr 56px!important;
+    gap:10px!important;
+  }
+  .sf-bar .sf-container{width:calc(100% - 30px)!important}
+  .sf-logo{
+    justify-self:center!important;
+  }
+  .sf-logo img{
+    width:122px!important;
+    height:56px!important;
+  }
+  .sf-menu{
+    display:block!important;
+    justify-self:start!important;
+    font-size:30px!important;
+  }
+  .sf-head-wa{
+    display:block!important;
+    justify-self:end!important;
+  }
+  .sf-nav{
+    display:none!important;
+  }
+  .sf-subbar .sf-container{
+    width:calc(100% - 30px)!important;
+    height:46px!important;
+    font-size:10px!important;
+  }
+  .sf-back{
+    font-size:12px!important;
+  }
+
+  /* Footer sized like the reference instead of a tiny desktop strip */
+  .sf-footer{
+    margin-top:0!important;
+  }
+  .sf-footer .sf-container{
+    width:calc(100% - 34px)!important;
+  }
+  .sf-footer-grid{
+    grid-template-columns:1.15fr 1fr 1fr!important;
+    gap:18px!important;
+    padding:24px 0 20px!important;
+  }
+  .sf-footer-intro{
+    grid-column:auto!important;
+    display:block!important;
+    border-bottom:0!important;
+    padding-bottom:0!important;
+  }
+  .sf-footer-intro strong{
+    font-size:22px!important;
+    margin-bottom:8px!important;
+  }
+  .sf-footer-intro p{
+    font-size:10px!important;
+    text-align:left!important;
+    max-width:220px!important;
+  }
+  .sf-footer h4{
+    font-size:9px!important;
+    margin-bottom:7px!important;
+  }
+  .sf-footer p,.sf-footer a{
+    font-size:10px!important;
+    line-height:1.45!important;
+  }
+  .sf-footer-grid>div:last-child{
+    display:none!important;
+  }
+  .sf-footer-meta{
+    padding:9px!important;
+    font-size:8px!important;
+  }
+}
