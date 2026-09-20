@@ -1523,3 +1523,31 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
     padding:0 14px!important;
   }
 }
+
+/* PILAR PRODUCT ACTION POSITION FIX 2026-09-20 */
+@media(max-width:680px){
+  /* The catalog heart remains overlayed; the detail-page heart must stay in normal flow. */
+  .storefront .sf-detail-info>.sfp-tools .sfp-actions .sfp-fav{
+    position:relative!important;
+    inset:auto!important;
+    top:auto!important;
+    right:auto!important;
+    bottom:auto!important;
+    left:auto!important;
+    transform:none!important;
+    z-index:auto!important;
+    width:44px!important;
+    min-width:44px!important;
+    max-width:44px!important;
+    height:44px!important;
+    padding:0!important;
+  }
+  .storefront .sf-detail-info>.sfp-tools .sfp-actions .sfp-fav::after{
+    width:44px!important;
+    height:44px!important;
+  }
+  .storefront .sf-detail-info>.sfp-tools .sfp-actions button:last-child{
+    position:relative!important;
+    z-index:1!important;
+  }
+}
