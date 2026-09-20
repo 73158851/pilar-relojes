@@ -371,3 +371,7 @@ linear-gradient(145deg,#02070b 0%,#071522 50%,#02080d 100%);color:#f7f8fa;displa
 /* PILAR drawer identity — supplied reference */
 .pa-brand .pa-logo{width:150px!important;height:150px!important;object-fit:cover!important;border-radius:30px!important;background:#0b0d10!important;border:1px solid rgba(229,173,60,.55)!important;box-shadow:0 12px 32px rgba(0,0,0,.28),0 0 0 1px rgba(255,215,120,.08)!important}.pa-brand{align-items:center!important}.pa-brand>span{margin-top:10px!important}
 @media(max-width:760px){.pa-brand .pa-logo{width:150px!important;height:150px!important;border-radius:28px!important}.pa-brand>span{margin-top:10px!important}}
+
+/* Reliable inline PILAR ADMIN identity in drawer */
+.pa-brand .pa-menu-logo{width:150px;height:150px;flex:0 0 150px;border-radius:30px;overflow:hidden;display:block;background:#0b0e12;box-shadow:0 12px 32px rgba(0,0,0,.28),0 0 0 1px rgba(229,173,60,.18)}.pa-brand .pa-menu-logo svg{display:block;width:100%;height:100%}.pa-brand>span{margin-top:10px!important}
+@media(max-width:760px){.pa-brand .pa-menu-logo{width:150px;height:150px;flex-basis:150px;border-radius:28px}}
