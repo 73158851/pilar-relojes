@@ -309,3 +309,20 @@
  .pa-input{height:35px!important;font-size:11px!important}
  .pax-attention{display:none!important}
 }
+
+/* PILAR approved drawer branding + logout */
+.pa-drawer-footer{margin-top:auto;padding:18px 10px 22px;border-top:1px solid rgba(255,255,255,.09)}
+.pa-drawer-logout{width:100%;display:flex;align-items:center;gap:13px;padding:12px 14px;border:1px solid rgba(255,88,96,.32);border-radius:12px;background:rgba(7,27,42,.58);color:#f4f7fb;font:inherit;font-weight:650;cursor:pointer;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+.pa-drawer-logout:active{transform:scale(.98)}
+.pa-drawer-logout:hover{background:rgba(255,77,87,.08);border-color:rgba(255,88,96,.55)}
+.pa-logout-icon{width:25px;height:25px;color:#ff515b;display:grid;place-items:center}
+.pa-logout-icon svg{width:25px;height:25px}
+@media(max-width:900px){
+ .pa-top .pa-nav{display:flex!important;flex-direction:column!important;height:100%!important;overflow-y:auto!important}
+ .pa-top .pa-brand{flex:0 0 auto!important}
+ .pa-top .pa-brand .pa-logo{width:92px!important;height:92px!important;object-fit:cover!important;border-radius:18px!important;box-shadow:0 7px 22px rgba(211,157,40,.18)!important}
+ .pa-top .pa-tabs{flex:0 0 auto!important}
+ .pa-drawer-footer{margin-top:auto!important;padding:15px 9px 18px!important}
+ .pa-drawer-logout{font-size:12px!important;padding:10px 12px!important}
+ .pa-logout-icon,.pa-logout-icon svg{width:21px!important;height:21px!important}
+}
