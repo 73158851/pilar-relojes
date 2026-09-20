@@ -367,3 +367,7 @@ linear-gradient(145deg,#02070b 0%,#071522 50%,#02080d 100%);color:#f7f8fa;displa
 /* Login final fidelity — approved reference */
 .pa-login-crown{width:112px!important;height:65px!important;color:#e5ad3c!important;filter:drop-shadow(0 0 10px rgba(229,173,60,.24))!important}.pa-login-crown svg{display:block;width:100%!important;height:100%!important;overflow:visible}.pa-loginbox-lux .pa-login-title,.pa-login-lux .pa-login-title{color:#fff!important;-webkit-text-fill-color:#fff!important;text-shadow:0 2px 16px rgba(0,0,0,.42)!important;font-weight:850!important;opacity:1!important}.pa-login-wordmark{color:#fff!important;-webkit-text-fill-color:#fff!important}.pa-loginbox-lux{color:#fff!important}
 @media(max-width:600px){.pa-login-crown{width:94px!important;height:56px!important}.pa-loginbox-lux .pa-login-title,.pa-login-lux .pa-login-title{font-size:30px!important;color:#fff!important;-webkit-text-fill-color:#fff!important}}
+
+/* PILAR drawer identity — supplied reference */
+.pa-brand .pa-logo{width:150px!important;height:150px!important;object-fit:cover!important;border-radius:30px!important;background:#0b0d10!important;border:1px solid rgba(229,173,60,.55)!important;box-shadow:0 12px 32px rgba(0,0,0,.28),0 0 0 1px rgba(255,215,120,.08)!important}.pa-brand{align-items:center!important}.pa-brand>span{margin-top:10px!important}
+@media(max-width:760px){.pa-brand .pa-logo{width:150px!important;height:150px!important;border-radius:28px!important}.pa-brand>span{margin-top:10px!important}}
