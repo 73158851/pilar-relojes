@@ -19,3 +19,121 @@
 .pa-previewinfo{background:#fff;border:1px solid #e4dac8;border-radius:18px;padding:22px;color:#14213a}.pa-previewbrand{font-size:10px;font-weight:900;letter-spacing:.17em;text-transform:uppercase;color:#a87927}.pa-previewinfo h2{font-family:Georgia,serif;font-size:38px;line-height:1.02;font-weight:500;margin:8px 0 12px}.pa-previewprice{font-size:27px;font-weight:900;color:#b57c18;margin-bottom:10px}.pa-previewstock{display:inline-flex;border:1px solid #e4dac8;border-radius:999px;padding:8px 12px;font-size:11px;font-weight:800}.pa-previewstock.ok{color:#248252}.pa-previewstock.out{color:#a33}
 .pa-previewactions{display:grid;grid-template-columns:52px 1fr;gap:9px;margin:12px 0}.pa-previewactions button{height:44px;border:1px solid #ded7cc;border-radius:10px;background:#fff;color:#14213a;font-weight:800}.pa-previewinfo p{font-size:13px;line-height:1.5;color:#777167;border-bottom:1px solid #e9e2d8;padding-bottom:14px}.pa-previewspecs{display:grid;grid-template-columns:1fr 1fr;margin:12px 0}.pa-previewspecs>div{display:grid;gap:6px;padding:8px 10px 8px 0}.pa-previewspecs>div+div{border-left:1px solid #e9e2d8;padding-left:12px}.pa-previewspecs span{font-size:8px;font-weight:900;letter-spacing:.14em;color:#8a8d91}.pa-previewspecs b{font-size:11px}.pa-previewwa{height:54px;border-radius:11px;background:linear-gradient(135deg,#c78a1b,#edc34f);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;margin-top:8px}.pa-previewvisibility{display:block;margin-top:10px;text-align:center;color:#7d8794}.pa-previewnote{margin-top:14px;padding:11px 13px;border-radius:11px;background:#fff9e9;border:1px solid #ead9a5;color:#765b1d;font-size:11px;text-align:center}
 @media(max-width:760px){.pa-preview{padding:8px}.pa-previewbox{padding:12px;border-radius:16px}.pa-previewstage{grid-template-columns:1fr;gap:12px}.pa-previewgallery{padding:0}.pa-previewimage{max-height:38vh}.pa-previewinfo{padding:16px}.pa-previewinfo h2{font-size:31px}.pa-previewprice{font-size:23px}.pa-previewtop strong{font-size:13px}.pa-savebar{flex-wrap:wrap}.pa-savebar .previewp{order:2}.pa-savebar .savep{order:3}}
+
+/* PILAR PRODUCT PREVIEW MOBILE SCALE FIX 2026-09-20 */
+@media(max-width:760px){
+  .pa-preview{
+    padding:8px!important;
+    align-items:start!important;
+    overflow:auto!important;
+  }
+  .pa-previewbox{
+    width:min(92vw,520px)!important;
+    max-height:none!important;
+    margin:10px auto 24px!important;
+    padding:10px!important;
+    border-radius:14px!important;
+  }
+  .pa-previewtop{
+    padding:2px 2px 10px!important;
+  }
+  .pa-previewtop span{
+    font-size:8px!important;
+    letter-spacing:.13em!important;
+  }
+  .pa-previewtop strong{
+    font-size:12px!important;
+    line-height:1.25!important;
+  }
+  .pa-previewtop .pa-btn{
+    padding:7px 10px!important;
+    font-size:10px!important;
+  }
+  .pa-previewstage{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:10px!important;
+  }
+  .pa-previewgallery{
+    padding:0!important;
+  }
+  .pa-previewimage{
+    aspect-ratio:1.18/1!important;
+    max-height:30vh!important;
+    min-height:0!important;
+    border-radius:14px!important;
+  }
+  .pa-previewimage img{
+    object-fit:contain!important;
+  }
+  .pa-previewbadges{
+    top:7px!important;
+    left:7px!important;
+    gap:4px!important;
+  }
+  .pa-previewbadges span{
+    padding:4px 7px!important;
+    font-size:7px!important;
+  }
+  .pa-previewinfo{
+    padding:13px!important;
+    border-radius:14px!important;
+  }
+  .pa-previewbrand{
+    font-size:8px!important;
+  }
+  .pa-previewinfo h2{
+    font-size:26px!important;
+    line-height:1.04!important;
+    margin:6px 0 8px!important;
+  }
+  .pa-previewprice{
+    font-size:20px!important;
+    margin-bottom:8px!important;
+  }
+  .pa-previewstock{
+    padding:6px 10px!important;
+    font-size:9px!important;
+  }
+  .pa-previewactions{
+    grid-template-columns:44px minmax(0,1fr)!important;
+    gap:8px!important;
+    margin:9px 0!important;
+  }
+  .pa-previewactions button{
+    height:40px!important;
+    font-size:10px!important;
+  }
+  .pa-previewinfo p{
+    font-size:11px!important;
+    line-height:1.4!important;
+    margin:8px 0!important;
+    padding-bottom:10px!important;
+  }
+  .pa-previewspecs{
+    margin:8px 0!important;
+  }
+  .pa-previewspecs>div{
+    padding:6px 8px 6px 0!important;
+  }
+  .pa-previewspecs span{
+    font-size:7px!important;
+  }
+  .pa-previewspecs b{
+    font-size:9px!important;
+  }
+  .pa-previewwa{
+    height:44px!important;
+    font-size:11px!important;
+    margin-top:6px!important;
+  }
+  .pa-previewvisibility{
+    margin-top:7px!important;
+    font-size:10px!important;
+  }
+  .pa-previewnote{
+    margin-top:10px!important;
+    padding:8px 10px!important;
+    font-size:9px!important;
+  }
+}
