@@ -137,3 +137,27 @@
     font-size:9px!important;
   }
 }
+
+/* PILAR PRODUCT PREVIEW MULTI IMAGE FIX 2026-09-20 */
+.pa-previewthumbs{
+  display:flex;gap:8px;margin-top:9px;padding:2px 1px 3px;overflow-x:auto;scrollbar-width:thin;
+}
+.pa-previewthumb{
+  flex:0 0 82px;padding:4px;border:1px solid #ddd5c8;border-radius:10px;background:#fff;
+  cursor:pointer;text-align:left;color:#596477;
+}
+.pa-previewthumb img{
+  width:100%;aspect-ratio:1/1;display:block;object-fit:cover;border-radius:7px;background:#f4efe5;
+}
+.pa-previewthumb span{
+  display:block;padding:4px 2px 1px;font-size:8px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.pa-previewthumb.active{
+  border-color:#c89535;box-shadow:0 0 0 2px rgba(200,149,53,.16);
+}
+@media(max-width:760px){
+  .pa-previewthumbs{gap:6px;margin-top:7px}
+  .pa-previewthumb{flex-basis:60px;padding:3px;border-radius:8px}
+  .pa-previewthumb img{border-radius:6px}
+  .pa-previewthumb span{font-size:6px;padding-top:3px}
+}
