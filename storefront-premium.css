@@ -1460,3 +1460,66 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
     max-width:520px!important;
   }
 }
+
+/* PILAR MOBILE DRAWER + PRODUCT ACTIONS FIX 2026-09-20 */
+@media(max-width:680px){
+  /* Narrower storefront drawer: keeps the page visible behind it. */
+  .storefront .sf-drawer-panel{
+    width:min(300px,76vw)!important;
+    max-width:300px!important;
+    padding:20px 18px 18px!important;
+  }
+  .storefront .sf-drawer-head{
+    padding-bottom:16px!important;
+    margin-bottom:8px!important;
+  }
+  .storefront .sf-drawer-head img{
+    width:96px!important;
+    height:46px!important;
+  }
+  .storefront .sf-drawer-panel>a:not(.sf-drawer-wa){
+    min-height:52px!important;
+    padding:13px 8px 13px 44px!important;
+    font-size:14px!important;
+  }
+  .storefront .sf-drawer-panel>a:not(.sf-drawer-wa):before{
+    left:9px!important;
+    width:23px!important;
+    font-size:18px!important;
+  }
+  .storefront .sf-drawer-wa{
+    min-height:56px!important;
+    padding:10px 12px!important;
+    font-size:12px!important;
+  }
+
+  /* Restore the approved product actions: heart separate from Share. */
+  .storefront .sf-detail-info>.sfp-tools .sfp-actions{
+    display:grid!important;
+    grid-template-columns:44px minmax(0,1fr)!important;
+    gap:10px!important;
+    width:100%!important;
+    align-items:stretch!important;
+  }
+  .storefront .sf-detail-info>.sfp-tools .sfp-actions button{
+    min-height:44px!important;
+    height:44px!important;
+    margin:0!important;
+    border-radius:10px!important;
+    font-size:11px!important;
+    display:inline-flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    white-space:nowrap!important;
+  }
+  .storefront .sf-detail-info>.sfp-tools .sfp-actions button:first-child{
+    width:44px!important;
+    min-width:44px!important;
+    padding:0!important;
+  }
+  .storefront .sf-detail-info>.sfp-tools .sfp-actions button:last-child{
+    width:100%!important;
+    min-width:0!important;
+    padding:0 14px!important;
+  }
+}
