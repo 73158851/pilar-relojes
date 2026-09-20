@@ -1,6 +1,6 @@
 const admin=location.pathname.startsWith('/admin');
 if(admin){
-  await import('/admin-v2.js?v=20260920-login-fix-2');
+  await import('/admin-v2.js?v=20260920-catalog-order-1');
   await import('/admin-enhance.js?v=20260916-save-fix-1');
   await import('/admin-sales.js?v=20260916-sales-2');
   await import('/admin-product-gender.js?v=20260919-stable-4');
@@ -9,7 +9,7 @@ if(admin){
   await import('/admin-pwa.js?v=20260919-stable-4');
   await import('/admin-realtime.js?v=20260919-stable-4');
 }else{
-  await import('/storefront.js?v=20260919-detail-scale-1');
+  await import('/storefront.js?v=20260920-catalog-order-1');
   await import('/store-enhance.js?v=20260919-stable-4');
   await import('/storefront-lightbox.js');
   await import('/store-pro.js?v=20260919-stable-4');
