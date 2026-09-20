@@ -1602,3 +1602,56 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
   .storefront .sf-grid,
   .storefront .sf-grid-3{max-width:1200px!important}
 }
+
+/* PILAR SKELETON LOADERS 33 - 2026-09-20 */
+@keyframes pilarSkeletonPulse{
+  0%,100%{opacity:.58}
+  50%{opacity:1}
+}
+.storefront .sf-skeleton-page .sf-skeleton-block,
+.storefront .sf-skeleton-page .sf-skeleton-line,
+.storefront .sf-skeleton-page .sf-skeleton-actions span,
+.storefront .sf-skeleton-page .sf-skeleton-specs span,
+.storefront .sf-skeleton-page .sf-skeleton-buy{
+  background:linear-gradient(110deg,#f0ede6 8%,#f8f6f1 18%,#f0ede6 33%)!important;
+  background-size:200% 100%!important;
+  border-color:transparent!important;
+  animation:pilarSkeletonPulse 1.25s ease-in-out infinite;
+  color:transparent!important;
+  pointer-events:none!important;
+}
+.storefront .sf-skeleton-card{pointer-events:none}
+.storefront .sf-skeleton-card:hover{transform:none!important;box-shadow:0 8px 24px rgba(17,24,39,.04)!important}
+.storefront .sf-skeleton-line{display:block;height:10px;border-radius:999px}
+.storefront .sf-skeleton-line.short{width:30%;height:7px}
+.storefront .sf-skeleton-line.name{width:78%;height:17px;margin:8px 0 11px}
+.storefront .sf-skeleton-line.price{width:42%;height:18px}
+.storefront .sf-skeleton-line.stock{width:30%;height:8px}
+.storefront .sf-skeleton-line.link{width:28%;height:8px;margin-left:auto}
+.storefront .sf-skeleton-line.count{width:64px;height:10px;margin-bottom:7px}
+.storefront .sf-skeleton-detail .sf-skeleton-line.detail-title{width:82%;height:48px;margin:12px 0}
+.storefront .sf-skeleton-detail .sf-skeleton-line.detail-price{width:38%;height:28px;margin:12px 0}
+.storefront .sf-skeleton-detail .sf-skeleton-line.pill{width:90px;height:32px;margin:10px 0}
+.storefront .sf-skeleton-actions{display:grid;grid-template-columns:44px 1fr;gap:10px;margin:10px 0}
+.storefront .sf-skeleton-actions span{height:44px;border-radius:10px}
+.storefront .sf-skeleton-line.copy{width:100%;height:11px;margin-top:16px}
+.storefront .sf-skeleton-line.copy.small{width:72%;margin-top:8px}
+.storefront .sf-skeleton-specs{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin:18px 0}
+.storefront .sf-skeleton-specs span{height:52px;border-radius:7px}
+.storefront .sf-skeleton-buy{width:100%;height:52px;border-radius:10px}
+@media(max-width:680px){
+  .storefront .sf-skeleton-line.name{height:10px;margin:5px 0 7px}
+  .storefront .sf-skeleton-line.price{height:12px}
+  .storefront .sf-skeleton-line.short{height:5px}
+  .storefront .sf-skeleton-detail .sf-skeleton-line.detail-title{height:38px;margin:8px 0}
+  .storefront .sf-skeleton-detail .sf-skeleton-line.detail-price{height:20px;margin:8px 0}
+  .storefront .sf-skeleton-detail .sf-skeleton-line.pill{height:28px}
+  .storefront .sf-skeleton-buy{height:44px}
+}
+@media(prefers-reduced-motion:reduce){
+  .storefront .sf-skeleton-page .sf-skeleton-block,
+  .storefront .sf-skeleton-page .sf-skeleton-line,
+  .storefront .sf-skeleton-page .sf-skeleton-actions span,
+  .storefront .sf-skeleton-page .sf-skeleton-specs span,
+  .storefront .sf-skeleton-page .sf-skeleton-buy{animation:none!important}
+}
