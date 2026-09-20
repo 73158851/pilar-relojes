@@ -18,7 +18,7 @@ function enhanceHero(){
     </div>
     <div class="sf-premium-visual">
       <div class="sf-premium-script">Más que<br>relojes, <em>historias</em><br>contigo.</div>
-      <img src="${HERO_IMAGE}" alt="Reloj destacado PILAR" fetchpriority="high">
+      <img src="${HERO_IMAGE}" alt="Reloj destacado PILAR" width="480" height="450" fetchpriority="high" decoding="async">
       <span class="sf-premium-glow" aria-hidden="true"></span>
     </div>
     <div class="sf-premium-benefits">
