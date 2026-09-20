@@ -1655,3 +1655,138 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
   .storefront .sf-skeleton-page .sf-skeleton-specs span,
   .storefront .sf-skeleton-page .sf-skeleton-buy{animation:none!important}
 }
+
+/* PILAR SUBTLE MOTION 36 - 2026-09-20 */
+@keyframes pilarFadeUp{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes pilarFadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+@keyframes pilarDrawerIn{
+  from{transform:translateX(-18px);opacity:.96}
+  to{transform:translateX(0);opacity:1}
+}
+
+/* Page content arrives softly after skeleton/data replacement. */
+.storefront main>section:not(.sf-skeleton-page){
+  animation:pilarFadeIn .24s ease both;
+}
+
+/* Catalog cards reveal in a controlled stagger without changing layout. */
+.storefront .sf-grid:not(.sf-skeleton-page .sf-grid) .sf-card{
+  animation:pilarFadeUp .28s ease both;
+}
+.storefront .sf-grid .sf-card:nth-child(2){animation-delay:.025s}
+.storefront .sf-grid .sf-card:nth-child(3){animation-delay:.05s}
+.storefront .sf-grid .sf-card:nth-child(4){animation-delay:.075s}
+.storefront .sf-grid .sf-card:nth-child(5){animation-delay:.1s}
+.storefront .sf-grid .sf-card:nth-child(6){animation-delay:.125s}
+.storefront .sf-grid .sf-card:nth-child(n+7){animation-delay:.15s}
+
+/* Product detail enters as two coordinated blocks. */
+.storefront .sf-product-gallery{
+  animation:pilarFadeUp .3s ease both;
+}
+.storefront .sf-detail-info{
+  animation:pilarFadeUp .34s ease .04s both;
+}
+
+/* Drawer uses a short, elegant slide. */
+.storefront .sf-drawer.open .sf-drawer-panel{
+  animation:pilarDrawerIn .22s cubic-bezier(.2,.8,.2,1) both;
+}
+
+/* Micro-interactions. */
+.storefront .sf-btn,
+.storefront .sf-buy-wide,
+.storefront .sf-premium-actions a,
+.storefront .sf-card-bottom a,
+.storefront .sf-thumb,
+.storefront .sfp-fav,
+.storefront .sf-menu,
+.storefront .sf-head-wa,
+.storefront .sf-float{
+  transition:
+    transform .16s ease,
+    box-shadow .18s ease,
+    border-color .18s ease,
+    background-color .18s ease,
+    color .18s ease!important;
+}
+
+@media (hover:hover) and (pointer:fine){
+  .storefront .sf-btn:hover,
+  .storefront .sf-buy-wide:hover,
+  .storefront .sf-premium-actions a:hover{
+    transform:translateY(-2px)!important;
+  }
+  .storefront .sf-thumb:hover{
+    transform:translateY(-1px)!important;
+  }
+  .storefront .sfp-fav:hover,
+  .storefront .sf-menu:hover,
+  .storefront .sf-head-wa:hover,
+  .storefront .sf-float:hover{
+    transform:scale(1.04)!important;
+  }
+}
+
+.storefront .sf-btn:active,
+.storefront .sf-buy-wide:active,
+.storefront .sf-premium-actions a:active,
+.storefront .sf-card-bottom a:active,
+.storefront .sf-thumb:active,
+.storefront .sfp-fav:active,
+.storefront .sf-menu:active,
+.storefront .sf-head-wa:active,
+.storefront .sf-float:active{
+  transform:scale(.97)!important;
+}
+
+/* Main product image changes feel smoother without delaying interaction. */
+.storefront .sf-gallery-main img{
+  transition:opacity .18s ease,transform .22s ease!important;
+}
+.storefront .sf-thumb.active{
+  transition:transform .16s ease,border-color .18s ease,box-shadow .18s ease!important;
+}
+
+/* Keep mobile calmer: no card hover lift, only subtle reveal/tap feedback. */
+@media(max-width:680px){
+  .storefront .sf-grid .sf-card{
+    animation-duration:.22s;
+  }
+  .storefront .sf-product-gallery{
+    animation-duration:.24s;
+  }
+  .storefront .sf-detail-info{
+    animation-duration:.26s;
+    animation-delay:.02s;
+  }
+}
+
+/* Accessibility: disable all non-essential motion when requested by the OS/browser. */
+@media(prefers-reduced-motion:reduce){
+  .storefront main>section,
+  .storefront .sf-card,
+  .storefront .sf-product-gallery,
+  .storefront .sf-detail-info,
+  .storefront .sf-drawer-panel{
+    animation:none!important;
+  }
+  .storefront .sf-btn,
+  .storefront .sf-buy-wide,
+  .storefront .sf-premium-actions a,
+  .storefront .sf-card-bottom a,
+  .storefront .sf-thumb,
+  .storefront .sfp-fav,
+  .storefront .sf-menu,
+  .storefront .sf-head-wa,
+  .storefront .sf-float,
+  .storefront .sf-gallery-main img{
+    transition:none!important;
+  }
+}
