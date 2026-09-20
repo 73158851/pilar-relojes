@@ -1,6 +1,6 @@
 const admin=location.pathname.startsWith('/admin');
 if(admin){
-  await import('/admin-v2.js?v=20260920-mobile-final-1');
+  await import('/admin-v2.js?v=20260920-drawer-final-1');
   await import('/admin-enhance.js?v=20260916-save-fix-1');
   await import('/admin-sales.js?v=20260916-sales-2');
   await import('/admin-product-gender.js?v=20260919-stable-4');
