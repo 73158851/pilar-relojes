@@ -426,3 +426,60 @@ linear-gradient(145deg,#02070b 0%,#071522 50%,#02080d 100%);color:#f7f8fa;displa
   .pa-brand .pa-menu-logo{width:116px!important;height:116px!important;flex-basis:116px!important}
   .pa-tab{min-height:49px!important;font-size:13.5px!important}
 }
+
+/* PILAR mobile professional scale v2 — 2026-09-20 */
+@media (max-width:760px){
+  /* Drawer: closer to the approved narrow reference */
+  .pa-top{width:min(64vw,280px)!important}
+  .pa-top .pa-nav{padding:18px 12px 14px!important}
+  .pa-brand .pa-menu-logo{width:104px!important;height:104px!important;flex-basis:104px!important;border-radius:21px!important}
+  .pa-brand>span{font-size:8.5px!important;letter-spacing:2.5px!important;margin-top:7px!important}
+  .pa-tabs{gap:5px!important;margin-top:18px!important}
+  .pa-tab{min-height:46px!important;padding:9px 11px!important;border-radius:11px!important;font-size:12.5px!important;gap:10px!important}
+  .pa-tab-icon,.pa-tab-icon svg{width:19px!important;height:19px!important}
+  .pa-drawer-footer{padding:10px 2px 6px!important}
+  .pa-drawer-logout{min-height:44px!important;font-size:12px!important;padding:9px 10px!important;border-radius:10px!important}
+  .pa-logout-icon,.pa-logout-icon svg{width:19px!important;height:19px!important}
+
+  /* Main panel: denser, professional mobile scale */
+  .padmin{font-size:13px!important}
+  .pa-main{padding:14px 12px 28px!important}
+  .pa-mobile-top{min-height:56px!important;padding:8px 12px!important}
+  .pa-menu-toggle{width:40px!important;height:40px!important;font-size:20px!important}
+  .pa-title{font-size:22px!important;line-height:1.12!important}
+  .pa-sub{font-size:11.5px!important;line-height:1.35!important;margin-top:4px!important}
+  .pa-headrow{gap:9px!important;margin-bottom:12px!important}
+  .pa-btn{min-height:36px!important;padding:7px 10px!important;font-size:11.5px!important;border-radius:9px!important}
+  .pa-card{border-radius:15px!important;padding:13px!important}
+  .pa-stats{gap:8px!important}
+  .pa-stat{min-height:70px!important;padding:11px!important;border-radius:14px!important}
+  .pa-stat-icon{width:34px!important;height:34px!important;font-size:15px!important}
+  .pa-stat strong{font-size:18px!important}
+  .pa-stat span{font-size:9.5px!important}
+  .pa-dashboard-grid{gap:10px!important}
+  .pa-card-title h3{font-size:14.5px!important}
+  .pa-card-title span,.pa-card-title button{font-size:10px!important}
+  .pa-recent-row{padding:7px 0!important;gap:8px!important}
+  .pa-recent-row img,.pa-recent-placeholder{width:42px!important;height:42px!important;border-radius:9px!important}
+  .pa-recent-row b{font-size:11.5px!important}
+  .pa-recent-row span,.pa-recent-row em{font-size:9.5px!important}
+  .pa-table{font-size:10.5px!important}
+  .pa-table th{font-size:8.5px!important;padding:8px 7px!important}
+  .pa-table td{padding:9px 7px!important}
+  .pa-actions{gap:4px!important}
+  .pa-actions .pa-btn{min-height:32px!important;padding:5px 7px!important;font-size:9.5px!important}
+  .pa-settings{padding:11px!important}
+  .pa-setting{padding:9px 0!important;gap:8px!important}
+  .pa-seticon{width:34px!important;height:34px!important;border-radius:9px!important}
+  .pa-seticon svg{width:18px!important;height:18px!important}
+  .pa-setting label{font-size:10.5px!important}
+  .pa-input{min-height:38px!important;font-size:11.5px!important;padding:8px 9px!important}
+  .pa-setting-control small{font-size:8.5px!important}
+}
+@media (max-width:390px){
+  .pa-top{width:min(66vw,262px)!important}
+  .pa-main{padding-left:10px!important;padding-right:10px!important}
+  .pa-title{font-size:21px!important}
+  .pa-brand .pa-menu-logo{width:98px!important;height:98px!important;flex-basis:98px!important}
+  .pa-tab{min-height:44px!important;font-size:12px!important}
+}
