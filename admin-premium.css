@@ -179,3 +179,34 @@
   .pa-stock-legend{min-width:0;flex:1}
   .pa-recent-row{grid-template-columns:40px minmax(0,1fr) auto}.pa-recent-row img,.pa-recent-placeholder{width:40px;height:40px}
 }
+
+/* PILAR APPROVED ADMIN SECTIONS 2026-09-19 */
+.padmin{background:#f4f7fa!important}
+.pa-admin-user{display:flex;align-items:center;gap:10px;color:#fff;padding:12px 8px 0}
+.pa-avatar{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#50637a;color:#fff;font-weight:800}
+.pa-admin-user>div{display:grid;gap:3px}.pa-admin-user b{font-size:11px}.pa-admin-user .pa-logout{width:auto!important;height:auto!important;min-height:0!important;padding:0!important;background:none!important;font-size:10px!important;color:#d5dee7!important}
+.pa-main>.pa-title{display:flex;align-items:center;gap:12px}
+.pa-main>.pa-title:before{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#fff1d7;color:#ad771e;font-size:20px;flex:0 0 auto}
+.pa-main>.pa-title+.pa-sub{margin-left:58px;margin-top:-12px}
+.pa-settings{border-radius:16px!important;padding:4px 18px 10px!important}
+.pa-setting{min-height:69px!important;grid-template-columns:48px 190px minmax(0,1fr)!important;padding:10px 4px!important}
+.pa-setting-control .pa-input{height:39px!important}
+.pa-settings-save{padding-top:14px!important}
+.pa-settings-save .pa-btn{min-width:142px}
+.pa-headrow+.pa-card{padding:16px!important}
+.pa-headrow .pa-title{margin-bottom:4px!important}
+.pa-table-wrap{border-radius:12px!important}
+.pa-table th{background:#f6f8fb!important}
+.pa-table tbody tr:hover{background:#fafcfe}
+@media(min-width:901px){
+ .pa-nav-bottom{display:flex!important;flex-direction:column!important;align-items:stretch!important}
+ .pa-admin-user{margin-top:6px}
+ .pa-main{padding-top:26px!important}
+}
+@media(max-width:900px){
+ .pa-admin-user{display:none!important}
+ .pa-main>.pa-title:before{display:none}
+ .pa-main>.pa-title+.pa-sub{margin-left:0;margin-top:0}
+ .pa-settings{padding:8px 10px!important}
+ .pa-setting{grid-template-columns:40px 92px minmax(0,1fr)!important;min-height:auto!important}
+}
