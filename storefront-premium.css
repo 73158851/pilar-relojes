@@ -1855,43 +1855,61 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
 }
 
 /* PILAR DISCREET PRODUCT CODE 2026-09-21 */
-.sf-brand-row{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:8px;
+.storefront .sf-card-body .sf-brand-row{
+  display:flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  gap:6px!important;
+  width:100%!important;
+  min-width:0!important;
+  margin:0!important;
+  padding:0!important;
 }
-.sf-brand-row .sf-brand{
-  min-width:0;
+.storefront .sf-card-body .sf-brand-row .sf-brand{
+  display:block!important;
+  flex:0 1 auto!important;
+  min-width:0!important;
+  margin:0!important;
 }
-.sf-card-body .sf-product-code{
-  flex:0 1 auto;
-  max-width:46%;
-  padding:2px 5px;
-  border-radius:999px;
-  background:rgba(247,242,233,.78);
-  border:1px solid rgba(190,177,157,.42);
-  color:#8e877d;
-  font-size:6px;
-  line-height:1.15;
-  font-weight:700;
-  letter-spacing:.18px;
-  text-transform:uppercase;
-  white-space:nowrap;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  opacity:.78;
-  pointer-events:none;
+.storefront .sf-card-body .sf-brand-row .sf-product-code{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  flex:0 0 auto!important;
+  width:auto!important;
+  min-width:0!important;
+  max-width:42%!important;
+  height:auto!important;
+  margin:0!important;
+  padding:1px 4px!important;
+  border-radius:999px!important;
+  background:rgba(247,242,233,.78)!important;
+  border:1px solid rgba(190,177,157,.42)!important;
+  color:#8e877d!important;
+  font-family:inherit!important;
+  font-size:6px!important;
+  line-height:1!important;
+  font-weight:700!important;
+  letter-spacing:.15px!important;
+  text-transform:uppercase!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  opacity:.72!important;
+  position:static!important;
+  transform:none!important;
+  pointer-events:none!important;
 }
 @media(max-width:680px){
-  .sf-brand-row{
-    gap:6px;
+  .storefront .sf-card-body .sf-brand-row{
+    gap:4px!important;
   }
-  .sf-card-body .sf-product-code{
-    max-width:44%;
-    padding:1px 4px;
-    font-size:5px;
-    letter-spacing:.12px;
-    opacity:.72;
+  .storefront .sf-card-body .sf-brand-row .sf-product-code{
+    max-width:40%!important;
+    padding:1px 3px!important;
+    font-size:5px!important;
+    letter-spacing:.08px!important;
+    opacity:.68!important;
   }
 }
