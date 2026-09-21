@@ -1886,7 +1886,7 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
   border-radius:999px!important;
   background:rgba(247,242,233,.78)!important;
   border:1px solid rgba(190,177,157,.42)!important;
-  color:#8e877d!important;
+  color:#b0a79a!important;
   font-family:inherit!important;
   font-size:6px!important;
   line-height:1!important;
@@ -1896,7 +1896,7 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
   white-space:nowrap!important;
   overflow:hidden!important;
   text-overflow:ellipsis!important;
-  opacity:.72!important;
+  opacity:.88!important;
   position:static!important;
   transform:none!important;
   pointer-events:none!important;
@@ -1910,6 +1910,6 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
     padding:1px 3px!important;
     font-size:5px!important;
     letter-spacing:.08px!important;
-    opacity:.68!important;
+    opacity:.84!important;
   }
 }
