@@ -1853,3 +1853,39 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
   .storefront .sf-lightbox.open{animation:none!important}
   .storefront .sf-lightbox-img{transition:none!important}
 }
+
+/* PILAR DISCREET PRODUCT CODE 2026-09-21 */
+.sf-card-media .sf-product-code{
+  position:absolute;
+  top:10px;
+  right:44px;
+  z-index:4;
+  max-width:42%;
+  padding:2px 5px;
+  border-radius:999px;
+  background:rgba(247,242,233,.78);
+  border:1px solid rgba(190,177,157,.42);
+  color:#8e877d;
+  font-size:6px;
+  line-height:1.15;
+  font-weight:700;
+  letter-spacing:.18px;
+  text-transform:uppercase;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  opacity:.78;
+  backdrop-filter:blur(2px);
+  pointer-events:none;
+}
+@media(max-width:680px){
+  .sf-card-media .sf-product-code{
+    top:7px;
+    right:38px;
+    padding:1px 4px;
+    font-size:5px;
+    letter-spacing:.12px;
+    opacity:.72;
+    max-width:40%;
+  }
+}
