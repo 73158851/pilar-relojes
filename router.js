@@ -14,7 +14,6 @@ if(admin){
   await import('/store-pro.js?v=20260919-stable-4');
   await import('/storefront-whatsapp-sync.js?v=20260916-wa-sync-1');
   await import('/storefront-realtime.js?v=20260919-sync-1');
-  if(location.pathname==='/'||location.pathname==='') await import('/storefront-reference-hero.js?v=20260920-cls-55-1');
   await import('/store-premium-motion.js?v=20260917-motion-1');
   await import('/store-gender-filter.js?v=20260917-gender-1');
   await import('/store-seo.js?v=20260917-seo-1');
