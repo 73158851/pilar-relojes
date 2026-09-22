@@ -194,3 +194,28 @@ body:has(.pa-login),body:has(.padmin-login){background:#07111c}
   .padmin .pa-title{font-size:30px}
   .padmin .pa-card{border-radius:16px}
 }
+
+/* Contact V2 */
+.storefront .sf-contact-v2{padding:76px 0 90px;background:linear-gradient(180deg,#f5eee3,#fffdf9)}
+.storefront .sf-contact-head{display:flex;justify-content:space-between;align-items:end;gap:32px;padding-bottom:30px;border-bottom:1px solid var(--v2-line)}
+.storefront .sf-contact-head>div{max-width:720px}
+.storefront .sf-contact-head .sf-btn{flex:0 0 auto}
+.storefront .sf-contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.storefront .sf-contact-v2-card{background:#fff;border:1px solid var(--v2-line);border-radius:20px;padding:28px;box-shadow:0 8px 28px rgba(20,28,36,.05)}
+.storefront .sf-contact-v2-icon{display:grid;place-items:center;width:46px;height:46px;border-radius:14px;background:#f1e4c7;color:#8d6620;font-size:20px;margin-bottom:24px}
+.storefront .sf-contact-v2-card small{display:block;color:#a57829;text-transform:uppercase;letter-spacing:.16em;font-weight:900;font-size:9px;margin-bottom:8px}
+.storefront .sf-contact-v2-card strong{display:block;color:var(--v2-ink);font-family:Georgia,"Times New Roman",serif;font-size:21px;line-height:1.25}
+.storefront .sf-contact-v2-card p{color:#777268;line-height:1.6;margin:10px 0 0;font-size:14px}
+.storefront .sf-contact-direct{margin-top:18px;background:var(--v2-ink);color:#fff;border-radius:20px;padding:24px 28px;display:grid;grid-template-columns:1fr 1.4fr auto;align-items:center;gap:26px}
+.storefront .sf-contact-direct span{display:block;color:var(--v2-gold-2);font-size:10px;text-transform:uppercase;letter-spacing:.16em;font-weight:900}
+.storefront .sf-contact-direct strong{display:block;font-size:18px;margin-top:4px}
+.storefront .sf-contact-direct p{margin:0;color:#cbd2da;line-height:1.55;font-size:13px}
+.storefront .sf-contact-direct a{color:var(--v2-gold-2);font-weight:900;white-space:nowrap}
+@media(max-width:760px){
+ .storefront .sf-contact-v2{padding:48px 0 62px}
+ .storefront .sf-contact-head{display:block}
+ .storefront .sf-contact-head .sf-btn{margin-top:22px;width:100%;justify-content:center}
+ .storefront .sf-contact-grid{grid-template-columns:1fr;gap:12px}
+ .storefront .sf-contact-v2-card{padding:22px}
+ .storefront .sf-contact-direct{grid-template-columns:1fr;gap:14px;padding:22px}
+}
