@@ -21,5 +21,7 @@ jobs:
           node --check store-seo.js
           node --check api/sitemap.js
           node --check api/product-meta.js
-      - name: Run feature contract
-        run: node tests/feature-check.mjs
+      - name: Run feature contracts
+        run: |
+          node tests/feature-check.mjs
+          node tests/mobile-catalog-admin-icons.mjs
