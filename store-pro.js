@@ -31,19 +31,41 @@ function favoriteView(){
 function improveImages(){document.querySelectorAll('.sf-card img,.sf-related img,.sf-thumb img').forEach(img=>{img.loading='lazy';img.decoding='async'});const main=document.getElementById('sf-main-img');if(main){main.decoding='async';main.fetchPriority='high'}}
 function metaShare(){const slug=productSlug();if(!slug)return;const name=document.querySelector('.sf-detail-info h1')?.textContent?.trim();const img=document.getElementById('sf-main-img')?.src;if(!name)return;document.title=`${name} | PILAR`;const set=(p,c)=>{let m=document.head.querySelector(`meta[property="${p}"]`);if(!m){m=document.createElement('meta');m.setAttribute('property',p);document.head.appendChild(m)}m.content=c};set('og:title',`${name} | PILAR`);set('og:description','Reloj disponible en PILAR · Sucre, Bolivia. Consulta por WhatsApp.');set('og:url',location.href);set('og:type','product');if(img)set('og:image',img)}
 function favoritesView(){
-  if(location.hash!=='#favoritos')return;
+  if(location.pathname!=='/catalogo')return;
   const page=document.querySelector('.sf-catalog-page');
   const grid=page?.querySelector('.sf-grid');
   if(!page||!grid)return;
-  const selected=new Set(favs());
-  page.querySelector('.sf-title')&&(page.querySelector('.sf-title').textContent='Mis favoritos');
-  page.querySelector('.sf-catalog-sub')&&(page.querySelector('.sf-catalog-sub').textContent='Los relojes que marcaste con el corazón.');
   const cards=[...grid.querySelectorAll('.sf-card')];
+  const title=page.querySelector('.sf-title');
+  const sub=page.querySelector('.sf-catalog-sub');
+  const count=page.querySelector('.sf-catalog-count');
+  let empty=grid.querySelector('.sfp-favorites-empty');
+  const bottomLinks=[...document.querySelectorAll('.sf-mobile-bottom a')];
+  const catalogLink=document.querySelector('.sf-mobile-bottom a[href="/catalogo"]');
+  const favoritesLink=document.querySelector('.sf-mobile-bottom a[href="/catalogo#favoritos"]');
+  const showFavorites=location.hash==='#favoritos';
+
+  bottomLinks.forEach(a=>a.classList.remove('active'));
+  (showFavorites?favoritesLink:catalogLink)?.classList.add('active');
+
+  if(!showFavorites){
+    page.classList.remove('sf-favorites-page');
+    if(title)title.textContent='Nuestros relojes';
+    if(sub)sub.textContent='Diseño, calidad y estilo en cada detalle.';
+    cards.forEach(card=>{card.hidden=false});
+    empty?.remove();
+    empty=null;
+    if(count)count.textContent=cards.length+` reloj${cards.length===1?'':'es'}`;
+    return;
+  }
+
+  page.classList.add('sf-favorites-page');
+  const selected=new Set(favs());
+  if(title)title.textContent='Mis favoritos';
+  if(sub)sub.textContent='Los relojes que marcaste con el corazón.';
   cards.forEach(card=>{card.hidden=!selected.has(slugFromCard(card))});
   const visible=cards.filter(card=>!card.hidden);
-  const count=page.querySelector('.sf-catalog-count');
   if(count)count.textContent=visible.length+` reloj${visible.length===1?'':'es'}`;
-  let empty=grid.querySelector('.sfp-favorites-empty');
   if(!visible.length&&!empty){empty=document.createElement('div');empty.className='sf-empty sfp-favorites-empty';empty.innerHTML='Aún no marcaste ningún reloj como favorito.<br><a href="/catalogo">Explorar catálogo</a>';grid.appendChild(empty)}
   if(visible.length&&empty)empty.remove();
 }
