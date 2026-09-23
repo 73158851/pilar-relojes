@@ -11,7 +11,7 @@ if(admin){
 }else{
   await import('/storefront.js?v=20260922-exact-ref-2');
   await import('/store-enhance.js?v=20260919-stable-4');
-  await import('/store-pro.js?v=20260922-exact-ref-2');
+  await import('/store-pro.js?v=20260923-favorites-nav-fix-1');
   await import('/storefront-whatsapp-sync.js?v=20260916-wa-sync-1');
   await import('/storefront-realtime.js?v=20260919-sync-1');
   await import('/store-premium-motion.js?v=20260917-motion-1');
