@@ -529,3 +529,220 @@ body:has(.pa-login),body:has(.padmin-login){background:#07111c}
     background:#fff!important;color:#151c27!important;font-size:11px!important;font-weight:800!important
   }
 }
+
+/* PILAR MOBILE FINAL REFERENCE PASS 2026-09-22 */
+@media(max-width:680px){
+  /* Mobile uses the bottom navigation only */
+  .storefront .sf-menu,
+  .storefront .sf-drawer{display:none!important}
+  .storefront .sf-bar{
+    grid-template-columns:44px 1fr 44px!important;
+    position:relative!important
+  }
+  .storefront .sf-bar:before{content:"";display:block}
+  .storefront .sf-logo{grid-column:2!important;justify-self:center!important}
+  .storefront .sf-bar:after{
+    grid-column:3!important;
+    content:"🛒"!important;
+    font-size:19px!important;
+    justify-self:center!important;
+    align-self:center!important;
+    opacity:.62!important
+  }
+
+  /* WhatsApp floating action: always clear of bottom navigation */
+  .storefront .sf-float{
+    display:grid!important;
+    position:fixed!important;
+    right:14px!important;
+    bottom:76px!important;
+    width:50px!important;
+    height:50px!important;
+    border-radius:50%!important;
+    place-items:center!important;
+    background:#18c66f!important;
+    color:#fff!important;
+    z-index:82!important;
+    box-shadow:0 9px 24px rgba(24,198,111,.30)!important;
+    border:2px solid rgba(255,255,255,.92)!important
+  }
+  .storefront .sf-float svg{width:26px!important;height:26px!important;display:block!important}
+
+  /* Hero: closer to the approved visual reference */
+  .storefront .sf-hero{
+    min-height:330px!important;
+    background-image:
+      linear-gradient(90deg,rgba(8,10,12,.64) 0%,rgba(8,10,12,.42) 44%,rgba(8,10,12,.08) 78%),
+      var(--hero-image)!important;
+    background-position:center 48%!important;
+    border-bottom:1px solid #e2d8c7!important
+  }
+  .storefront .sf-hero-inner{
+    min-height:330px!important;
+    justify-content:flex-end!important;
+    padding:0 24px 25px!important
+  }
+  .storefront .sf-hero h1{
+    font-size:31px!important;
+    line-height:.96!important;
+    max-width:185px!important;
+    margin:0 0 8px!important;
+    font-weight:500!important;
+    text-shadow:0 2px 12px rgba(0,0,0,.28)!important
+  }
+  .storefront .sf-lead{
+    max-width:210px!important;
+    font-size:12px!important;
+    line-height:1.35!important;
+    margin:0 0 13px!important;
+    color:#fff!important
+  }
+  .storefront .sf-btn.dark{
+    min-height:36px!important;
+    padding:0 18px!important;
+    font-size:10px!important;
+    border-radius:999px!important
+  }
+
+  /* Product detail: compact, balanced and structured like reference */
+  .storefront .sf-product-section{
+    background:#fbf7ef!important;
+    padding-bottom:78px!important
+  }
+  .storefront .sf-product-gallery{
+    background:#f0ebe2!important;
+    margin:0!important;
+    padding:0!important
+  }
+  .storefront .sf-gallery-main{
+    height:330px!important;
+    min-height:330px!important;
+    max-height:330px!important;
+    width:100%!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    background:#f0ebe2!important;
+    overflow:hidden!important
+  }
+  .storefront .sf-gallery-main img{
+    width:auto!important;
+    height:auto!important;
+    max-width:88%!important;
+    max-height:88%!important;
+    object-fit:contain!important;
+    object-position:center!important;
+    padding:0!important;
+    background:transparent!important
+  }
+  .storefront .sf-zoom-open{
+    right:14px!important;
+    bottom:14px!important;
+    width:42px!important;
+    height:42px!important
+  }
+  .storefront .sf-thumbs-vertical{
+    padding:9px 14px 7px!important;
+    background:#fbf7ef!important
+  }
+  .storefront .sf-thumb{
+    width:52px!important;
+    height:52px!important;
+    flex-basis:52px!important;
+    border-radius:8px!important
+  }
+
+  .storefront .sf-detail-info{
+    margin:0 12px 18px!important;
+    padding:16px 14px 18px!important;
+    background:#fffdf9!important;
+    border:1px solid #e7dfd2!important;
+    border-radius:14px!important;
+    box-shadow:0 5px 18px rgba(28,22,16,.05)!important
+  }
+  .storefront .sf-detail-info .sf-eyebrow{
+    display:block!important;
+    margin-bottom:4px!important;
+    font-size:7px!important;
+    color:#aa7c29!important
+  }
+  .storefront .sf-detail-info h1{
+    font-size:25px!important;
+    line-height:1.05!important;
+    margin:0 0 7px!important
+  }
+  .storefront .sf-detail-price{
+    font-size:22px!important;
+    margin:0 0 5px!important
+  }
+  .storefront .sf-detail-stock{
+    display:inline-flex!important;
+    font-size:9px!important;
+    font-weight:800!important;
+    color:#13a45b!important;
+    margin-bottom:2px!important
+  }
+  .storefront .sfp-tools{margin:8px 0 10px!important}
+  .storefront .sfp-actions{
+    display:grid!important;
+    grid-template-columns:48px 1fr!important;
+    gap:8px!important
+  }
+  .storefront .sfp-detail-fav{
+    width:48px!important;height:42px!important;
+    border-radius:9px!important
+  }
+  .storefront .sfp-share{
+    height:42px!important;
+    border-radius:9px!important;
+    font-size:10px!important
+  }
+  .storefront .sf-detail-copy{
+    margin:0!important;
+    padding:8px 0!important;
+    font-size:10px!important;
+    line-height:1.4!important;
+    color:#706a62!important
+  }
+  .storefront .sf-specs-compact{
+    display:grid!important;
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:7px!important;
+    margin:5px 0 11px!important
+  }
+  .storefront .sf-spec{
+    min-height:54px!important;
+    padding:9px!important;
+    border-radius:9px!important;
+    background:#fff!important;
+    border:1px solid #e8dfd2!important
+  }
+  .storefront .sf-spec b{
+    display:block!important;
+    margin-bottom:3px!important;
+    font-size:6px!important;
+    letter-spacing:.08em!important;
+    text-transform:uppercase!important;
+    color:#858078!important
+  }
+  .storefront .sf-spec span{
+    font-size:9px!important;
+    font-weight:700!important;
+    color:#2c3440!important
+  }
+  .storefront .sf-buy-wide{
+    min-height:45px!important;
+    border-radius:9px!important;
+    font-size:11px!important;
+    margin-top:3px!important
+  }
+
+  /* Home collection transition */
+  .storefront .sf-section{
+    padding-top:27px!important
+  }
+  .storefront .sf-section .sf-title{
+    font-size:24px!important;
+    max-width:270px!important
+  }
+}
