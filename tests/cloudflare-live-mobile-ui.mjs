@@ -11,7 +11,7 @@ const checks=[
  ['Nuevos no figura como enlace independiente',()=>!storefront.includes('href="/nuevos"')],
  ['sección Nuevos ingresos eliminada del inicio',()=>!storefront.includes('sf-new-arrivals')&&!storefront.includes('Nuevos <em>ingresos.</em>')],
  ['ruta /nuevos redirige al catálogo',()=>storefront.includes("path==='/nuevos'")&&storefront.includes("location.replace('/catalogo')")],
- ['panel usa iconos SVG en navegación principal',()=>admin.includes('ADMIN_ICON')&&admin.includes('pa-tab-icon')&&admin.includes('<svg')],
+ ['panel usa iconos SVG en navegación principal',()=>admin.includes('NAV_ICON')&&admin.includes('pa-tab-icon')&&admin.includes('<svg')],
 ];
 let failed=0;
 for(const [name,fn] of checks){
