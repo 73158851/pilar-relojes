@@ -9,9 +9,9 @@ if(admin){
   await import('/admin-pwa.js?v=20260919-stable-4');
   await import('/admin-realtime.js?v=20260919-stable-4');
 }else{
-  await import('/storefront.js?v=20260923-mobile-live-1');
+  await import('/storefront.js?v=20260923-favorites-mobile-1');
   await import('/store-enhance.js?v=20260919-stable-4');
-  await import('/store-pro.js?v=20260919-stable-4');
+  await import('/store-pro.js?v=20260923-favorites-mobile-1');
   await import('/storefront-whatsapp-sync.js?v=20260916-wa-sync-1');
   await import('/storefront-realtime.js?v=20260919-sync-1');
   if(location.pathname==='/'||location.pathname==='') await import('/storefront-reference-hero.js?v=20260920-cls-55-1');
