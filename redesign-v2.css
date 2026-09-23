@@ -1053,3 +1053,89 @@ body:has(.pa-login),body:has(.padmin-login){background:#07111c}
   /* All products are continuous: never show batch/load-more controls */
   .storefront .sfp-more-wrap,.storefront .sfp-more{display:none!important}
 }
+
+/* PILAR RESPONSIVE UNIFIED V5 2026-09-22 */
+/* Keep the same visual model when mobile browsers request desktop mode. */
+@media(max-width:1100px){
+  body{padding-bottom:64px!important}
+  .storefront .sf-topstrip,.storefront .sf-subbar{display:none!important}
+  .storefront .sf-nav{display:none!important}
+  .storefront .sf-header{background:#fffdf8!important;border-bottom:1px solid #eee7dc!important;box-shadow:none!important}
+  .storefront .sf-bar{
+    display:grid!important;
+    grid-template-columns:1fr auto 1fr!important;
+    min-height:56px!important;
+    height:56px!important;
+    padding:0 16px!important;
+    max-width:none!important
+  }
+  .storefront .sf-header-pad{display:block!important;grid-column:1!important}
+  .storefront .sf-logo{grid-column:2!important;justify-self:center!important}
+  .storefront .sf-logo img{width:62px!important;height:40px!important;object-fit:contain!important}
+  .storefront .sf-menu,.storefront .sf-drawer{display:none!important}
+  .storefront .sf-bar:before,.storefront .sf-bar:after{content:none!important;display:none!important}
+
+  .storefront .sf-hero-reference-final{
+    width:100%!important;
+    min-height:0!important;
+    height:auto!important;
+    aspect-ratio:686/383!important;
+    background-image:url('/assets/hero/pilar-reference-final.jpg?v=20260922-fixedhero2')!important;
+    background-size:100% 100%!important;
+    background-position:center!important;
+    background-repeat:no-repeat!important;
+    overflow:hidden!important
+  }
+  .storefront .sf-hero-reference-final:after{display:none!important}
+  .storefront .sf-hero-reference-final .sf-hero-inner{display:none!important}
+
+  .storefront .sf-mobile-bottom{
+    position:fixed!important;
+    left:0!important;right:0!important;bottom:0!important;
+    z-index:70!important;
+    height:62px!important;
+    background:#fff!important;
+    border-top:1px solid #e6dfd4!important;
+    box-shadow:0 -4px 14px rgba(25,20,14,.05)!important;
+    display:grid!important;
+    grid-template-columns:repeat(4,1fr)!important;
+    padding:4px 7px 3px!important
+  }
+  .storefront .sf-mobile-bottom a{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:2px!important;
+    color:#555b64!important;
+    text-decoration:none!important;
+    font-size:8px!important;
+    font-weight:800!important
+  }
+  .storefront .sf-mobile-bottom a svg{width:16px!important;height:16px!important;display:block!important}
+  .storefront .sf-mobile-bottom a.active{color:#0d1724!important}
+
+  .storefront .sf-float{
+    display:grid!important;
+    position:fixed!important;
+    right:14px!important;
+    bottom:76px!important;
+    width:50px!important;
+    height:50px!important;
+    border-radius:50%!important;
+    place-items:center!important;
+    background:#18c66f!important;
+    color:#fff!important;
+    z-index:82!important;
+    box-shadow:0 9px 24px rgba(24,198,111,.30)!important;
+    border:2px solid rgba(255,255,255,.92)!important
+  }
+  .storefront .sf-float svg{width:26px!important;height:26px!important}
+}
+
+/* Desktop proper still keeps navigation; only switch above 1100px. */
+@media(min-width:1101px){
+  body{padding-bottom:0!important}
+  .storefront .sf-mobile-bottom{display:none!important}
+  .storefront .sf-float{bottom:24px!important}
+}
