@@ -23,5 +23,5 @@ jobs:
           node --check api/product-meta.js
       - name: Run feature contracts
         run: |
-          node tests/feature-check.mjs
           node tests/mobile-catalog-admin-icons.mjs
+          node tests/feature-check.mjs
