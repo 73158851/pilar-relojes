@@ -1913,3 +1913,26 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
     opacity:.84!important;
   }
 }
+
+
+/* PILAR MOBILE 2-COLUMN + CENTERED LOGO 2026-09-24 */
+@media(max-width:680px){
+  .sf-grid,
+  .sf-grid-3,
+  .sf-catalog-page .sf-grid,
+  .sf-catalog-page .sf-grid-3{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:9px!important;
+  }
+  .sf-header .sf-bar{
+    position:relative!important;
+  }
+  .sf-header .sf-logo{
+    position:absolute!important;
+    left:50%!important;
+    top:50%!important;
+    transform:translate(-50%,-50%)!important;
+    justify-self:auto!important;
+    z-index:2!important;
+  }
+}
