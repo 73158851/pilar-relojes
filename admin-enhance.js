@@ -56,7 +56,7 @@ async function addDashboardAttention(){
 
 function rememberInitialSku(){document.querySelectorAll('.pa-modal #psku').forEach(i=>{if(i.dataset.initialSku===undefined)i.dataset.initialSku=i.value.trim()})}
 
-function enhanceLogin(){const box=document.querySelector('.pa-loginbox');if(!box||box.querySelector('.pax-forgot'))return;const button=document.createElement('button');button.type='button';button.className='pax-forgot';button.textContent='¿Olvidaste tu contraseña?';button.onclick=async()=>{const email=box.querySelector('#lemail')?.value.trim();if(!email){notify('Escribe primero tu correo de administrador.','error');box.querySelector('#lemail')?.focus();return}const{error}=await S.auth.resetPasswordForEmail(email,{redirectTo:`${location.origin}/admin`});if(error)return notify(error.message,'error');notify('Te enviamos un enlace para recuperar tu contraseña.')};box.appendChild(button)}
+function enhanceLogin(){document.querySelector('.pa-loginbox .pax-forgot')?.remove()}
 
 const obs=new MutationObserver(()=>{rememberInitialSku();addAdminToolbar();addDashboardAttention();enhanceLogin()});obs.observe(document.getElementById('app'),{childList:true,subtree:true});
 rememberInitialSku();addAdminToolbar();addDashboardAttention();enhanceLogin();
