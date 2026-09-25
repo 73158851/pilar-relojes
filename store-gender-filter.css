@@ -135,3 +135,51 @@
  .pilar-option3-copy p{font-size:9px!important;max-width:170px!important}
  .pilar-option3-benefits>div{min-height:58px!important}
 }
+
+/* OPTION 3 approved premium hero - same catalog width, integrated watch background */
+.pilar-option3-hero{
+ position:relative!important;
+ isolation:isolate!important;
+ grid-template-columns:minmax(0,52%) minmax(0,48%)!important;
+ background:
+   radial-gradient(circle at 82% 28%,rgba(255,255,255,.42) 0 15%,transparent 37%),
+   linear-gradient(135deg,#efe0c5 0%,#e7d0a9 52%,#c8a26b 100%)!important;
+ border-color:rgba(176,133,61,.22)!important;
+ box-shadow:0 12px 30px rgba(62,45,21,.08)!important;
+}
+.pilar-option3-hero:after{
+ content:'';position:absolute;z-index:-1;left:-4%;right:-4%;bottom:-28%;height:48%;
+ background:#102139;border-top:3px solid #c6973d;transform:rotate(-7deg);transform-origin:center;
+}
+.pilar-option3-copy h1,.pilar-option3-copy h1 em,.pilar-option3-copy p,.pilar-option3-copy .sf-eyebrow{position:relative;z-index:2}
+.pilar-option3-watch{
+ position:relative!important;z-index:1!important;
+ background-image:url('/products/casio-azul.jpg')!important;
+ background-size:cover!important;
+ background-position:center!important;
+ border-radius:18px!important;
+ box-shadow:inset 0 0 0 999px rgba(225,205,172,.10)!important;
+ mix-blend-mode:multiply;
+}
+@media(max-width:680px){
+ .sf-catalog-page>.sf-container{padding-left:12px!important;padding-right:12px!important}
+ .pilar-option3-hero{
+   grid-template-columns:52% 48%!important;
+   width:100%!important;max-width:none!important;
+   min-height:200px!important;
+   margin-left:0!important;margin-right:0!important;
+   padding:17px 8px 17px 17px!important;
+   border-radius:17px!important;
+ }
+ .pilar-option3-copy h1{font-size:28px!important;line-height:.94!important}
+ .pilar-option3-copy h1 em{font-size:28px!important}
+ .pilar-option3-copy p{max-width:175px!important;font-size:9px!important;line-height:1.45!important}
+ .pilar-option3-watch{
+   min-height:166px!important;
+   margin:0!important;
+   border-radius:14px!important;
+   background-size:cover!important;
+   background-position:center!important;
+ }
+ .pilar-option3-benefits{width:100%!important;margin-left:0!important;margin-right:0!important}
+}
