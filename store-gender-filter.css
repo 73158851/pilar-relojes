@@ -822,3 +822,9 @@
  .pilar-home-all-products .sf-title{font-size:34px!important;line-height:.94!important}
  .pilar-home-all-products .sf-catalog-count{font-size:9px!important;white-space:nowrap!important}
 }
+
+/* PILAR THREE ITEM MOBILE NAV V1 */
+@media(max-width:680px){
+ .storefront .sf-mobile-nav{grid-template-columns:repeat(3,1fr)!important}
+ .pilar-home-all-products .pilar-gender-filter{margin:0 0 18px!important}
+}
