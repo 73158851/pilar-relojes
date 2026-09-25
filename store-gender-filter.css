@@ -253,3 +253,32 @@
  .pilar-benefit-icon{width:29px!important;height:29px!important;flex-basis:29px!important}
  .pilar-benefit-svg{width:27px;height:27px}
 }
+
+/* OPTION 3 HERO V6 - reference layout, reduced top gap */
+@media(max-width:680px){
+ .sf-catalog-page{padding-top:0!important}
+ .sf-catalog-page>.sf-container{padding-top:10px!important}
+ .pilar-option3-hero{
+  grid-template-columns:55% 45%!important;
+  min-height:255px!important;
+  padding:24px 4px 18px 20px!important;
+  margin-top:0!important;
+  background:
+   radial-gradient(circle at 83% 23%,rgba(255,255,255,.50) 0 12%,transparent 12.5% 27%,rgba(184,127,38,.22) 27.5% 31%,transparent 31.5%),
+   linear-gradient(120deg,#fbefd9 0%,#ecd2a6 58%,#c99e62 100%)!important;
+ }
+ .pilar-option3-hero:before{
+  left:-10%!important;right:38%!important;bottom:-17%!important;height:42%!important;
+  border-radius:52% 52% 0 0!important;background:#0d2948!important;border-top:4px solid #c9973b!important;
+ }
+ .pilar-option3-copy{z-index:4!important}
+ .pilar-option3-copy h1{font-size:31px!important;line-height:.91!important}
+ .pilar-option3-copy h1 em{font-size:31px!important}
+ .pilar-option3-copy p{max-width:175px!important;font-size:10px!important}
+ .pilar-option3-watch{
+  z-index:3!important;min-height:218px!important;margin:-17px -1px -9px -9px!important;
+  background-image:url('/products/casio-azul.jpg')!important;
+  background-size:contain!important;background-position:center!important;background-repeat:no-repeat!important;
+  mix-blend-mode:normal!important;filter:drop-shadow(0 14px 12px rgba(16,28,44,.19))!important;
+ }
+}
