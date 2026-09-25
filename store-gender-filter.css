@@ -352,3 +352,38 @@
  .pilar-home-trust span{font-size:9px}
 }
 @media(prefers-reduced-motion:reduce){.pilar-home-editorial .pilar-home-copy,.pilar-home-crown,.pilar-home-orbit{animation:none!important}}
+
+/* CATALOG HERO REFERENCE V8 - exact mobile composition */
+@media(max-width:680px){
+ .pilar-option3-no-watch{
+  min-height:260px!important;padding:29px 10px 20px 22px!important;border-radius:17px!important;
+  background:linear-gradient(108deg,#fff3df 0%,#f5dfba 61%,#dfb875 100%)!important;
+  box-shadow:0 7px 18px rgba(57,42,19,.08)!important
+ }
+ .pilar-option3-no-watch .pilar-option3-copy{width:61%!important}
+ .pilar-option3-copy .sf-eyebrow{font-size:8px!important;letter-spacing:2.7px!important;margin-bottom:11px!important}
+ .pilar-option3-no-watch .pilar-option3-copy h1{font-size:32px!important;line-height:.91!important;letter-spacing:-1.2px!important}
+ .pilar-option3-no-watch .pilar-option3-copy h1 em{font-size:32px!important;line-height:.91!important}
+ .pilar-option3-no-watch .pilar-option3-copy p{max-width:166px!important;margin-top:14px!important;font-size:10px!important;line-height:1.42!important}
+ .pilar-option3-copy p:after{width:38px!important;margin-top:13px!important}
+ .pilar-hero-dots{margin-top:11px!important;gap:7px!important}
+ .pilar-hero-dots i{width:7px!important;height:7px!important}
+ .pilar-hero-features{right:0!important;width:27%!important;background:linear-gradient(155deg,#0b2b4b,#071d35)!important;gap:7px!important}
+ .pilar-hero-features:before{display:none!important}
+ .pilar-hero-features>div{font-size:7px!important;letter-spacing:.85px!important;gap:3px!important}
+ .pilar-hero-features>div+div:before{width:23px!important;margin-bottom:6px!important}
+ .pilar-hero-features svg{width:24px!important;height:24px!important;fill:none!important;stroke:#d59a2e!important;stroke-width:1.45!important}
+ .pilar-ref-diagonals{position:absolute;z-index:2;left:58%;right:27%;top:-8%;bottom:-8%;overflow:visible;pointer-events:none;transform:skewX(-27deg)}
+ .pilar-ref-diagonals i,.pilar-ref-diagonals b{position:absolute;top:0;bottom:0;display:block}
+ .pilar-ref-diagonals i:first-child{left:0;width:35%;background:linear-gradient(90deg,rgba(255,255,255,.82),#f7e4bd);border-left:1px solid rgba(255,255,255,.9);border-right:1px solid rgba(189,138,48,.18)}
+ .pilar-ref-diagonals i:nth-child(2){left:31%;width:39%;background:linear-gradient(90deg,#f4d797,#c58c29 52%,#f1cf83);box-shadow:0 0 10px rgba(126,82,18,.15)}
+ .pilar-ref-diagonals b{left:66%;width:34%;background:linear-gradient(90deg,#d1a453,#f1cf88)}
+ .pilar-option3-no-watch:before{left:-8%!important;right:39%!important;bottom:-23%!important;height:28%!important;border-radius:49% 49% 0 0!important;transform:rotate(2deg)!important}
+ .pilar-option3-no-watch:after{z-index:5!important}
+ .pilar-option3-benefits{border-radius:17px!important}
+ .pilar-option3-benefits>div{min-height:72px!important;padding:9px 5px!important;gap:5px!important}
+ .pilar-option3-benefits strong{font-size:8px!important;line-height:1.25!important}
+ .pilar-benefit-icon{width:31px!important;height:31px!important;flex-basis:31px!important}
+ .pilar-benefit-svg{width:29px!important;height:29px!important;fill:none!important;stroke:#cf941f!important;stroke-width:1.7!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+ .pilar-benefit-svg .svg-cut{stroke:#cf941f!important}
+}
