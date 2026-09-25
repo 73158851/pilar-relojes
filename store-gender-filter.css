@@ -828,3 +828,9 @@
  .storefront .sf-mobile-nav{grid-template-columns:repeat(3,1fr)!important}
  .pilar-home-all-products .pilar-gender-filter{margin:0 0 18px!important}
 }
+
+/* PILAR HOME GENDER FILTER FIX V2 */
+.pilar-home-all-products .sf-card{transition:opacity .22s ease,transform .26s ease,box-shadow .26s ease}
+.pilar-home-all-products .sf-card.pilar-gender-hidden{display:none!important}
+.pilar-home-all-products .sf-card:not(.pilar-gender-hidden){animation:pilarFilterIn .32s cubic-bezier(.2,.75,.25,1) both}
+@media(prefers-reduced-motion:reduce){.pilar-home-all-products .sf-card:not(.pilar-gender-hidden){animation:none}}
