@@ -520,3 +520,64 @@
  .pilar-home-ref-copy h1{font-size:36px!important}
  .pilar-home-stage{height:455px!important}
 }
+
+/* PILAR HOME V2.2 - compact photographic-style reference background */
+@media(max-width:680px){
+ .pilar-home-reference-v2{
+   background:
+    radial-gradient(ellipse at 86% 23%,rgba(248,193,88,.30) 0 10%,rgba(211,143,43,.12) 22%,transparent 42%),
+    radial-gradient(ellipse at 67% 66%,rgba(215,153,56,.17),transparent 24%),
+    linear-gradient(118deg,#031625 0%,#041a2c 52%,#09243a 100%)!important;
+ }
+ .pilar-home-ref-inner{
+   min-height:400px!important;
+   height:400px!important;
+   padding:27px 18px 34px!important;
+ }
+ .pilar-home-ref-copy{width:66%!important}
+ .pilar-home-ref-copy h1{font-size:34px!important;margin:9px 0 13px!important}
+ .pilar-home-ref-copy .sf-kicker{font-size:6.5px!important}
+ .pilar-home-ref-values{gap:2px!important;margin-bottom:12px!important}
+ .pilar-home-ref-values>div{min-height:31px!important;grid-template-columns:26px 1fr!important;font-size:7.5px!important}
+ .pilar-home-ref-values svg{width:23px!important;height:23px!important}
+ .pilar-home-ref-values>div:not(:last-child):after{width:23px!important}
+ .pilar-home-catalog-cta{min-width:145px!important;padding:10px 16px!important;font-size:10.5px!important}
+ .pilar-home-stage{
+   left:57%!important;
+   height:400px!important;
+   background:
+    radial-gradient(ellipse at 55% 62%,rgba(236,177,74,.25),transparent 23%),
+    radial-gradient(ellipse at 85% 16%,rgba(255,204,104,.22),transparent 29%)!important;
+ }
+ .pilar-stage-arch{
+   opacity:.72!important;
+   filter:blur(3px) drop-shadow(0 0 18px rgba(229,166,58,.28))!important;
+ }
+ .pilar-stage-arch.one{
+   width:100px!important;height:270px!important;right:12px!important;top:9px!important;
+   border-width:18px!important;border-color:rgba(238,181,76,.64)!important;
+ }
+ .pilar-stage-arch.two{
+   width:95px!important;height:205px!important;right:-54px!important;top:132px!important;
+   border-width:17px!important;border-color:rgba(181,113,28,.50)!important;
+ }
+ .pilar-stage-plant{
+   left:-5%!important;bottom:48px!important;width:76px!important;height:96px!important;
+   opacity:.42!important;filter:blur(6px)!important;
+ }
+ .pilar-stage-plinth{
+   width:105%!important;height:76px!important;right:-33%!important;bottom:-3px!important;
+   transform:skewX(-10deg)!important;
+   background:linear-gradient(118deg,#111a23,#192129 48%,#080f17)!important;
+   border-top:1px solid rgba(219,161,61,.52)!important;
+   filter:blur(.35px);
+ }
+ .pilar-home-ref-dots{bottom:18px!important}
+ .pilar-home-ref-benefits{margin:-16px 14px 0!important}
+ .pilar-home-ref-benefits>div{min-height:66px!important}
+}
+@media(max-width:390px){
+ .pilar-home-ref-inner{height:385px!important;min-height:385px!important;padding-top:24px!important}
+ .pilar-home-ref-copy h1{font-size:32px!important}
+ .pilar-home-stage{height:385px!important}
+}
