@@ -387,3 +387,62 @@
  .pilar-benefit-svg{width:29px!important;height:29px!important;fill:none!important;stroke:#cf941f!important;stroke-width:1.7!important;stroke-linecap:round!important;stroke-linejoin:round!important}
  .pilar-benefit-svg .svg-cut{stroke:#cf941f!important}
 }
+
+/* PILAR HOME REFERENCE V2 - approved no-watch composition */
+.pilar-home-reference-v2{position:relative;overflow:hidden;padding:0!important;background:linear-gradient(115deg,#03172a 0%,#06213a 52%,#0b2b46 100%)!important;color:#fff;border-bottom:1px solid rgba(210,157,54,.38)}
+.pilar-home-ref-inner{position:relative;min-height:620px;padding-top:66px!important;padding-bottom:72px!important}
+.pilar-home-ref-copy{position:relative;z-index:5;width:54%}
+.pilar-home-ref-copy .sf-kicker{display:flex;align-items:center;gap:16px;color:#e4b04d!important;font-size:11px!important;letter-spacing:4px!important;font-weight:800}
+.pilar-home-ref-copy .sf-kicker:after{content:"";width:95px;height:1px;background:#dca53d}
+.pilar-home-ref-copy h1{margin:17px 0 28px;font-family:Georgia,"Times New Roman",serif;font-size:67px;line-height:.91;font-weight:700;letter-spacing:-2.4px;color:#fff}
+.pilar-home-ref-copy h1 em{color:#e7b34e;font-weight:400}
+.pilar-home-ref-values{display:grid;gap:14px;margin-bottom:28px}
+.pilar-home-ref-values>div{display:grid;grid-template-columns:48px 1fr;align-items:center;gap:14px;min-height:48px;color:#fff;font-size:12px;font-weight:750;letter-spacing:2.4px}
+.pilar-home-ref-values>div:not(:last-child):after{content:"";grid-column:2;width:38px;height:1px;margin-top:2px;background:#d6a13c}
+.pilar-home-ref-values svg{width:42px;height:42px;fill:none;stroke:#e7b34e;stroke-width:1.55;stroke-linecap:round;stroke-linejoin:round}
+.pilar-home-catalog-cta{display:inline-flex;align-items:center;justify-content:center;gap:27px;min-width:215px;padding:17px 25px;border-radius:999px;background:linear-gradient(100deg,#f5ce75,#dda536);color:#081a2c!important;font-weight:850;font-size:15px;box-shadow:0 10px 30px rgba(214,159,55,.15)}
+.pilar-home-catalog-cta span{font-size:25px;line-height:.7}
+.pilar-home-stage{position:absolute;z-index:2;inset:0 0 0 48%;overflow:hidden;background:radial-gradient(circle at 68% 55%,rgba(224,164,64,.22),transparent 28%)}
+.pilar-stage-arch{position:absolute;border:24px solid rgba(225,165,65,.58);border-bottom:0;border-radius:150px 150px 0 0;filter:drop-shadow(0 0 17px rgba(221,157,51,.2))}
+.pilar-stage-arch.one{width:205px;height:420px;right:74px;top:14px}
+.pilar-stage-arch.two{width:180px;height:335px;right:-62px;top:190px;transform:rotate(23deg);border-color:rgba(175,112,30,.58)}
+.pilar-stage-plant{position:absolute;left:20%;bottom:77px;width:120px;height:175px;opacity:.56;filter:blur(3px);background:radial-gradient(ellipse at 48% 20%,#d59d3c 0 7%,transparent 8%),radial-gradient(ellipse at 30% 38%,#d59d3c 0 8%,transparent 9%),radial-gradient(ellipse at 65% 42%,#d59d3c 0 8%,transparent 9%),radial-gradient(ellipse at 24% 61%,#d59d3c 0 8%,transparent 9%),radial-gradient(ellipse at 70% 65%,#d59d3c 0 8%,transparent 9%)}
+.pilar-stage-plinth{position:absolute;right:-4%;bottom:-22px;width:78%;height:150px;transform:skewX(-8deg);background:linear-gradient(115deg,#101b27,#17232d 55%,#08121d);border-top:2px solid rgba(211,157,54,.5);box-shadow:inset 0 11px 22px rgba(255,255,255,.025)}
+.pilar-stage-plinth:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 26%,rgba(197,140,42,.45) 27%,transparent 29%,transparent 55%,rgba(197,140,42,.32) 56%,transparent 58%)}
+.pilar-home-ref-dots{position:absolute;z-index:6;right:31%;bottom:49px;display:flex;gap:10px}
+.pilar-home-ref-dots i{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.28)}
+.pilar-home-ref-dots i:first-child{width:24px;border-radius:999px;background:#e8b247}
+.pilar-home-ref-benefits{position:relative;z-index:7;display:grid!important;grid-template-columns:repeat(3,1fr);margin-top:-23px!important;margin-bottom:0!important;border:1px solid rgba(229,181,92,.22);border-radius:28px;background:#061c31;box-shadow:0 14px 35px rgba(2,12,22,.2)}
+.pilar-home-ref-benefits>div{display:flex;align-items:center;justify-content:center;gap:17px;min-height:102px;padding:16px}
+.pilar-home-ref-benefits>div+div{border-left:1px solid rgba(225,176,83,.42)}
+.pilar-home-ref-benefits svg{width:44px;height:44px;fill:none;stroke:#efbd59;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.pilar-home-ref-benefits span{font-size:14px;line-height:1.25;font-weight:800}
+@keyframes pilarHomeRefIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes pilarHomeArchGlow{0%,100%{filter:drop-shadow(0 0 12px rgba(221,157,51,.16))}50%{filter:drop-shadow(0 0 28px rgba(221,157,51,.36))}}
+.pilar-home-ref-copy{animation:pilarHomeRefIn .7s cubic-bezier(.2,.8,.2,1) both}
+.pilar-stage-arch{animation:pilarHomeArchGlow 4.5s ease-in-out infinite}
+@media(max-width:680px){
+ .pilar-home-ref-inner{min-height:620px!important;padding:47px 20px 70px!important}
+ .pilar-home-ref-copy{width:72%!important}
+ .pilar-home-ref-copy .sf-kicker{font-size:8px!important;letter-spacing:3px!important;gap:10px}
+ .pilar-home-ref-copy .sf-kicker:after{width:54px}
+ .pilar-home-ref-copy h1{font-size:47px!important;line-height:.9!important;letter-spacing:-1.7px!important;margin:15px 0 25px!important}
+ .pilar-home-ref-values{gap:10px;margin-bottom:25px}
+ .pilar-home-ref-values>div{grid-template-columns:38px 1fr;gap:11px;min-height:43px;font-size:10px;letter-spacing:1.8px}
+ .pilar-home-ref-values svg{width:34px;height:34px}
+ .pilar-home-ref-values>div:not(:last-child):after{width:32px}
+ .pilar-home-catalog-cta{min-width:177px;padding:14px 21px;font-size:13px;gap:21px}
+ .pilar-home-stage{left:48%}
+ .pilar-stage-arch.one{width:145px;height:385px;right:18px;top:12px;border-width:19px}
+ .pilar-stage-arch.two{width:125px;height:290px;right:-65px;top:190px;border-width:20px}
+ .pilar-stage-plant{left:5%;bottom:72px;width:90px;height:145px}
+ .pilar-stage-plinth{width:93%;height:130px;right:-17%;bottom:-9px}
+ .pilar-home-ref-dots{right:15%;bottom:45px;gap:7px}
+ .pilar-home-ref-dots i{width:8px;height:8px}
+ .pilar-home-ref-dots i:first-child{width:20px}
+ .pilar-home-ref-benefits{width:calc(100% - 28px)!important;margin:-28px 14px 0!important;border-radius:22px}
+ .pilar-home-ref-benefits>div{min-height:85px;padding:11px 5px;gap:7px;flex-direction:column;text-align:center}
+ .pilar-home-ref-benefits svg{width:31px;height:31px}
+ .pilar-home-ref-benefits span{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){.pilar-home-ref-copy,.pilar-stage-arch{animation:none!important}}
