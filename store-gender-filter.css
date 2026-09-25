@@ -183,3 +183,50 @@
  }
  .pilar-option3-benefits{width:100%!important;margin-left:0!important;margin-right:0!important}
 }
+
+/* OPTION 3 FINAL REFERENCE MATCH - 2026-09-24 */
+@media(max-width:680px){
+ .sf-catalog-page>.sf-container{padding-left:12px!important;padding-right:12px!important}
+ .pilar-option3-hero{
+   position:relative!important;isolation:isolate!important;overflow:hidden!important;
+   display:grid!important;grid-template-columns:54% 46%!important;align-items:center!important;
+   width:100%!important;min-height:238px!important;margin:0 0 10px!important;
+   padding:24px 8px 24px 20px!important;border:1px solid rgba(176,133,61,.22)!important;
+   border-radius:18px!important;
+   background:
+    radial-gradient(circle at 86% 28%,rgba(255,255,255,.52) 0 11%,transparent 11.5% 27%,rgba(189,135,50,.28) 27.5% 31%,transparent 31.5%),
+    linear-gradient(118deg,#f6ead3 0%,#ead2aa 58%,#caa66f 100%)!important;
+   box-shadow:0 10px 26px rgba(65,46,19,.09)!important;
+ }
+ .pilar-option3-hero:before{
+   content:''!important;position:absolute!important;z-index:-1!important;
+   left:-8%!important;right:37%!important;bottom:-19%!important;height:42%!important;
+   border-radius:50% 50% 0 0!important;background:#10233d!important;
+   border-top:3px solid #c9973b!important;transform:rotate(-7deg)!important;
+ }
+ .pilar-option3-hero:after{
+   content:''!important;position:absolute!important;z-index:-2!important;
+   right:-6%!important;bottom:-7%!important;width:49%!important;height:31%!important;
+   border-radius:50% 0 0 0!important;
+   background:linear-gradient(145deg,#f6ead3,#d7b983)!important;
+   border-top:1px solid rgba(255,255,255,.5)!important;
+   transform:none!important;
+ }
+ .pilar-option3-copy{align-self:center!important}
+ .pilar-option3-copy .sf-eyebrow{margin:0 0 10px!important;color:#ad7a20!important;font-size:7px!important;font-weight:800!important;letter-spacing:2.3px!important}
+ .pilar-option3-copy h1{margin:0!important;color:#10213a!important;font-family:Georgia,"Times New Roman",serif!important;font-size:31px!important;font-weight:700!important;line-height:.91!important;letter-spacing:-1.4px!important}
+ .pilar-option3-copy h1 em{display:block!important;margin-top:3px!important;color:#b78022!important;font-family:Georgia,"Times New Roman",serif!important;font-size:31px!important;font-weight:400!important;font-style:italic!important;line-height:.92!important}
+ .pilar-option3-copy p{max-width:165px!important;margin:14px 0 0!important;color:#5f5a52!important;font-size:9px!important;line-height:1.45!important}
+ .pilar-option3-copy p:after{content:''!important;display:block!important;width:46px!important;height:2px!important;margin-top:13px!important;border-radius:9px!important;background:#bd8a2d!important}
+ .pilar-option3-watch{
+   position:relative!important;z-index:2!important;align-self:stretch!important;
+   min-height:190px!important;margin:-9px -3px -9px -5px!important;
+   border-radius:0!important;background-image:url('/products/casio-azul.jpg')!important;
+   background-size:contain!important;background-position:center!important;background-repeat:no-repeat!important;
+   box-shadow:none!important;filter:drop-shadow(0 13px 10px rgba(25,31,42,.17))!important;
+   mix-blend-mode:multiply!important;
+ }
+ .pilar-option3-benefits{margin:0 0 12px!important;border-radius:16px!important;background:#fffaf2!important;box-shadow:0 5px 14px rgba(45,35,20,.04)!important}
+ .pilar-option3-benefits>div{min-height:68px!important;gap:6px!important;font-size:8px!important;color:#10213a!important}
+ .pilar-benefit-icon{width:23px!important;height:23px!important;flex-basis:23px!important;border-color:#c9973b!important;color:#b78022!important}
+}
