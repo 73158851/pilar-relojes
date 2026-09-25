@@ -1,1 +1,99 @@
 .pilar-gender-filter{display:inline-flex;align-items:center;gap:4px;padding:4px;margin:2px 0 22px;border:1px solid rgba(183,143,52,.28);border-radius:999px;background:rgba(250,247,239,.92);box-shadow:0 8px 24px rgba(17,27,44,.055);backdrop-filter:blur(10px)}.pilar-gender-option{appearance:none;border:0;border-radius:999px;background:transparent;color:#6f6a61;padding:9px 18px;font:600 12px/1 Arial,sans-serif;letter-spacing:.025em;cursor:pointer;transition:background .22s ease,color .22s ease,transform .18s ease,box-shadow .22s ease}.pilar-gender-option:hover{color:#111b2c;transform:translateY(-1px)}.pilar-gender-option.active{background:#111b2c;color:#fff;box-shadow:0 6px 16px rgba(17,27,44,.16)}.sf-catalog-page .sf-card{transition:opacity .22s ease,transform .26s ease,box-shadow .26s ease;transition-delay:var(--pilar-filter-delay,0ms)}.sf-catalog-page .sf-card.pilar-gender-hidden{display:none}.sf-catalog-page .sf-card:not(.pilar-gender-hidden){animation:pilarFilterIn .32s cubic-bezier(.2,.75,.25,1) both;animation-delay:var(--pilar-filter-delay,0ms)}@keyframes pilarFilterIn{from{opacity:0;transform:translateY(8px) scale(.985)}to{opacity:1;transform:none}}@media(max-width:600px){.pilar-gender-filter{display:flex;width:max-content;max-width:100%;margin-bottom:16px}.pilar-gender-option{padding:9px 15px;font-size:11px}}@media(prefers-reduced-motion:reduce){.sf-catalog-page .sf-card:not(.pilar-gender-hidden){animation:none}.pilar-gender-option{transition:none}}
+
+/* PILAR OPTION 4 - MINIMAL MODERNO 2026-09-24 */
+@media(max-width:680px){
+  .sf-catalog-page>.sf-container{padding-top:24px!important}
+  .sf-catalog-page .sf-catalog-head{margin-bottom:14px!important}
+  .sf-catalog-page .sf-catalog-head>div:first-child{display:block!important}
+  .sf-catalog-page .sf-eyebrow{
+    font-size:8px!important;
+    letter-spacing:2.8px!important;
+    text-transform:uppercase!important;
+    color:#9f7427!important;
+    margin-bottom:8px!important;
+  }
+  .sf-catalog-page .sf-title{
+    font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+    font-size:38px!important;
+    line-height:.96!important;
+    letter-spacing:-1.7px!important;
+    font-weight:780!important;
+    color:#111b2c!important;
+    margin:0!important;
+  }
+  .sf-catalog-page .sf-title em{
+    display:block!important;
+    margin-top:3px!important;
+    font-family:Georgia,"Times New Roman",serif!important;
+    font-size:34px!important;
+    line-height:1!important;
+    font-weight:400!important;
+    font-style:italic!important;
+    letter-spacing:-1.1px!important;
+    color:#b9852c!important;
+  }
+  .sf-catalog-page .sf-title:after{
+    content:''!important;
+    display:block!important;
+    width:28px!important;
+    height:2px!important;
+    margin:13px 0 10px!important;
+    border-radius:999px!important;
+    background:#c39540!important;
+  }
+  .sf-catalog-page .sf-catalog-sub{
+    margin:0 0 6px!important;
+    font-size:10px!important;
+    line-height:1.35!important;
+    color:#82796c!important;
+  }
+  .sf-catalog-page .sf-catalog-count,
+  .sf-catalog-page .sf-catalog-count-premium{
+    display:inline-flex!important;
+    align-items:center!important;
+    gap:6px!important;
+    margin-top:3px!important;
+    padding:0!important;
+    border:0!important;
+    border-radius:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    color:#a87927!important;
+    font-size:10px!important;
+    font-weight:800!important;
+  }
+  .sf-catalog-page .sf-count-dot{font-size:13px!important}
+  .pilar-gender-filter{
+    display:flex!important;
+    width:100%!important;
+    max-width:none!important;
+    gap:7px!important;
+    padding:0!important;
+    margin:10px 0 16px!important;
+    border:0!important;
+    border-radius:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    backdrop-filter:none!important;
+  }
+  .pilar-gender-option{
+    flex:1 1 0!important;
+    min-width:0!important;
+    padding:10px 8px!important;
+    border:1px solid #e0d5c5!important;
+    border-radius:999px!important;
+    background:rgba(255,252,246,.72)!important;
+    color:#5f5b55!important;
+    font-size:10px!important;
+    font-weight:760!important;
+    box-shadow:none!important;
+  }
+  .pilar-gender-option.active{
+    border-color:#111b2c!important;
+    background:#111b2c!important;
+    color:#fff!important;
+    box-shadow:0 5px 14px rgba(17,27,44,.14)!important;
+  }
+  .pilar-gender-option[data-gender="varon"]:before{content:'♂';margin-right:5px;font-size:11px}
+  .pilar-gender-option[data-gender="dama"]:before{content:'♀';margin-right:5px;font-size:11px}
+}
