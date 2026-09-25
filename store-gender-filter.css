@@ -811,3 +811,14 @@
  }
  .pilar-home-v4-benefits>div{min-height:54px!important}
 }
+
+/* PILAR HOME FULL CATALOG V1 */
+@media(max-width:680px){
+ .pilar-home-reference-v4 .pilar-home-v4-inner{height:215px!important;min-height:215px!important;padding-bottom:14px!important}
+ .pilar-home-reference-v4 h1{margin-top:3px!important}
+ .pilar-home-v4-features{margin:15px 0 0!important}
+ .pilar-home-all-products{padding-top:38px!important}
+ .pilar-home-all-products .sf-section-head{align-items:flex-end!important;margin-bottom:22px!important}
+ .pilar-home-all-products .sf-title{font-size:34px!important;line-height:.94!important}
+ .pilar-home-all-products .sf-catalog-count{font-size:9px!important;white-space:nowrap!important}
+}
