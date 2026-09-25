@@ -1964,3 +1964,12 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
  .storefront .sf-footer-meta{padding:6px!important;font-size:6.5px!important;line-height:1.1!important}
  .storefront .sf-footer-wa svg{width:13px!important;height:13px!important}
 }
+
+/* PILAR MOBILE PAGE END LOCK V1 2026-09-25
+   The fixed nav is 64px high: reserve exactly that space, no extra scroll tail. */
+@media(max-width:680px){
+ .storefront{padding-bottom:64px!important}
+ .storefront .sf-footer{margin-bottom:0!important;padding-bottom:0!important}
+ .storefront .sf-footer-meta{margin-bottom:0!important}
+ .storefront .sf-mobile-nav{bottom:0!important}
+}
