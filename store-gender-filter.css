@@ -796,3 +796,18 @@
  .pilar-home-reference-v4 h1{font-size:37px!important}
  .pilar-home-v4-features small{font-size:7px!important}
 }
+
+/* PILAR HOME V4.1 BENEFITS FLOAT - match approved reference */
+@media(max-width:680px){
+ .pilar-home-reference-v4{padding-bottom:12px!important}
+ .pilar-home-v4-benefits{
+   width:calc(100% - 28px)!important;
+   margin:0 14px 0!important;
+   border:1px solid rgba(205,223,235,.28)!important;
+   border-radius:18px!important;
+   overflow:hidden!important;
+   background:#041c30!important;
+   box-shadow:0 8px 18px rgba(1,14,24,.16)!important;
+ }
+ .pilar-home-v4-benefits>div{min-height:54px!important}
+}
