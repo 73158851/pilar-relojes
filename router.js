@@ -14,7 +14,7 @@ if(admin){
   await import('/store-pro.js?v=20260923-favorites-mobile-1');
   await import('/storefront-whatsapp-sync.js?v=20260916-wa-sync-1');
   await import('/store-premium-motion.js?v=20260917-motion-1');
-  await import('/store-gender-filter.js?v=20260924-inline-filter-v2');
+  await import('/store-gender-filter.js?v=20260925-home-filter-fix-v1');
   await import('/store-seo.js?v=20260917-seo-1');
   await import('/store-header-cleanup.js?v=20260919-wa-header-remove-1');
 }
