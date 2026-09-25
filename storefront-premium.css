@@ -1936,3 +1936,31 @@ linear-gradient(135deg,#08111e 0%,#0e1d31 55%,#162943 100%)!important;border-bot
     z-index:2!important;
   }
 }
+
+/* PILAR MOBILE FOOTER COMPACT V2 2026-09-25 */
+@media(max-width:680px){
+ .storefront .sf-footer .sf-container{width:calc(100% - 28px)!important}
+ .storefront .sf-footer-grid{
+   grid-template-columns:1.05fr .95fr!important;
+   gap:10px 20px!important;
+   padding:14px 0 10px!important;
+   align-items:start!important;
+ }
+ .storefront .sf-footer-intro{
+   grid-column:1/-1!important;
+   display:flex!important;
+   align-items:center!important;
+   justify-content:space-between!important;
+   gap:16px!important;
+   margin:0!important;
+   padding:0 0 9px!important;
+   border-bottom:1px solid rgba(255,255,255,.08)!important;
+ }
+ .storefront .sf-footer-intro strong{font-size:18px!important;margin:0!important;line-height:1!important}
+ .storefront .sf-footer-intro p{max-width:58%!important;margin:0!important;font-size:7.5px!important;line-height:1.25!important;text-align:right!important}
+ .storefront .sf-footer h4{font-size:7px!important;margin:0 0 5px!important;letter-spacing:1.5px!important}
+ .storefront .sf-footer p,.storefront .sf-footer a{font-size:7.5px!important;line-height:1.3!important;margin:0 0 3px!important}
+ .storefront .sf-footer-grid>div:last-child{display:none!important}
+ .storefront .sf-footer-meta{padding:6px!important;font-size:6.5px!important;line-height:1.1!important}
+ .storefront .sf-footer-wa svg{width:13px!important;height:13px!important}
+}
