@@ -106,7 +106,7 @@
 .pilar-option3-copy h1{margin:0;color:#111b2c;font:800 46px/.94 Inter,system-ui,sans-serif;letter-spacing:-2px}
 .pilar-option3-copy h1 em{color:#b9852c;font:italic 400 43px/1 Georgia,serif}
 .pilar-option3-copy p{max-width:330px;margin:16px 0 0;color:#716a60;font-size:13px;line-height:1.55}
-.pilar-option3-watch{align-self:stretch;min-height:250px;background-image:url('https://media.canva.com/v2/image-resize/format:JPG/height:900/quality:90/uri:ifs%3A%2F%2FM%2Fbd26469f-7490-4127-b49e-3c6ece96174e/watermark:F/width:956');background-position:center;background-repeat:no-repeat;background-size:contain;filter:drop-shadow(0 16px 18px rgba(17,27,44,.12))}
+.pilar-option3-watch{align-self:stretch;min-height:250px;background-image:url('/products/casio-azul.jpg');background-position:center;background-repeat:no-repeat;background-size:contain;filter:drop-shadow(0 16px 18px rgba(17,27,44,.12))}
 .pilar-option3-benefits{display:grid;grid-template-columns:repeat(3,1fr);margin:0 0 18px;border:1px solid #eadfce;border-radius:16px;background:#fffaf2;overflow:hidden}
 .pilar-option3-benefits>div{display:flex;align-items:center;justify-content:center;gap:9px;min-height:58px;padding:10px 12px;text-align:center;color:#283142;font-size:11px}
 .pilar-option3-benefits>div+div{border-left:1px solid #eadfce}
@@ -124,4 +124,14 @@
  .pilar-benefit-icon{width:20px;height:20px;flex-basis:20px;font-size:7px}
  .sf-catalog-page .sf-catalog-head{margin-top:4px!important}
  .sf-catalog-page .sf-catalog-head>div:first-child{display:none!important}
+}
+
+/* OPTION 3 visual correction: stable local watch asset + compact mobile hero */
+@media(max-width:680px){
+ .pilar-option3-hero{grid-template-columns:52% 48%!important;min-height:190px!important;padding:16px 10px 16px 17px!important}
+ .pilar-option3-watch{display:block!important;min-height:160px!important;background-image:url('/products/casio-azul.jpg')!important;background-size:contain!important;background-position:center!important;background-repeat:no-repeat!important}
+ .pilar-option3-copy h1{font-size:27px!important}
+ .pilar-option3-copy h1 em{font-size:27px!important}
+ .pilar-option3-copy p{font-size:9px!important;max-width:170px!important}
+ .pilar-option3-benefits>div{min-height:58px!important}
 }
