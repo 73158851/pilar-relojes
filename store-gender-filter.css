@@ -319,3 +319,36 @@
 @media(prefers-reduced-motion:reduce){
  .pilar-option3-no-watch:after,.pilar-option3-no-watch .pilar-option3-copy,.pilar-hero-features svg{animation:none!important}
 }
+
+/* PILAR HOME EDITORIAL 2026-09-24 */
+.pilar-home-editorial{position:relative;overflow:hidden;background:radial-gradient(circle at 78% 36%,rgba(197,151,67,.14),transparent 27%),linear-gradient(135deg,#06182c,#0c2744 62%,#081c33);color:#fff}
+.pilar-home-editorial .sf-hero-inner{position:relative;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr);align-items:center;gap:30px}
+.pilar-home-editorial .pilar-home-copy{position:relative;z-index:3}
+.pilar-home-editorial .sf-actions svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.pilar-home-editorial .sf-btn{display:inline-flex;align-items:center;gap:8px}
+.pilar-home-trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12)}
+.pilar-home-trust span{display:inline-flex;align-items:center;gap:7px;font-size:10px;letter-spacing:.35px;color:rgba(255,255,255,.72)}
+.pilar-home-trust svg{width:17px;height:17px;fill:none;stroke:#d6a13e;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.pilar-home-art{position:relative;z-index:2;min-height:330px;display:grid;place-items:center}
+.pilar-home-orbit{position:absolute;width:285px;height:285px;border:1px solid rgba(213,163,67,.28);border-radius:50%;box-shadow:0 0 0 34px rgba(213,163,67,.035),0 0 0 70px rgba(213,163,67,.025)}
+.pilar-home-crown{position:absolute;top:73px;width:105px;color:#d7a13c}
+.pilar-home-crown svg{width:100%;fill:none;stroke:currentColor;stroke-width:2}
+.pilar-home-monogram{font-family:Georgia,"Times New Roman",serif;font-size:156px;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(221,174,82,.6);text-shadow:0 0 42px rgba(211,158,57,.11)}
+@keyframes pilarEditorialFloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-8px) rotate(2deg)}}
+@keyframes pilarEditorialOrbit{to{transform:rotate(360deg)}}
+@keyframes pilarEditorialIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.pilar-home-editorial .pilar-home-copy{animation:pilarEditorialIn .65s cubic-bezier(.2,.8,.2,1) both}
+.pilar-home-crown{animation:pilarEditorialFloat 4.8s ease-in-out infinite}
+.pilar-home-orbit{animation:pilarEditorialOrbit 26s linear infinite}
+@media(max-width:680px){
+ .pilar-home-editorial .sf-hero-inner{display:block!important;min-height:650px!important;padding-top:62px!important;padding-bottom:44px!important}
+ .pilar-home-editorial .pilar-home-copy{max-width:100%!important}
+ .pilar-home-editorial .sf-lead{max-width:92%!important}
+ .pilar-home-art{position:absolute;right:-68px;top:35px;min-height:0;width:250px;height:250px;opacity:.72;pointer-events:none}
+ .pilar-home-orbit{width:205px;height:205px}
+ .pilar-home-crown{top:52px;width:72px}
+ .pilar-home-monogram{font-size:112px}
+ .pilar-home-trust{margin-top:27px;gap:12px 16px}
+ .pilar-home-trust span{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){.pilar-home-editorial .pilar-home-copy,.pilar-home-crown,.pilar-home-orbit{animation:none!important}}
