@@ -9,7 +9,7 @@ if(admin){
   await import('/admin-pwa.js?v=20260919-stable-4');
   await import('/admin-realtime.js?v=20260919-stable-4');
 }else{
-  await import('/storefront.js?v=20260925-home-full-catalog-v1');
+  await import('/storefront.js?v=20260925-three-nav-home-filter-v1');
   await import('/store-enhance.js?v=20260919-stable-4');
   await import('/store-pro.js?v=20260923-favorites-mobile-1');
   await import('/storefront-whatsapp-sync.js?v=20260916-wa-sync-1');
