@@ -230,3 +230,26 @@
  .pilar-option3-benefits>div{min-height:68px!important;gap:6px!important;font-size:8px!important;color:#10213a!important}
  .pilar-benefit-icon{width:23px!important;height:23px!important;flex-basis:23px!important;border-color:#c9973b!important;color:#b78022!important}
 }
+
+/* OPTION 3 PRODUCTION V5 - stable premium mobile hero */
+.pilar-benefit-icon{border:0!important;width:30px!important;height:30px!important;flex-basis:30px!important}
+.pilar-benefit-svg{width:28px;height:28px;display:block;fill:#c28b24;stroke:#c28b24;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
+.pilar-benefit-svg .svg-cut{fill:none;stroke:#fff;stroke-width:2.1}
+@media(max-width:680px){
+ .sf-catalog-page>.sf-container{padding-left:12px!important;padding-right:12px!important}
+ .pilar-option3-hero{
+  grid-template-columns:52% 48%!important;min-height:232px!important;padding:22px 7px 22px 20px!important;
+  background:radial-gradient(circle at 83% 27%,rgba(255,255,255,.38) 0 12%,transparent 12.5% 28%,rgba(190,137,51,.22) 28.5% 31%,transparent 31.5%),linear-gradient(120deg,#f7ead2 0%,#ead1a6 60%,#caa36c 100%)!important
+ }
+ .pilar-option3-hero:before{left:-8%!important;right:39%!important;bottom:-18%!important;height:39%!important;background:#0d2948!important;border-top:3px solid #c9973b!important}
+ .pilar-option3-copy h1{font-size:30px!important;line-height:.92!important}
+ .pilar-option3-copy h1 em{font-size:30px!important}
+ .pilar-option3-watch{
+  min-height:194px!important;margin:-10px -2px -10px -5px!important;
+  background-image:url('/products/casio-azul.jpg')!important;background-size:contain!important;background-position:center!important;background-repeat:no-repeat!important;
+  border-radius:0!important;box-shadow:none!important;filter:drop-shadow(0 12px 11px rgba(18,30,45,.16))!important;mix-blend-mode:normal!important
+ }
+ .pilar-option3-benefits>div{min-height:70px!important}
+ .pilar-benefit-icon{width:29px!important;height:29px!important;flex-basis:29px!important}
+ .pilar-benefit-svg{width:27px;height:27px}
+}
