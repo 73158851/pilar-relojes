@@ -446,3 +446,77 @@
  .pilar-home-ref-benefits span{font-size:9px}
 }
 @media(prefers-reduced-motion:reduce){.pilar-home-ref-copy,.pilar-stage-arch{animation:none!important}}
+
+/* PILAR HOME V2.1 - mobile proportion correction against approved reference */
+@media(max-width:680px){
+ .pilar-home-reference-v2{min-height:0!important}
+ .pilar-home-ref-inner{
+   min-height:480px!important;
+   height:480px!important;
+   padding:35px 18px 42px!important;
+   overflow:hidden!important;
+ }
+ .pilar-home-ref-copy{width:64%!important}
+ .pilar-home-ref-copy .sf-kicker{font-size:7px!important;letter-spacing:2.5px!important;gap:8px!important}
+ .pilar-home-ref-copy .sf-kicker:after{width:40px!important}
+ .pilar-home-ref-copy h1{
+   margin:12px 0 18px!important;
+   font-size:39px!important;
+   line-height:.91!important;
+   letter-spacing:-1.4px!important;
+ }
+ .pilar-home-ref-values{gap:5px!important;margin-bottom:17px!important}
+ .pilar-home-ref-values>div{
+   grid-template-columns:30px 1fr!important;
+   gap:9px!important;
+   min-height:36px!important;
+   font-size:8px!important;
+   letter-spacing:1.5px!important;
+ }
+ .pilar-home-ref-values svg{width:27px!important;height:27px!important}
+ .pilar-home-ref-values>div:not(:last-child):after{width:26px!important;margin-top:0!important}
+ .pilar-home-catalog-cta{
+   min-width:155px!important;
+   padding:12px 18px!important;
+   gap:17px!important;
+   font-size:11px!important;
+ }
+ .pilar-home-catalog-cta span{font-size:20px!important}
+ .pilar-home-stage{
+   left:55%!important;
+   top:0!important;
+   right:0!important;
+   bottom:0!important;
+   height:480px!important;
+ }
+ .pilar-stage-arch.one{
+   width:112px!important;height:305px!important;
+   right:15px!important;top:15px!important;border-width:15px!important;
+ }
+ .pilar-stage-arch.two{
+   width:102px!important;height:225px!important;
+   right:-53px!important;top:157px!important;border-width:15px!important;
+ }
+ .pilar-stage-plant{left:4%!important;bottom:58px!important;width:70px!important;height:108px!important}
+ .pilar-stage-plinth{width:100%!important;height:94px!important;right:-28%!important;bottom:-5px!important}
+ .pilar-home-ref-dots{right:11%!important;bottom:26px!important;gap:6px!important}
+ .pilar-home-ref-dots i{width:7px!important;height:7px!important}
+ .pilar-home-ref-dots i:first-child{width:18px!important}
+ .pilar-home-ref-benefits{
+   width:calc(100% - 28px)!important;
+   margin:-20px 14px 0!important;
+   border-radius:20px!important;
+ }
+ .pilar-home-ref-benefits>div{
+   min-height:72px!important;
+   padding:9px 4px!important;
+   gap:5px!important;
+ }
+ .pilar-home-ref-benefits svg{width:27px!important;height:27px!important}
+ .pilar-home-ref-benefits span{font-size:8px!important;line-height:1.2!important}
+}
+@media(max-width:390px){
+ .pilar-home-ref-inner{height:455px!important;min-height:455px!important;padding-top:31px!important}
+ .pilar-home-ref-copy h1{font-size:36px!important}
+ .pilar-home-stage{height:455px!important}
+}
