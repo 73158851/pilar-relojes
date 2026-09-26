@@ -10,3 +10,6 @@ assert.match(save,/failedImages\s*>\s*0/);
 console.log('PASS dedicated server image pipeline regression');
 assert.match(save,/arrayBuffer\(\)/,'Selected Android files must be snapshotted before later upload');
 assert.match(save,/selectedFilesPromise/,'Save must use the stable in-memory file snapshot');
+
+assert.doesNotMatch(save,/S\.auth\.getSession\(\)/,'Image upload must not request a second auth session inside save');
+assert.match(save,/S\.functions\.invoke\('pilar-image-upload'/,'Use the authenticated Supabase client to invoke the image function');
