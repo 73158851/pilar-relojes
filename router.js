@@ -4,8 +4,8 @@ if(admin){
   await import('/admin-enhance.js?v=20260916-save-fix-1');
   await import('/admin-sales.js?v=20260916-sales-2');
   await import('/admin-product-gender.js?v=20260919-stable-4');
-  await import('/admin-image-pro.js?v=20260926-image-upload-v12');
-  await import('/admin-product-save-v2.js?v=20260926-image-upload-v12');
+  await import('/admin-image-pro.js?v=20260926-image-upload-v13');
+  await import('/admin-product-save-v2.js?v=20260926-image-upload-v13');
   await import('/admin-pwa.js?v=20260919-stable-4');
   await import('/admin-realtime.js?v=20260919-stable-4');
 }else{
