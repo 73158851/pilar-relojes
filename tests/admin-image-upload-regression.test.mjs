@@ -13,3 +13,7 @@ assert.match(save,/selectedFilesPromise/,'Save must use the stable in-memory fil
 
 assert.doesNotMatch(save,/S\.auth\.getSession\(\)/,'Image upload must not request a second auth session inside save');
 assert.match(save,/S\.functions\.invoke\('pilar-image-upload'/,'Use the authenticated Supabase client to invoke the image function');
+
+assert.match(save,/localStorage\.getItem\('sb-lsuigiuthuycddlcvrds-auth-token'\)/,'Upload must read the already-persisted token without invoking Supabase auth');
+assert.match(save,/fetch\(`https:\/\/lsuigiuthuycddlcvrds\.supabase\.co\/functions\/v1\/pilar-image-upload/,'Upload must issue a direct network request');
+assert.doesNotMatch(save,/S\.functions\.invoke\('pilar-image-upload'/,'Do not use invoke because the failing boundary is before its network request');
