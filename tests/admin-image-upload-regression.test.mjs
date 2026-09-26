@@ -8,3 +8,5 @@ assert.match(save,/withTimeout\(fetch\(/);
 assert.match(save,/const storedPath=reply\.path\|\|path/);
 assert.match(save,/failedImages\s*>\s*0/);
 console.log('PASS dedicated server image pipeline regression');
+assert.match(save,/arrayBuffer\(\)/,'Selected Android files must be snapshotted before later upload');
+assert.match(save,/selectedFilesPromise/,'Save must use the stable in-memory file snapshot');
