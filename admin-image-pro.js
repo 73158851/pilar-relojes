@@ -2,13 +2,20 @@ const MAX=1400,QUALITY=0.80;
 const human=n=>n<1024?`${n} B`:n<1048576?`${(n/1024).toFixed(0)} KB`:`${(n/1048576).toFixed(1)} MB`;
 function dimensions(file){return new Promise(resolve=>{const img=new Image(),u=URL.createObjectURL(file);img.onload=()=>{resolve({w:img.naturalWidth,h:img.naturalHeight});URL.revokeObjectURL(u)};img.onerror=()=>{resolve({w:0,h:0});URL.revokeObjectURL(u)};img.src=u})}
 function loadImage(file){return new Promise((resolve,reject)=>{const img=new Image(),u=URL.createObjectURL(file);img.onload=()=>{URL.revokeObjectURL(u);resolve(img)};img.onerror=()=>{URL.revokeObjectURL(u);reject(new Error('El navegador no pudo decodificar esta imagen. Si es HEIC/HEIF, expórtala desde la galería como JPG antes de subirla.'))};img.src=u})}
+async function decodeFallback(file){
+ if(typeof window.heic2any!=='function')throw new Error('El conversor HEIC/HEIF no terminó de cargar. Cierra y abre nuevamente el panel.');
+ const converted=await window.heic2any({blob:file,toType:'image/jpeg',quality:0.90});
+ const blob=Array.isArray(converted)?converted[0]:converted;
+ if(!blob)throw new Error('No se pudo convertir la fotografía del teléfono.');
+ return new File([blob],String(file.name||'imagen').replace(/\.[^.]+$/,'.jpg'),{type:'image/jpeg',lastModified:Date.now()});
+}
 async function optimizeFile(file){
  if(!file)return file;
  const type=String(file.type||'').toLowerCase(),name=String(file.name||'imagen');
  const looksImage=type.startsWith('image/')||/\.(jpe?g|png|webp|gif|bmp|avif|heic|heif)$/i.test(name);
  if(!looksImage)throw new Error('El archivo seleccionado no es una imagen.');
  let source=null,close=()=>{};
- try{source=await loadImage(file)}catch(first){try{source=await createImageBitmap(file);close=()=>source.close?.()}catch{throw first}}
+ try{source=await loadImage(file)}catch(first){try{source=await createImageBitmap(file);close=()=>source.close?.()}catch{const decoded=await decodeFallback(file);source=await loadImage(decoded)}}
  const sw=source.width||source.naturalWidth,sh=source.height||source.naturalHeight;
  if(!sw||!sh)throw new Error('La imagen no tiene dimensiones válidas.');
  const scale=Math.min(1,MAX/Math.max(sw,sh)),w=Math.max(1,Math.round(sw*scale)),h=Math.max(1,Math.round(sh*scale)),canvas=document.createElement('canvas');
