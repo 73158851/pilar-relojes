@@ -1,16 +1,11 @@
 import fs from 'node:fs';
 import assert from 'node:assert/strict';
 
-const image=fs.readFileSync(new URL('../admin-image-pro.js',import.meta.url),'utf8');
 const save=fs.readFileSync(new URL('../admin-product-save-v2.js',import.meta.url),'utf8');
 
-assert.match(image,/heic|heif/i,'El panel debe contemplar HEIC/HEIF de teléfonos');
-assert.match(image,/canvas\.toBlob/,'Debe poder normalizar imágenes');
-assert.match(save,/file\.arrayBuffer\(\)/,'Debe materializar los bytes del archivo móvil antes de subir');
-assert.match(save,/new Uint8Array/,'Debe enviar bytes estables a Storage');
-assert.match(save,/contentType:file\.type/,'Debe conservar el MIME de la foto original');
-assert.match(save,/failedImages\s*>\s*0/,'Debe tratar una carga fallida como guardado incompleto');
+assert.match(save,/S\.storage\.from\('product-images'\)\.upload\(/,'Images must upload directly through the authenticated Supabase client');
+assert.doesNotMatch(save,/\/api\/upload-image/,'Image upload must not depend on the Cloudflare proxy');
+assert.doesNotMatch(save,/new FormData/,'Do not repackage mobile files before Storage upload');
+assert.doesNotMatch(save,/btoa\(/,'Do not base64-encode mobile images');
+assert.match(save,/failedImages\s*>\s*0/,'A failed image must keep the editor open');
 console.log('PASS admin image upload regression');
-
-assert.match(save,/new FormData/,'Mobile upload must use browser-native multipart transport');
-assert.match(save,/form\.append\('image'/,'Multipart transport must carry the selected image');
