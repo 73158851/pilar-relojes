@@ -12,4 +12,5 @@ assert.match(save,/contentType:file\.type/,'Debe conservar el MIME de la foto or
 assert.match(save,/failedImages\s*>\s*0/,'Debe tratar una carga fallida como guardado incompleto');
 console.log('PASS admin image upload regression');
 
-assert.match(save,/base64/,'Mobile upload must use a text-safe payload to avoid intermittent binary body loss');
+assert.match(save,/new FormData/,'Mobile upload must use browser-native multipart transport');
+assert.match(save,/form\.append\('image'/,'Multipart transport must carry the selected image');
