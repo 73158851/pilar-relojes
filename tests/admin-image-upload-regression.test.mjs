@@ -5,5 +5,6 @@ assert.match(save,/new FormData/,'Use same-origin multipart upload');
 assert.match(save,/form\.append\('image'/,'Send selected file as multipart');
 assert.match(save,/\/api\/upload-image/,'Use PILAR same-origin upload endpoint');
 assert.doesNotMatch(save,/S\.storage\.from\('product-images'\)\.upload\(/,'Do not upload cross-origin from Android');
+assert.match(save,/PilarImagePro\?\.optimizeFile/,'Every selected image must be normalized before upload');
 assert.match(save,/failedImages\s*>\s*0/,'Failed upload keeps editor open');
 console.log('PASS admin image upload regression');
