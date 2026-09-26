@@ -8,16 +8,16 @@ async function optimizeFile(file){
  const looksImage=type.startsWith('image/')||/\.(jpe?g|png|webp|gif|bmp|avif|heic|heif)$/i.test(name);
  if(!looksImage)throw new Error('El archivo seleccionado no es una imagen.');
  let source=null,close=()=>{};
- try{source=await createImageBitmap(file);close=()=>source.close?.()}catch{source=await loadImage(file)}
+ try{source=await loadImage(file)}catch(first){try{source=await createImageBitmap(file);close=()=>source.close?.()}catch{throw first}}
  const sw=source.width||source.naturalWidth,sh=source.height||source.naturalHeight;
  if(!sw||!sh)throw new Error('La imagen no tiene dimensiones válidas.');
  const scale=Math.min(1,MAX/Math.max(sw,sh)),w=Math.max(1,Math.round(sw*scale)),h=Math.max(1,Math.round(sh*scale)),canvas=document.createElement('canvas');
  canvas.width=w;canvas.height=h;
  const ctx=canvas.getContext('2d',{alpha:false});if(!ctx){close();throw new Error('Este navegador no pudo preparar la imagen.')}
  ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h);ctx.drawImage(source,0,0,w,h);close();
- const blob=await new Promise(r=>canvas.toBlob(r,'image/webp',QUALITY));
- if(!blob)throw new Error('No se pudo convertir la imagen a WEBP.');
- return new File([blob],name.replace(/\.[^.]+$/,'.webp'),{type:'image/webp',lastModified:file.lastModified||Date.now()})
+ const blob=await new Promise(r=>canvas.toBlob(r,'image/jpeg',0.86));
+ if(!blob)throw new Error('No se pudo normalizar la imagen a JPG.');
+ return new File([blob],name.replace(/\.[^.]+$/,'.jpg'),{type:'image/jpeg',lastModified:Date.now()})
 }
 window.PilarImagePro={optimizeFile};
 async function preview(input,modal){let box=modal.querySelector('.pilar-image-preview');if(!box){box=document.createElement('div');box.className='pilar-image-preview';input.closest('.pa-upload')?.after(box)}box.innerHTML='';for(const file of [...input.files]){const card=document.createElement('div');card.className='pilar-preview-card';try{const normalized=await optimizeFile(file),d=await dimensions(normalized),url=URL.createObjectURL(normalized);card.innerHTML=`<img src="${url}" alt="Vista previa"><div><strong>${file.name}</strong><span>${d.w?d.w+'×'+d.h+' · ':''}${human(normalized.size)}</span><small>✓ Imagen verificada y preparada para publicar</small></div>`;card.querySelector('img').onload=()=>URL.revokeObjectURL(url);card.querySelector('img').onerror=()=>URL.revokeObjectURL(url)}catch(e){card.innerHTML=`<div><strong>${file.name}</strong><span>${human(file.size)}</span><small>⚠ ${String(e?.message||'Esta imagen no se puede leer')}</small></div>`}box.appendChild(card)}}
