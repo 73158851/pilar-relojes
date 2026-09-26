@@ -11,3 +11,5 @@ assert.match(save,/new Uint8Array/,'Debe enviar bytes estables a Storage');
 assert.match(save,/contentType:file\.type/,'Debe conservar el MIME de la foto original');
 assert.match(save,/failedImages\s*>\s*0/,'Debe tratar una carga fallida como guardado incompleto');
 console.log('PASS admin image upload regression');
+
+assert.match(save,/base64/,'Mobile upload must use a text-safe payload to avoid intermittent binary body loss');
