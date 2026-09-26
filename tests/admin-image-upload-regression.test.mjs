@@ -6,5 +6,8 @@ assert.match(save,/form\.append\('image'/,'Send selected file as multipart');
 assert.match(save,/\/api\/upload-image/,'Use PILAR same-origin upload endpoint');
 assert.doesNotMatch(save,/S\.storage\.from\('product-images'\)\.upload\(/,'Do not upload cross-origin from Android');
 assert.match(save,/PilarImagePro\?\.optimizeFile/,'Every selected image must be normalized before upload');
+const imagePro=fs.readFileSync(new URL('../admin-image-pro.js',import.meta.url),'utf8');
+assert.match(imagePro,/window\.heic2any/,'Unreadable mobile photos need a HEIC\/HEIF fallback decoder');
+assert.match(imagePro,/outputType:'image\/jpeg'/,'Fallback decoder must normalize to JPEG');
 assert.match(save,/failedImages\s*>\s*0/,'Failed upload keeps editor open');
 console.log('PASS admin image upload regression');
